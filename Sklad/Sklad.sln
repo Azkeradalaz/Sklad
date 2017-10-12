@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{581633EB-B896-402F-8E60-36F3DA191C85}") = "Sklad", "Sklad\Sklad.lsxtproj", "{DF7006B8-A211-4E4E-9C2B-97D954671D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sklad.Server", "Sklad\Sklad.Server\Sklad.Server.csproj", "{245C4E2A-1353-4717-A841-F5F2A2833EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sklad.DesktopClient", "Sklad\Sklad.DesktopClient\Sklad.DesktopClient.csproj", "{2B9554C6-B498-4A29-97DC-669954426C3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF7006B8-A211-4E4E-9C2B-97D954671D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF7006B8-A211-4E4E-9C2B-97D954671D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF7006B8-A211-4E4E-9C2B-97D954671D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF7006B8-A211-4E4E-9C2B-97D954671D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245C4E2A-1353-4717-A841-F5F2A2833EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245C4E2A-1353-4717-A841-F5F2A2833EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245C4E2A-1353-4717-A841-F5F2A2833EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245C4E2A-1353-4717-A841-F5F2A2833EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B9554C6-B498-4A29-97DC-669954426C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B9554C6-B498-4A29-97DC-669954426C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B9554C6-B498-4A29-97DC-669954426C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B9554C6-B498-4A29-97DC-669954426C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

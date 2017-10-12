@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="RecipesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <NavigationProperty
+        Name="MatsAndGoodsItem"
+        Association="FK_Recipes_MatsAndGoods"
+        FromEnd="Recipes"
+        ToEnd="MatsAndGoods">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Материал" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="QuantityDone"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+          <DisplayName
+            Value="Кол-во" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="RecipesComponents"
+        Association="FK_RecipesComponents_Recipes"
+        FromEnd="Recipes"
+        ToEnd="RecipesComponents" />
+      <NavigationProperty
+        Name="Craft"
+        Association="FK_Craft_Recipes"
+        FromEnd="Recipes"
+        ToEnd="Craft" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_RecipesComponents_Recipes">
+    <AssociationEnd
+      Name="Recipes"
+      Multiplicity="One"
+      EntityType="RecipesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="RecipesComponents"
+      Multiplicity="Many"
+      EntityType="RecipesComponentsItem" />
+  </Association>
+  <EntityContainer
+    Name="skladData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Recipes"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="RecipesItem" />
+    <AssociationSet
+      Name="FK_RecipesComponents_Recipes"
+      Association="FK_RecipesComponents_Recipes">
+      <AssociationSetEnd
+        Name="Recipes"
+        EntitySet="Recipes" />
+      <AssociationSetEnd
+        Name="RecipesComponents"
+        EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <QueryOperation
+      Name="Recipes_Single"
+      ReturnType="RecipesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Recipes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Recipes_SingleOrDefault"
+      ReturnType="RecipesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Recipes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="FK_Craft_Recipes"
+      Association="FK_Craft_Recipes">
+      <AssociationSetEnd
+        Name="Recipes"
+        EntitySet="Recipes" />
+      <AssociationSetEnd
+        Name="Craft"
+        EntitySet="Craft" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="FK_Craft_Recipes">
+    <AssociationEnd
+      Name="Recipes"
+      EntityType="RecipesItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Craft"
+      Multiplicity="Many"
+      EntityType="CraftItem" />
+  </Association>
+  <DataService
+    Name="skladDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Recipes">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Recipes" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="decimal"
+          Property="RecipesItem/Properties[ID]" />
+        <SsdlProperty
+          Name="QuantityDone"
+          Nullable="True"
+          Type="numeric"
+          Property="RecipesItem/Properties[QuantityDone]" />
+        <SsdlForeignKeyProperty
+          Name="DoneID"
+          Nullable="True"
+          Type="decimal"
+          PropertyName="DoneID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Craft_Recipes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Craft_Recipes" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Craft_Recipes]/Members[Recipes]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Craft_Recipes]/Members[Craft]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RecipeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_RecipesComponents_Recipes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_RecipesComponents_Recipes" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_RecipesComponents_Recipes]/Members[Recipes]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_RecipesComponents_Recipes]/Members[RecipesComponents]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="RecipeID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

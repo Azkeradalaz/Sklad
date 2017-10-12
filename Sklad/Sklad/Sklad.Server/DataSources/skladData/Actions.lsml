@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="ActionsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Action"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="Действие" />
+          <SupportedValue
+            DisplayName="Брак"
+            Value="Брак" />
+          <SupportedValue
+            DisplayName="Перемещение"
+            Value="Перемещение" />
+          <SupportedValue
+            Value="Накладная" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="CreationDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="Дата создания" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RealiationDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="Дата реализации" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RealTimeCreationDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="Примечание" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="SkladiItem"
+        Association="FK_Actions_Skladi"
+        FromEnd="Actions"
+        ToEnd="Skladi">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Откуда" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="SkladiItem1"
+        Association="FK_Actions_Skladi1"
+        FromEnd="Actions"
+        ToEnd="Skladi">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Куда" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="SuppliersItem"
+        Association="FK_Actions_Suppliers"
+        FromEnd="Actions"
+        ToEnd="Suppliers">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Поставщик" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+      <NavigationProperty
+        Name="ActionsFiller"
+        Association="FK_ActionsFiller_Actions"
+        FromEnd="Actions"
+        ToEnd="ActionsFiller" />
+      <EntityProperty
+        Name="Status"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="Статус" />
+          <SupportedValue
+            Value="Перемещается" />
+          <SupportedValue
+            Value="Завершен" />
+          <SupportedValue
+            Value="Удален" />
+          <SupportedValue
+            Value="Принят" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Price"
+        PropertyType="Microsoft.LightSwitch.Extensions:Money?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="2" />
+          <NotSearchable />
+          <DisplayName
+            Value="Сумма по накладной" />
+          <Attribute
+            Class="Microsoft.LightSwitch.Extensions:@MoneyProperties">
+            <Property
+              Name="CurrencySymbol"
+              Value="р." />
+          </Attribute>
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Number"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="25" />
+          <DisplayName
+            Value="Номер накладной" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="day"
+        IsReadOnly="True"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="month"
+        IsReadOnly="True"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="year"
+        IsReadOnly="True"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="skladData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Actions"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ActionsItem" />
+    <QueryOperation
+      Name="Actions_Single"
+      ReturnType="ActionsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Actions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Actions_SingleOrDefault"
+      ReturnType="ActionsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Actions" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="FK_ActionsFiller_Actions"
+      Association="FK_ActionsFiller_Actions">
+      <AssociationSetEnd
+        Name="Actions"
+        EntitySet="Actions" />
+      <AssociationSetEnd
+        Name="ActionsFiller"
+        EntitySet="ActionsFiller" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="FK_ActionsFiller_Actions">
+    <AssociationEnd
+      Name="Actions"
+      EntityType="ActionsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ActionsFiller"
+      Multiplicity="Many"
+      EntityType="ActionsFillerItem" />
+  </Association>
+  <DataService
+    Name="skladDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Actions">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Actions" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="decimal"
+          Property="ActionsItem/Properties[ID]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Action"
+          Nullable="True"
+          Type="nvarchar"
+          Property="ActionsItem/Properties[Action]" />
+        <SsdlProperty
+          Name="CreationDate"
+          Nullable="False"
+          Type="date"
+          Property="ActionsItem/Properties[CreationDate]" />
+        <SsdlProperty
+          Name="RealiationDate"
+          Nullable="True"
+          Type="date"
+          Property="ActionsItem/Properties[RealiationDate]" />
+        <SsdlProperty
+          Name="RealTimeCreationDate"
+          Nullable="False"
+          Type="date"
+          Property="ActionsItem/Properties[RealTimeCreationDate]" />
+        <SsdlProperty
+          Name="Note"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="ActionsItem/Properties[Note]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Status"
+          Nullable="True"
+          Type="nvarchar"
+          Property="ActionsItem/Properties[Status]" />
+        <SsdlProperty
+          Name="Price"
+          Nullable="True"
+          Scale="2"
+          Type="numeric"
+          Property="ActionsItem/Properties[Price]" />
+        <SsdlProperty
+          MaxLength="25"
+          Name="Number"
+          Nullable="True"
+          Type="nvarchar"
+          Property="ActionsItem/Properties[Number]" />
+        <SsdlForeignKeyProperty
+          Name="FromSkladID"
+          Nullable="True"
+          Type="decimal"
+          PropertyName="FromSkladID" />
+        <SsdlForeignKeyProperty
+          Name="ToSkladID"
+          Nullable="True"
+          Type="decimal"
+          PropertyName="ToSkladID" />
+        <SsdlForeignKeyProperty
+          Name="SupplierID"
+          Nullable="True"
+          Type="decimal"
+          PropertyName="SupplierID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ActionsFiller_Actions">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ActionsFiller_Actions" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_ActionsFiller_Actions]/Members[Actions]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_ActionsFiller_Actions]/Members[ActionsFiller]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ActionID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

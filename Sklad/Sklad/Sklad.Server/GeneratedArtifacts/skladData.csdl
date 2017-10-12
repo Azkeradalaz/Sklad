@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="ActionsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="CreationDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="RealiationDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="RealTimeCreationDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="Note" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="FromSkladID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ToSkladID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="SupplierID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="Status" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Price" Type="Edm.Decimal" Precision="18" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="Number" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_Actions_Skladi" ToRole="Skladi" FromRole="Actions" />
+    <NavigationProperty Name="SkladiItem1" Relationship="LightSwitchApplication.FK_Actions_Skladi1" ToRole="Skladi" FromRole="Actions" />
+    <NavigationProperty Name="SuppliersItem" Relationship="LightSwitchApplication.FK_Actions_Suppliers" ToRole="Suppliers" FromRole="Actions" />
+    <NavigationProperty Name="ActionsFiller" Relationship="LightSwitchApplication.FK_ActionsFiller_Actions" ToRole="ActionsFiller" FromRole="Actions" />
+  </EntityType>
+  <EntityType Name="ActionsFillerItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="ActionID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="MAGID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="PricePerUnit" Type="Edm.Decimal" Precision="18" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="PriceTotal" Type="Edm.Decimal" Precision="18" Scale="2" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity1" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity2" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="ActionsItem" Relationship="LightSwitchApplication.FK_ActionsFiller_Actions" ToRole="Actions" FromRole="ActionsFiller" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_ActionsFiller_MatsAndGoods" ToRole="MatsAndGoods" FromRole="ActionsFiller" />
+  </EntityType>
+  <EntityType Name="CraftItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="RecipeID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="CraftID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="RecipesItem" Relationship="LightSwitchApplication.FK_Craft_Recipes" ToRole="Recipes" FromRole="Craft" />
+    <NavigationProperty Name="CraftActionItem" Relationship="LightSwitchApplication.FK_Craft_CraftAction" ToRole="CraftAction" FromRole="Craft" />
+  </EntityType>
+  <EntityType Name="CraftActionItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Note" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="SkladID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="DateCreation" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="DateRealisation" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="RealTimeCreationDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="ResponsibleID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Craft" Relationship="LightSwitchApplication.FK_Craft_CraftAction" ToRole="Craft" FromRole="CraftAction" />
+    <NavigationProperty Name="CraftFiller" Relationship="LightSwitchApplication.FK_CraftFiller_Craft1" ToRole="CraftFiller" FromRole="CraftAction" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_CraftAction_Skladi" ToRole="Skladi" FromRole="CraftAction" />
+    <NavigationProperty Name="ResponsibleItem" Relationship="LightSwitchApplication.FK_CraftAction_Responsible" ToRole="Responsible" FromRole="CraftAction" />
+  </EntityType>
+  <EntityType Name="CraftFillerItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="MAGID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="CraftID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity1" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity2" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_CraftFiller_MatsAndGoods" ToRole="MatsAndGoods" FromRole="CraftFiller" />
+    <NavigationProperty Name="CraftActionItem" Relationship="LightSwitchApplication.FK_CraftFiller_Craft1" ToRole="CraftAction" FromRole="CraftFiller" />
+  </EntityType>
+  <EntityType Name="LogActionsAndCraftItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="c_Date" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Action" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="WayBillNumber" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="QuantityOnSklad" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="MatsAndGoodsItem" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="Sklad" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem1" Relationship="LightSwitchApplication.FK_LogActionsAndCraft_MatsAndGoods" ToRole="MatsAndGoods" FromRole="LogActionsAndCraft" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1" ToRole="Skladi" FromRole="LogActionsAndCraft" />
+  </EntityType>
+  <EntityType Name="LogMatsAndGoodsQuantitiesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="c_Date" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Quantity" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="MatsAndGoodsItemID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="SkladItemID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_MatsAndGoods" ToRole="MatsAndGoods" FromRole="LogMatsAndGoodsQuantities" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_Skladi" ToRole="Skladi" FromRole="LogMatsAndGoodsQuantities" />
+  </EntityType>
+  <EntityType Name="MatsAndGoodsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="5" ConcurrencyMode="Fixed" />
+    <Property Name="Note" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="FullName" Type="Edm.String" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="Status" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <Property Name="TotalQuantity" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="TotalQuantityNeeded" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="TotalQuantityDifference" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsQuantities" Relationship="LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods" ToRole="MatsAndGoodsQuantities" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="Recipes" Relationship="LightSwitchApplication.FK_Recipes_MatsAndGoods" ToRole="Recipes" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="RecipesComponents" Relationship="LightSwitchApplication.FK_RecipesComponents_MatsAndGoods" ToRole="RecipesComponents" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="ActionsFiller" Relationship="LightSwitchApplication.FK_ActionsFiller_MatsAndGoods" ToRole="ActionsFiller" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="CraftFiller" Relationship="LightSwitchApplication.FK_CraftFiller_MatsAndGoods" ToRole="CraftFiller" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="LogActionsAndCraft" Relationship="LightSwitchApplication.FK_LogActionsAndCraft_MatsAndGoods" ToRole="LogActionsAndCraft" FromRole="MatsAndGoods" />
+    <NavigationProperty Name="LogMatsAndGoodsQuantities" Relationship="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_MatsAndGoods" ToRole="LogMatsAndGoodsQuantities" FromRole="MatsAndGoods" />
+  </EntityType>
+  <EntityType Name="MatsAndGoodsQuantitiesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Edm.Decimal" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="MatsAndGoodID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="SkladID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods" ToRole="MatsAndGoods" FromRole="MatsAndGoodsQuantities" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi" ToRole="Skladi" FromRole="MatsAndGoodsQuantities" />
+  </EntityType>
+  <EntityType Name="RecipesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="DoneID" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuantityDone" Type="Edm.Decimal" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_Recipes_MatsAndGoods" ToRole="MatsAndGoods" FromRole="Recipes" />
+    <NavigationProperty Name="RecipesComponents" Relationship="LightSwitchApplication.FK_RecipesComponents_Recipes" ToRole="RecipesComponents" FromRole="Recipes" />
+    <NavigationProperty Name="Craft" Relationship="LightSwitchApplication.FK_Craft_Recipes" ToRole="Craft" FromRole="Recipes" />
+  </EntityType>
+  <EntityType Name="RecipesComponentsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ComponentID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="3" ConcurrencyMode="Fixed" />
+    <Property Name="RecipeID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="MatsAndGoodsItem" Relationship="LightSwitchApplication.FK_RecipesComponents_MatsAndGoods" ToRole="MatsAndGoods" FromRole="RecipesComponents" />
+    <NavigationProperty Name="RecipesItem" Relationship="LightSwitchApplication.FK_RecipesComponents_Recipes" ToRole="Recipes" FromRole="RecipesComponents" />
+  </EntityType>
+  <EntityType Name="ResponsibleItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="SkladID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" ConcurrencyMode="Fixed" />
+    <Property Name="Note" Type="Edm.String" MaxLength="100" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="CraftAction" Relationship="LightSwitchApplication.FK_CraftAction_Responsible" ToRole="CraftAction" FromRole="Responsible" />
+    <NavigationProperty Name="SkladiItem" Relationship="LightSwitchApplication.FK_Responsible_Skladi" ToRole="Skladi" FromRole="Responsible" />
+  </EntityType>
+  <EntityType Name="SkladiItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Adress" Type="Edm.String" MaxLength="100" ConcurrencyMode="Fixed" />
+    <Property Name="Note" Type="Edm.String" MaxLength="Max" ConcurrencyMode="Fixed" />
+    <Property Name="Status" Type="Edm.String" MaxLength="20" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Actions" Relationship="LightSwitchApplication.FK_Actions_Skladi" ToRole="Actions" FromRole="Skladi" />
+    <NavigationProperty Name="Actions1" Relationship="LightSwitchApplication.FK_Actions_Skladi1" ToRole="Actions" FromRole="Skladi" />
+    <NavigationProperty Name="MatsAndGoodsQuantities" Relationship="LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi" ToRole="MatsAndGoodsQuantities" FromRole="Skladi" />
+    <NavigationProperty Name="CraftAction" Relationship="LightSwitchApplication.FK_CraftAction_Skladi" ToRole="CraftAction" FromRole="Skladi" />
+    <NavigationProperty Name="Responsible" Relationship="LightSwitchApplication.FK_Responsible_Skladi" ToRole="Responsible" FromRole="Skladi" />
+    <NavigationProperty Name="LogMatsAndGoodsQuantities" Relationship="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_Skladi" ToRole="LogMatsAndGoodsQuantities" FromRole="Skladi" />
+    <NavigationProperty Name="LogActionsAndCraft" Relationship="LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1" ToRole="LogActionsAndCraft" FromRole="Skladi" />
+  </EntityType>
+  <EntityType Name="SuppliersItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="FullName" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Country" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Region" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="City" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Adress" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="Postcode" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="INN_KPP" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="OGRN" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="OKPO" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="OKVED" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="ContactName" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="PhoneNumber" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="FaxNumber" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Note" Type="Edm.String" MaxLength="50" ConcurrencyMode="Fixed" />
+    <Property Name="NDS" Type="Edm.String" MaxLength="10" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Actions" Relationship="LightSwitchApplication.FK_Actions_Suppliers" ToRole="Actions" FromRole="Suppliers" />
+  </EntityType>
+  <Association Name="FK_ActionsFiller_Actions">
+    <End Role="Actions" Type="LightSwitchApplication.ActionsItem" Multiplicity="0..1" />
+    <End Role="ActionsFiller" Type="LightSwitchApplication.ActionsFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionsFiller">
+        <PropertyRef Name="ActionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Craft_CraftAction">
+    <End Role="CraftAction" Type="LightSwitchApplication.CraftActionItem" Multiplicity="0..1" />
+    <End Role="Craft" Type="LightSwitchApplication.CraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CraftAction">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Craft">
+        <PropertyRef Name="CraftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftFiller_Craft1">
+    <End Role="CraftAction" Type="LightSwitchApplication.CraftActionItem" Multiplicity="0..1" />
+    <End Role="CraftFiller" Type="LightSwitchApplication.CraftFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CraftAction">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftFiller">
+        <PropertyRef Name="CraftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatsAndGoodsQuantities_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="0..1" />
+    <End Role="MatsAndGoodsQuantities" Type="LightSwitchApplication.MatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsQuantities">
+        <PropertyRef Name="MatsAndGoodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="0..1" />
+    <End Role="Recipes" Type="LightSwitchApplication.RecipesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="DoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipesComponents_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="1" />
+    <End Role="RecipesComponents" Type="LightSwitchApplication.RecipesComponentsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RecipesComponents">
+        <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActionsFiller_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="1" />
+    <End Role="ActionsFiller" Type="LightSwitchApplication.ActionsFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionsFiller">
+        <PropertyRef Name="MAGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftFiller_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="0..1" />
+    <End Role="CraftFiller" Type="LightSwitchApplication.CraftFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftFiller">
+        <PropertyRef Name="MAGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogActionsAndCraft_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="0..1" />
+    <End Role="LogActionsAndCraft" Type="LightSwitchApplication.LogActionsAndCraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogActionsAndCraft">
+        <PropertyRef Name="MatsAndGoodsItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="LightSwitchApplication.MatsAndGoodsItem" Multiplicity="0..1" />
+    <End Role="LogMatsAndGoodsQuantities" Type="LightSwitchApplication.LogMatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogMatsAndGoodsQuantities">
+        <PropertyRef Name="MatsAndGoodsItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipesComponents_Recipes">
+    <End Role="Recipes" Type="LightSwitchApplication.RecipesItem" Multiplicity="1" />
+    <End Role="RecipesComponents" Type="LightSwitchApplication.RecipesComponentsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RecipesComponents">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Craft_Recipes">
+    <End Role="Recipes" Type="LightSwitchApplication.RecipesItem" Multiplicity="0..1" />
+    <End Role="Craft" Type="LightSwitchApplication.CraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Craft">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftAction_Responsible">
+    <End Role="Responsible" Type="LightSwitchApplication.ResponsibleItem" Multiplicity="0..1" />
+    <End Role="CraftAction" Type="LightSwitchApplication.CraftActionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsible">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftAction">
+        <PropertyRef Name="ResponsibleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Skladi">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="0..1" />
+    <End Role="Actions" Type="LightSwitchApplication.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="FromSkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Skladi1">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="0..1" />
+    <End Role="Actions" Type="LightSwitchApplication.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="ToSkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatsAndGoodsQuantities_Skladi">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="0..1" />
+    <End Role="MatsAndGoodsQuantities" Type="LightSwitchApplication.MatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsQuantities">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftAction_Skladi">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="1" />
+    <End Role="CraftAction" Type="LightSwitchApplication.CraftActionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftAction">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Responsible_Skladi">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="1" />
+    <End Role="Responsible" Type="LightSwitchApplication.ResponsibleItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Responsible">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogMatsAndGoodsQuantities_Skladi">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="0..1" />
+    <End Role="LogMatsAndGoodsQuantities" Type="LightSwitchApplication.LogMatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogMatsAndGoodsQuantities">
+        <PropertyRef Name="SkladItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogActionsAndCraft_LogActionsAndCraft1">
+    <End Role="Skladi" Type="LightSwitchApplication.SkladiItem" Multiplicity="0..1" />
+    <End Role="LogActionsAndCraft" Type="LightSwitchApplication.LogActionsAndCraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogActionsAndCraft">
+        <PropertyRef Name="Sklad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Suppliers">
+    <End Role="Suppliers" Type="LightSwitchApplication.SuppliersItem" Multiplicity="0..1" />
+    <End Role="Actions" Type="LightSwitchApplication.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="skladData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Actions" EntityType="LightSwitchApplication.ActionsItem" />
+    <EntitySet Name="ActionsFiller" EntityType="LightSwitchApplication.ActionsFillerItem" />
+    <EntitySet Name="Craft" EntityType="LightSwitchApplication.CraftItem" />
+    <EntitySet Name="CraftAction" EntityType="LightSwitchApplication.CraftActionItem" />
+    <EntitySet Name="CraftFiller" EntityType="LightSwitchApplication.CraftFillerItem" />
+    <EntitySet Name="LogActionsAndCraft" EntityType="LightSwitchApplication.LogActionsAndCraftItem" />
+    <EntitySet Name="LogMatsAndGoodsQuantities" EntityType="LightSwitchApplication.LogMatsAndGoodsQuantitiesItem" />
+    <EntitySet Name="MatsAndGoods" EntityType="LightSwitchApplication.MatsAndGoodsItem" />
+    <EntitySet Name="MatsAndGoodsQuantities" EntityType="LightSwitchApplication.MatsAndGoodsQuantitiesItem" />
+    <EntitySet Name="Recipes" EntityType="LightSwitchApplication.RecipesItem" />
+    <EntitySet Name="RecipesComponents" EntityType="LightSwitchApplication.RecipesComponentsItem" />
+    <EntitySet Name="Responsible" EntityType="LightSwitchApplication.ResponsibleItem" />
+    <EntitySet Name="Skladi" EntityType="LightSwitchApplication.SkladiItem" />
+    <EntitySet Name="Suppliers" EntityType="LightSwitchApplication.SuppliersItem" />
+    <AssociationSet Name="FK_ActionsFiller_Actions" Association="LightSwitchApplication.FK_ActionsFiller_Actions">
+      <End Role="Actions" EntitySet="Actions" />
+      <End Role="ActionsFiller" EntitySet="ActionsFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Craft_CraftAction" Association="LightSwitchApplication.FK_Craft_CraftAction">
+      <End Role="CraftAction" EntitySet="CraftAction" />
+      <End Role="Craft" EntitySet="Craft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftFiller_Craft1" Association="LightSwitchApplication.FK_CraftFiller_Craft1">
+      <End Role="CraftAction" EntitySet="CraftAction" />
+      <End Role="CraftFiller" EntitySet="CraftFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsQuantities_MatsAndGoods" Association="LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="MatsAndGoodsQuantities" EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_MatsAndGoods" Association="LightSwitchApplication.FK_Recipes_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipesComponents_MatsAndGoods" Association="LightSwitchApplication.FK_RecipesComponents_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="RecipesComponents" EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActionsFiller_MatsAndGoods" Association="LightSwitchApplication.FK_ActionsFiller_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="ActionsFiller" EntitySet="ActionsFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftFiller_MatsAndGoods" Association="LightSwitchApplication.FK_CraftFiller_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="CraftFiller" EntitySet="CraftFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogActionsAndCraft_MatsAndGoods" Association="LightSwitchApplication.FK_LogActionsAndCraft_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="LogActionsAndCraft" EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods" Association="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="LogMatsAndGoodsQuantities" EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipesComponents_Recipes" Association="LightSwitchApplication.FK_RecipesComponents_Recipes">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="RecipesComponents" EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Craft_Recipes" Association="LightSwitchApplication.FK_Craft_Recipes">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="Craft" EntitySet="Craft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftAction_Responsible" Association="LightSwitchApplication.FK_CraftAction_Responsible">
+      <End Role="Responsible" EntitySet="Responsible" />
+      <End Role="CraftAction" EntitySet="CraftAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Skladi" Association="LightSwitchApplication.FK_Actions_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Skladi1" Association="LightSwitchApplication.FK_Actions_Skladi1">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsQuantities_Skladi" Association="LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="MatsAndGoodsQuantities" EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftAction_Skladi" Association="LightSwitchApplication.FK_CraftAction_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="CraftAction" EntitySet="CraftAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Responsible_Skladi" Association="LightSwitchApplication.FK_Responsible_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Responsible" EntitySet="Responsible" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogMatsAndGoodsQuantities_Skladi" Association="LightSwitchApplication.FK_LogMatsAndGoodsQuantities_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="LogMatsAndGoodsQuantities" EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogActionsAndCraft_LogActionsAndCraft1" Association="LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="LogActionsAndCraft" EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Suppliers" Association="LightSwitchApplication.FK_Actions_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="CraftActionItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="Примечание" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Status"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="Статус" />
+          <Required />
+          <SupportedValue
+            Value="Удален" />
+          <SupportedValue
+            Value="Завершен" />
+          <SupportedValue
+            Value="Изготавливается" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Craft"
+        Association="FK_Craft_CraftAction"
+        FromEnd="CraftAction"
+        ToEnd="Craft" />
+      <NavigationProperty
+        Name="CraftFiller"
+        Association="FK_CraftFiller_Craft1"
+        FromEnd="CraftAction"
+        ToEnd="CraftFiller" />
+      <NavigationProperty
+        Name="SkladiItem"
+        Association="FK_CraftAction_Skladi"
+        FromEnd="CraftAction"
+        ToEnd="Skladi" />
+      <EntityProperty
+        Name="DateCreation"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="Дата создания" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DateRealisation"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+          <DisplayName
+            Value="Дата реализации" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RealTimeCreationDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ResponsibleItem"
+        Association="FK_CraftAction_Responsible"
+        FromEnd="CraftAction"
+        ToEnd="Responsible">
+        <NavigationProperty.Attributes>
+          <DisplayName
+            Value="Ответственный" />
+        </NavigationProperty.Attributes>
+      </NavigationProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Craft_CraftAction">
+    <AssociationEnd
+      Name="CraftAction"
+      EntityType="CraftActionItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Craft"
+      Multiplicity="Many"
+      EntityType="CraftItem" />
+  </Association>
+  <Association
+    Name="FK_CraftFiller_Craft1">
+    <AssociationEnd
+      Name="CraftAction"
+      EntityType="CraftActionItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CraftFiller"
+      Multiplicity="Many"
+      EntityType="CraftFillerItem" />
+  </Association>
+  <EntityContainer
+    Name="skladData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="CraftAction"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="CraftActionItem" />
+    <AssociationSet
+      Name="FK_Craft_CraftAction"
+      Association="FK_Craft_CraftAction">
+      <AssociationSetEnd
+        Name="CraftAction"
+        EntitySet="CraftAction" />
+      <AssociationSetEnd
+        Name="Craft"
+        EntitySet="Craft" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CraftFiller_Craft1"
+      Association="FK_CraftFiller_Craft1">
+      <AssociationSetEnd
+        Name="CraftAction"
+        EntitySet="CraftAction" />
+      <AssociationSetEnd
+        Name="CraftFiller"
+        EntitySet="CraftFiller" />
+    </AssociationSet>
+    <QueryOperation
+      Name="CraftAction_Single"
+      ReturnType="CraftActionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CraftAction" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="CraftAction_SingleOrDefault"
+      ReturnType="CraftActionItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="CraftAction" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="skladDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="CraftAction">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="CraftAction" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="decimal"
+          Property="CraftActionItem/Properties[ID]" />
+        <SsdlProperty
+          Name="Note"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="CraftActionItem/Properties[Note]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Status"
+          Nullable="False"
+          Type="nvarchar"
+          Property="CraftActionItem/Properties[Status]" />
+        <SsdlProperty
+          Name="DateCreation"
+          Nullable="False"
+          Type="date"
+          Property="CraftActionItem/Properties[DateCreation]" />
+        <SsdlProperty
+          Name="DateRealisation"
+          Nullable="True"
+          Type="date"
+          Property="CraftActionItem/Properties[DateRealisation]" />
+        <SsdlProperty
+          Name="RealTimeCreationDate"
+          Nullable="False"
+          Type="date"
+          Property="CraftActionItem/Properties[RealTimeCreationDate]" />
+        <SsdlForeignKeyProperty
+          Name="ResponsibleID"
+          Nullable="True"
+          Type="decimal"
+          PropertyName="ResponsibleID" />
+        <SsdlForeignKeyProperty
+          Name="SkladID"
+          Nullable="False"
+          Type="decimal"
+          PropertyName="SkladID" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Craft_CraftAction">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Craft_CraftAction" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Craft_CraftAction]/Members[CraftAction]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Craft_CraftAction]/Members[Craft]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CraftID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_CraftFiller_Craft1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_CraftFiller_Craft" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftFiller_Craft1]/Members[CraftAction]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftFiller_Craft1]/Members[CraftFiller]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="CraftID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

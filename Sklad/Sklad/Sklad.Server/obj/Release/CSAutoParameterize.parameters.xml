@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="_IntrinsicData-Web.config Connection String" description="_IntrinsicData Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=|SqlExpressInstanceName|;AttachDbFilename=|ApplicationDatabasePath|;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VS_PRO\\projects\\Sklad\\Sklad\\Sklad\\bin\\Release\\app\.publish\\Web\.config$" match="/configuration/connectionStrings/add[@name='_IntrinsicData']/@connectionString" />
+  </parameter>
+  <parameter name="c1f3fab5-0243-4e19-9555-98e489199bf1-Web.config Connection String" description="c1f3fab5-0243-4e19-9555-98e489199bf1 Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=LITANY\SQLEXPRESS;Initial Catalog=sklad;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VS_PRO\\projects\\Sklad\\Sklad\\Sklad\\bin\\Release\\app\.publish\\Web\.config$" match="/configuration/connectionStrings/add[@name='c1f3fab5-0243-4e19-9555-98e489199bf1']/@connectionString" />
+  </parameter>
+</parameters>

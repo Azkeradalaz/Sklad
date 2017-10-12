@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="MatsAndGoodsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="100" />
+          <DisplayName
+            Value="Наименование" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Category"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="Категория" />
+          <SupportedValue
+            DisplayName="Материал"
+            Value="Материал" />
+          <SupportedValue
+            DisplayName="Блок"
+            Value="Блок" />
+          <SupportedValue
+            DisplayName="Готовое изделие"
+            Value="Готовое изделие" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Unit"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="5" />
+          <DisplayName
+            Value="Ед. измерения" />
+          <Required />
+          <SupportedValue
+            DisplayName="шт."
+            Value="шт." />
+          <SupportedValue
+            DisplayName="кг"
+            Value="кг" />
+          <SupportedValue
+            DisplayName="л"
+            Value="л" />
+          <SupportedValue
+            DisplayName="м"
+            Value="м" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="Примечание" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="MatsAndGoodsQuantities"
+        Association="FK_MatsAndGoodsQuantities_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="MatsAndGoodsQuantities" />
+      <NavigationProperty
+        Name="Recipes"
+        Association="FK_Recipes_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="Recipes" />
+      <NavigationProperty
+        Name="RecipesComponents"
+        Association="FK_RecipesComponents_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="RecipesComponents" />
+      <EntityProperty
+        Name="FullName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <DisplayName
+            Value="Полное наименование" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ActionsFiller"
+        Association="FK_ActionsFiller_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="ActionsFiller" />
+      <NavigationProperty
+        Name="CraftFiller"
+        Association="FK_CraftFiller_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="CraftFiller" />
+      <EntityProperty
+        Name="Status"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TotalQuantity"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="3" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TotalQuantityNeeded"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="3" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TotalQuantityDifference"
+        PropertyType=":Decimal?">
+        <EntityProperty.Attributes>
+          <DecimalConstraint
+            Precision="18"
+            Scale="3" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="LogActionsAndCraft"
+        Association="FK_LogActionsAndCraft_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="LogActionsAndCraft" />
+      <NavigationProperty
+        Name="LogMatsAndGoodsQuantities"
+        Association="FK_LogMatsAndGoodsQuantities_MatsAndGoods"
+        FromEnd="MatsAndGoods"
+        ToEnd="LogMatsAndGoodsQuantities" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="skladData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="MatsAndGoods"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="MatsAndGoodsItem" />
+    <QueryOperation
+      Name="MatsAndGoods_Single"
+      ReturnType="MatsAndGoodsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MatsAndGoods" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="MatsAndGoods_SingleOrDefault"
+      ReturnType="MatsAndGoodsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="MatsAndGoods" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="FK_MatsAndGoodsQuantities_MatsAndGoods"
+      Association="FK_MatsAndGoodsQuantities_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="MatsAndGoodsQuantities"
+        EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Recipes_MatsAndGoods"
+      Association="FK_Recipes_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="Recipes"
+        EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_RecipesComponents_MatsAndGoods"
+      Association="FK_RecipesComponents_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="RecipesComponents"
+        EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_ActionsFiller_MatsAndGoods"
+      Association="FK_ActionsFiller_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="ActionsFiller"
+        EntitySet="ActionsFiller" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CraftFiller_MatsAndGoods"
+      Association="FK_CraftFiller_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="CraftFiller"
+        EntitySet="CraftFiller" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_LogActionsAndCraft_MatsAndGoods"
+      Association="FK_LogActionsAndCraft_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="LogActionsAndCraft"
+        EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods"
+      Association="FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="LogMatsAndGoodsQuantities"
+        EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="FK_MatsAndGoodsQuantities_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MatsAndGoodsQuantities"
+      Multiplicity="Many"
+      EntityType="MatsAndGoodsQuantitiesItem" />
+  </Association>
+  <Association
+    Name="FK_Recipes_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Recipes"
+      Multiplicity="Many"
+      EntityType="RecipesItem" />
+  </Association>
+  <Association
+    Name="FK_RecipesComponents_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      Multiplicity="One"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="RecipesComponents"
+      Multiplicity="Many"
+      EntityType="RecipesComponentsItem" />
+  </Association>
+  <Association
+    Name="FK_ActionsFiller_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      Multiplicity="One"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="ActionsFiller"
+      Multiplicity="Many"
+      EntityType="ActionsFillerItem" />
+  </Association>
+  <Association
+    Name="FK_CraftFiller_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CraftFiller"
+      Multiplicity="Many"
+      EntityType="CraftFillerItem" />
+  </Association>
+  <Association
+    Name="FK_LogActionsAndCraft_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LogActionsAndCraft"
+      Multiplicity="Many"
+      EntityType="LogActionsAndCraftItem" />
+  </Association>
+  <Association
+    Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LogMatsAndGoodsQuantities"
+      Multiplicity="Many"
+      EntityType="LogMatsAndGoodsQuantitiesItem" />
+  </Association>
+  <DataService
+    Name="skladDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="MatsAndGoods">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="MatsAndGoods" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="decimal"
+          Property="MatsAndGoodsItem/Properties[ID]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="Name"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MatsAndGoodsItem/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="FullName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MatsAndGoodsItem/Properties[FullName]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Category"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MatsAndGoodsItem/Properties[Category]" />
+        <SsdlProperty
+          MaxLength="5"
+          Name="Unit"
+          Nullable="False"
+          Type="nvarchar"
+          Property="MatsAndGoodsItem/Properties[Unit]" />
+        <SsdlProperty
+          Name="Note"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="MatsAndGoodsItem/Properties[Note]" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="Status"
+          Nullable="True"
+          Type="nvarchar"
+          Property="MatsAndGoodsItem/Properties[Status]" />
+        <SsdlProperty
+          Name="TotalQuantity"
+          Nullable="True"
+          Scale="3"
+          Type="numeric"
+          Property="MatsAndGoodsItem/Properties[TotalQuantity]" />
+        <SsdlProperty
+          Name="TotalQuantityNeeded"
+          Nullable="True"
+          Scale="3"
+          Type="numeric"
+          Property="MatsAndGoodsItem/Properties[TotalQuantityNeeded]" />
+        <SsdlProperty
+          Name="TotalQuantityDifference"
+          Nullable="True"
+          Scale="3"
+          Type="numeric"
+          Property="MatsAndGoodsItem/Properties[TotalQuantityDifference]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_ActionsFiller_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_ActionsFiller_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_ActionsFiller_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_ActionsFiller_MatsAndGoods]/Members[ActionsFiller]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MAGID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_CraftFiller_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_CraftFiller_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftFiller_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftFiller_MatsAndGoods]/Members[CraftFiller]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MAGID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_LogActionsAndCraft_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_LogActionsAndCraft_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogActionsAndCraft_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogActionsAndCraft_MatsAndGoods]/Members[LogActionsAndCraft]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MatsAndGoodsItem" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogMatsAndGoodsQuantities_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogMatsAndGoodsQuantities_MatsAndGoods]/Members[LogMatsAndGoodsQuantities]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MatsAndGoodsItemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MatsAndGoodsQuantities_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MatsAndGoodsQuantities_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsQuantities_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsQuantities_MatsAndGoods]/Members[MatsAndGoodsQuantities]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MatsAndGoodID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Recipes_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Recipes_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Recipes_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Recipes_MatsAndGoods]/Members[Recipes]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="DoneID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_RecipesComponents_MatsAndGoods">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_RecipesComponents_MatsAndGoods" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_RecipesComponents_MatsAndGoods]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_RecipesComponents_MatsAndGoods]/Members[RecipesComponents]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ComponentID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Properties\Client.lsml" Checksum="A83CF43F3C4E56E606300FDFED3A04F209A88C3F6C803F40A31A9B7C6175ACB4" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Properties\Proxies.lsml" Checksum="5AF2A128141B7F7E4098A981777E9B18ACAAB1F022E8FF789191DE6078951389" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Properties\skladData\Actions.lsml" Checksum="C609498F01BAE4D6C8CB7141B023D6CC503ACF68F19A591AC9DF07A27DFDABCE" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Properties\skladData\ActionsFiller.lsml" Checksum="03A4E7FCFDC04D2168E693FBBD2349E2EF2E060E1443B57D0B77F47FBC0FEFB9" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\MatsAndGoodsListDetail.lsml" Checksum="A9F1FA564123F364C5B8309E54D62AE06C9551F4D2B56F405F47B852709E5CF2" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Блоки.lsml" Checksum="9A6649221CF577A38156328FF0C98F6F69CC88F826BA1AACEC08EDA0B0179BAE" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ГотовыеИзделия.lsml" Checksum="9D66C1E2EA0A362965F39B9ACD16288133BF5EBB911044D708487149579B7D3D" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ИзготовлениеОтправка.lsml" Checksum="5FD3A4D2F8B0068925537D77D40163CDABC06878B18911F071412F8C8AC8C789" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ИзготовлениеПриход.lsml" Checksum="F4DC3BA488D7A73526196961C8146EDBB7C6795658DA08C50B3B41E3198FC9C5" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Материалы.lsml" Checksum="1F68AFB3A995B7F5B9A600F0FAC687504061F7980471FAA3F240AF9D6F7D1EDD" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Остатки.lsml" Checksum="BABFAA0110E6DD1DF400EC6E2423329D2F4918DFDDB8E3B0469D5357F6F90C2D" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Ответственные.lsml" Checksum="11BC9E6B0EDFDE13632C777735C0B71B5A029E35F88B7A6845DADA5884361EDF" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ОтчетКоличества.lsml" Checksum="E74563AA77DC0773B5BBC4E0D434007204D19201CCAF9B83BB918C0FF2467CE9" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ОтчетЛогКоличества.lsml" Checksum="E05F9713C2C8AA75D11B34228EBE37ECB61FA600B2DDB339FD46B525F06970E6" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ОтчетЛогПеремещенияИСоздание.lsml" Checksum="1C2AF7A563E5937B960DD8D9319DD889A629908BDEDB260F5D1A4E091250A86B" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ПеремещениеОтправка.lsml" Checksum="2A288966E719FB1758D1397500885E64421F1FD5B6DD76720DED30480CA3C3CB" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ПеремещениеПриход2.lsml" Checksum="81B05A182B9A0EAC73D43476E61B87781180245307FC1586AD91269748080C6C" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Поставщики.lsml" Checksum="5FA3866EA3C7F27554C8F44A65BB9F61BCDD44D9F1436368949564C0954874E9" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\ПриходПокупныхКомплектующих.lsml" Checksum="B1E0EC80F1639E94C06A967EFAF61B4C39F68068AE6002F5D2B60CA64E5DBBB9" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Склады.lsml" Checksum="C308CE9F2353B6B79F7F02DE29814D54CDCCA44CE4DDBFE153E79D09D05CB1F9" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Спецификации.lsml" Checksum="E1C1B71A6369DBEE9A47D4273C9D0F6A9C97F05C99CBCA0343E470336B322252" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Screens\Списание.lsml" Checksum="144B1592F0E44C72B8B9F888A5B917DEC827EE96C25B7EEDDAB16BC50949746A" />
+  </Documents>
+</ModelDocumentManifest>

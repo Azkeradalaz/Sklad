@@ -1,0 +1,16 @@
+Sklad.Server.Properties.Service.lsml
+Sklad.Server.DataSources.skladData.MatsAndGoods.lsml
+Sklad.Server.DataSources.skladData.Suppliers.lsml
+Sklad.Server.Properties.DataSources.skladData.lsml
+Sklad.Server.DataSources.skladData.Skladi.lsml
+Sklad.Server.DataSources.skladData.Actions.lsml
+Sklad.Server.DataSources.skladData.MatsAndGoodsQuantities.lsml
+Sklad.Server.DataSources.skladData.Recipes.lsml
+Sklad.Server.DataSources.skladData.RecipesComponents.lsml
+Sklad.Server.DataSources.skladData.ActionsFiller.lsml
+Sklad.Server.DataSources.skladData.Craft.lsml
+Sklad.Server.DataSources.skladData.CraftFiller.lsml
+Sklad.Server.DataSources.skladData.CraftAction.lsml
+Sklad.Server.DataSources.skladData.Responsible.lsml
+Sklad.Server.DataSources.skladData.LogActionsAndCraft.lsml
+Sklad.Server.DataSources.skladData.LogMatsAndGoodsQuantities.lsml

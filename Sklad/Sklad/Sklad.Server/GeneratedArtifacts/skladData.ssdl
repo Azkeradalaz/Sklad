@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="skladDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="skladDataStore">
+    <EntitySet Name="Actions" EntityType="skladDataStore.ActionsItem" store:Type="Tables" Schema="dbo" Table="Actions" />
+    <EntitySet Name="ActionsFiller" EntityType="skladDataStore.ActionsFillerItem" store:Type="Tables" Schema="dbo" Table="ActionsFiller" />
+    <EntitySet Name="Craft" EntityType="skladDataStore.CraftItem" store:Type="Tables" Schema="dbo" Table="Craft" />
+    <EntitySet Name="CraftAction" EntityType="skladDataStore.CraftActionItem" store:Type="Tables" Schema="dbo" Table="CraftAction" />
+    <EntitySet Name="CraftFiller" EntityType="skladDataStore.CraftFillerItem" store:Type="Tables" Schema="dbo" Table="CraftFiller" />
+    <EntitySet Name="LogActionsAndCraft" EntityType="skladDataStore.LogActionsAndCraftItem" store:Type="Tables" Schema="dbo" Table="LogActionsAndCraft" />
+    <EntitySet Name="LogMatsAndGoodsQuantities" EntityType="skladDataStore.LogMatsAndGoodsQuantitiesItem" store:Type="Tables" Schema="dbo" Table="LogMatsAndGoodsQuantities" />
+    <EntitySet Name="MatsAndGoods" EntityType="skladDataStore.MatsAndGoodsItem" store:Type="Tables" Schema="dbo" Table="MatsAndGoods" />
+    <EntitySet Name="MatsAndGoodsQuantities" EntityType="skladDataStore.MatsAndGoodsQuantitiesItem" store:Type="Tables" Schema="dbo" Table="MatsAndGoodsQuantities" />
+    <EntitySet Name="Recipes" EntityType="skladDataStore.RecipesItem" store:Type="Tables" Schema="dbo" Table="Recipes" />
+    <EntitySet Name="RecipesComponents" EntityType="skladDataStore.RecipesComponentsItem" store:Type="Tables" Schema="dbo" Table="RecipesComponents" />
+    <EntitySet Name="Responsible" EntityType="skladDataStore.ResponsibleItem" store:Type="Tables" Schema="dbo" Table="Responsible" />
+    <EntitySet Name="Skladi" EntityType="skladDataStore.SkladiItem" store:Type="Tables" Schema="dbo" Table="Skladi" />
+    <EntitySet Name="Suppliers" EntityType="skladDataStore.SuppliersItem" store:Type="Tables" Schema="dbo" Table="Suppliers" />
+    <AssociationSet Name="FK_ActionsFiller_Actions" Association="skladDataStore.FK_ActionsFiller_Actions">
+      <End Role="Actions" EntitySet="Actions" />
+      <End Role="ActionsFiller" EntitySet="ActionsFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Craft_CraftAction" Association="skladDataStore.FK_Craft_CraftAction">
+      <End Role="CraftAction" EntitySet="CraftAction" />
+      <End Role="Craft" EntitySet="Craft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftFiller_Craft1" Association="skladDataStore.FK_CraftFiller_Craft1">
+      <End Role="CraftAction" EntitySet="CraftAction" />
+      <End Role="CraftFiller" EntitySet="CraftFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsQuantities_MatsAndGoods" Association="skladDataStore.FK_MatsAndGoodsQuantities_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="MatsAndGoodsQuantities" EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recipes_MatsAndGoods" Association="skladDataStore.FK_Recipes_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="Recipes" EntitySet="Recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipesComponents_MatsAndGoods" Association="skladDataStore.FK_RecipesComponents_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="RecipesComponents" EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActionsFiller_MatsAndGoods" Association="skladDataStore.FK_ActionsFiller_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="ActionsFiller" EntitySet="ActionsFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftFiller_MatsAndGoods" Association="skladDataStore.FK_CraftFiller_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="CraftFiller" EntitySet="CraftFiller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogActionsAndCraft_MatsAndGoods" Association="skladDataStore.FK_LogActionsAndCraft_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="LogActionsAndCraft" EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods" Association="skladDataStore.FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="LogMatsAndGoodsQuantities" EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipesComponents_Recipes" Association="skladDataStore.FK_RecipesComponents_Recipes">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="RecipesComponents" EntitySet="RecipesComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Craft_Recipes" Association="skladDataStore.FK_Craft_Recipes">
+      <End Role="Recipes" EntitySet="Recipes" />
+      <End Role="Craft" EntitySet="Craft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftAction_Responsible" Association="skladDataStore.FK_CraftAction_Responsible">
+      <End Role="Responsible" EntitySet="Responsible" />
+      <End Role="CraftAction" EntitySet="CraftAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Skladi" Association="skladDataStore.FK_Actions_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Skladi1" Association="skladDataStore.FK_Actions_Skladi1">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsQuantities_Skladi" Association="skladDataStore.FK_MatsAndGoodsQuantities_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="MatsAndGoodsQuantities" EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CraftAction_Skladi" Association="skladDataStore.FK_CraftAction_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="CraftAction" EntitySet="CraftAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Responsible_Skladi" Association="skladDataStore.FK_Responsible_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="Responsible" EntitySet="Responsible" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogMatsAndGoodsQuantities_Skladi" Association="skladDataStore.FK_LogMatsAndGoodsQuantities_Skladi">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="LogMatsAndGoodsQuantities" EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogActionsAndCraft_LogActionsAndCraft1" Association="skladDataStore.FK_LogActionsAndCraft_LogActionsAndCraft1">
+      <End Role="Skladi" EntitySet="Skladi" />
+      <End Role="LogActionsAndCraft" EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Suppliers" Association="skladDataStore.FK_Actions_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ActionsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreationDate" Type="date" Nullable="false" />
+    <Property Name="RealiationDate" Type="date" />
+    <Property Name="RealTimeCreationDate" Type="date" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="numeric" Scale="2" />
+    <Property Name="Number" Type="nvarchar" MaxLength="25" />
+    <Property Name="FromSkladID" Type="decimal" />
+    <Property Name="ToSkladID" Type="decimal" />
+    <Property Name="SupplierID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="ActionsFillerItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="numeric" Nullable="false" Scale="3" />
+    <Property Name="PricePerUnit" Type="numeric" Scale="2" />
+    <Property Name="PriceTotal" Type="numeric" Scale="2" />
+    <Property Name="Quantity1" Type="numeric" Scale="3" />
+    <Property Name="Quantity2" Type="numeric" Scale="3" />
+    <Property Name="ActionID" Type="decimal" />
+    <Property Name="MAGID" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CraftItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="numeric" />
+    <Property Name="CraftID" Type="decimal" />
+    <Property Name="RecipeID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="CraftActionItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DateCreation" Type="date" Nullable="false" />
+    <Property Name="DateRealisation" Type="date" />
+    <Property Name="RealTimeCreationDate" Type="date" Nullable="false" />
+    <Property Name="ResponsibleID" Type="decimal" />
+    <Property Name="SkladID" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CraftFillerItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="numeric" Scale="3" />
+    <Property Name="Quantity1" Type="numeric" Scale="3" />
+    <Property Name="Quantity2" Type="numeric" Scale="3" />
+    <Property Name="CraftID" Type="decimal" />
+    <Property Name="MAGID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="LogActionsAndCraftItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" />
+    <Property Name="WayBillNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="numeric" Scale="3" />
+    <Property Name="QuantityOnSklad" Type="numeric" Scale="3" />
+    <Property Name="MatsAndGoodsItem" Type="decimal" />
+    <Property Name="Sklad" Type="decimal" />
+  </EntityType>
+  <EntityType Name="LogMatsAndGoodsQuantitiesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Quantity" Type="numeric" Scale="3" />
+    <Property Name="MatsAndGoodsItemID" Type="decimal" />
+    <Property Name="SkladItemID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="MatsAndGoodsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Unit" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="TotalQuantity" Type="numeric" Scale="3" />
+    <Property Name="TotalQuantityNeeded" Type="numeric" Scale="3" />
+    <Property Name="TotalQuantityDifference" Type="numeric" Scale="3" />
+  </EntityType>
+  <EntityType Name="MatsAndGoodsQuantitiesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="numeric" Scale="3" />
+    <Property Name="MatsAndGoodID" Type="decimal" />
+    <Property Name="SkladID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="RecipesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QuantityDone" Type="numeric" />
+    <Property Name="DoneID" Type="decimal" />
+  </EntityType>
+  <EntityType Name="RecipesComponentsItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="numeric" Nullable="false" Scale="3" />
+    <Property Name="ComponentID" Type="decimal" Nullable="false" />
+    <Property Name="RecipeID" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResponsibleItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Note" Type="nvarchar" MaxLength="100" />
+    <Property Name="SkladID" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SkladiItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="100" />
+    <Property Name="Note" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="SuppliersItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Postcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="INN/KPP" Type="nvarchar" MaxLength="50" />
+    <Property Name="OGRN" Type="nvarchar" MaxLength="50" />
+    <Property Name="OKPO" Type="nvarchar" MaxLength="50" />
+    <Property Name="OKVED" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="int" />
+    <Property Name="FaxNumber" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="NDS" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_ActionsFiller_Actions">
+    <End Role="Actions" Type="skladDataStore.ActionsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ActionsFiller" Type="skladDataStore.ActionsFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionsFiller">
+        <PropertyRef Name="ActionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Craft_CraftAction">
+    <End Role="CraftAction" Type="skladDataStore.CraftActionItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Craft" Type="skladDataStore.CraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CraftAction">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Craft">
+        <PropertyRef Name="CraftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftFiller_Craft1">
+    <End Role="CraftAction" Type="skladDataStore.CraftActionItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CraftFiller" Type="skladDataStore.CraftFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CraftAction">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftFiller">
+        <PropertyRef Name="CraftID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatsAndGoodsQuantities_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="MatsAndGoodsQuantities" Type="skladDataStore.MatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsQuantities">
+        <PropertyRef Name="MatsAndGoodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Recipes_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Recipes" Type="skladDataStore.RecipesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Recipes">
+        <PropertyRef Name="DoneID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipesComponents_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="RecipesComponents" Type="skladDataStore.RecipesComponentsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RecipesComponents">
+        <PropertyRef Name="ComponentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActionsFiller_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ActionsFiller" Type="skladDataStore.ActionsFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ActionsFiller">
+        <PropertyRef Name="MAGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftFiller_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CraftFiller" Type="skladDataStore.CraftFillerItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftFiller">
+        <PropertyRef Name="MAGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogActionsAndCraft_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="LogActionsAndCraft" Type="skladDataStore.LogActionsAndCraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogActionsAndCraft">
+        <PropertyRef Name="MatsAndGoodsItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogMatsAndGoodsQuantities_MatsAndGoods">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="LogMatsAndGoodsQuantities" Type="skladDataStore.LogMatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogMatsAndGoodsQuantities">
+        <PropertyRef Name="MatsAndGoodsItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipesComponents_Recipes">
+    <End Role="Recipes" Type="skladDataStore.RecipesItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="RecipesComponents" Type="skladDataStore.RecipesComponentsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RecipesComponents">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Craft_Recipes">
+    <End Role="Recipes" Type="skladDataStore.RecipesItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Craft" Type="skladDataStore.CraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recipes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Craft">
+        <PropertyRef Name="RecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftAction_Responsible">
+    <End Role="Responsible" Type="skladDataStore.ResponsibleItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CraftAction" Type="skladDataStore.CraftActionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsible">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftAction">
+        <PropertyRef Name="ResponsibleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Skladi">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Actions" Type="skladDataStore.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="FromSkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Skladi1">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Actions" Type="skladDataStore.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="ToSkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatsAndGoodsQuantities_Skladi">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="MatsAndGoodsQuantities" Type="skladDataStore.MatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsQuantities">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CraftAction_Skladi">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="CraftAction" Type="skladDataStore.CraftActionItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CraftAction">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Responsible_Skladi">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Responsible" Type="skladDataStore.ResponsibleItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Responsible">
+        <PropertyRef Name="SkladID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogMatsAndGoodsQuantities_Skladi">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="LogMatsAndGoodsQuantities" Type="skladDataStore.LogMatsAndGoodsQuantitiesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogMatsAndGoodsQuantities">
+        <PropertyRef Name="SkladItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogActionsAndCraft_LogActionsAndCraft1">
+    <End Role="Skladi" Type="skladDataStore.SkladiItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="LogActionsAndCraft" Type="skladDataStore.LogActionsAndCraftItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skladi">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LogActionsAndCraft">
+        <PropertyRef Name="Sklad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Suppliers">
+    <End Role="Suppliers" Type="skladDataStore.SuppliersItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="Actions" Type="skladDataStore.ActionsItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

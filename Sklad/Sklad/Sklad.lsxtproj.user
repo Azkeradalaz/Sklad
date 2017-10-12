@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EnableENC>False</EnableENC>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartUpClientProject>Sklad.DesktopClient</StartUpClientProject>
+    <SchemaManagementSchemaBuildState>1</SchemaManagementSchemaBuildState>
+    <EncryptedPublishConnectionString />
+    <EncryptedPublishSchemaConnectionString />
+    <EncryptedClientConnectionString>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZxDlyK0VokuR8zWH7NjSkwAAAAACAAAAAAAQZgAAAAEAACAAAAAPk0rZ+WEdGJYmsjd12SXetIeSL0b9enj0UxUFeh6RdQAAAAAOgAAAAAIAACAAAAAjcwxV1JzSi8dKybWVWllpRVb4x3/W9MPSaHSdjxa1eaAAAACbXXgANdk7jP41oK2KtI/8ksGx+4DeiNgCHIaT1RsFSS3rRWBDH7JLxrmmoxW+8fNvVocK/X2u7EnnkANHnQzE04NUSbJ16du06l9eP1twST6rtDzLbYYiH8Yvz/FRNov2oyKYVtXDPJkt+5nIJN3naJnXdR+3RbGZ/q0Y8z/zWrdHRH7CwwNNK+9AJdY6hjDUtOPAkyPuWqbsTUFK0AH7QAAAAMnHrIKJa5dUqL+8FJRTRbPoWtZjXprRRVgWtssZD00t8riXcQrHCvicNin7NKBIbP0oLyJ4hdF5QqjhYYZHkqE=</EncryptedClientConnectionString>
+    <EncryptedAdministratorPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZxDlyK0VokuR8zWH7NjSkwAAAAACAAAAAAAQZgAAAAEAACAAAADHFRppF/2N0cyn+dGZwIComE2YhSdQixzxKqvaxC4KWgAAAAAOgAAAAAIAACAAAACfVg5ctwXriZ5lqhMrtaZvetKn4vRMnCBRuYCYum6PlyAAAADeMT5IgfQqgY1jTEvwQpP3/9zejCYvL1ngRSYXS7qHKUAAAAC+BdyZuFyWbXnVqKrBbwoaG+D0nBbzk2D2iWFKtmJJAWQqvHZ7JHAYtO9NGYXBNuotbnO8HwLDghfyBbYsSwPO</EncryptedAdministratorPassword>
+    <PublishUserName />
+    <EncryptedPublishUserPassword />
+    <AzureSubscriptionId>00000000-0000-0000-0000-000000000000</AzureSubscriptionId>
+    <AzureManagementThumbprint />
+    <SharePointServerToServerCertificatePassword />
+    <SchemaManagementDatabaseIncludesSecurityObjects>True</SchemaManagementDatabaseIncludesSecurityObjects>
+    <GrantedPermissions>
+    </GrantedPermissions>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.Sklad.DesktopClient"
+  TargetPlatform="RichClient"
+  Version="1.0.0.0"
+  DefaultNavigationItem="!module/NavigationItems[Tasks]"
+  Shell="Microsoft.LightSwitch.RichClient:Standard"
+  Theme="Microsoft.LightSwitch.RichClient:Blue" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <ModuleNamespace
+      Namespace="LightSwitchApplication" />
+    <Partial
+      IsPrimary="True" />
+  </Application.Attributes>
+  <EntityContainerGroup
+    Name="DataWorkspace">
+    <EntityContainerGroupProperty
+      Name="SecurityData"
+      EntityContainer="Microsoft.LightSwitch.Security:SecurityData">
+      <EntityContainerGroupProperty.Attributes>
+        <Generated />
+        <DisplayName
+          Value="Security Data" />
+        <Description
+          Value="Service that provides access to security-related data." />
+      </EntityContainerGroupProperty.Attributes>
+    </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="skladData"
+      EntityContainer="skladData" />
+  </EntityContainerGroup>
+  <GlobalAttributeGroup>
+    <GlobalAttributeGroup.Attributes>
+      <Proxy
+        Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewBloki" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewProducts" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewCraftOut" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewCraftIn" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewMaterials" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewRemains" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewMoveOut" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewMoveIn" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewSuppliers" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewWayBills" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewStorages" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewRecipes" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewDefect" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewQuantitiesReport" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewAdminRed" />
+    </Permission.Attributes>
+  </Permission>
+  <Application.Commands>
+    <ApplicationCommand
+      Name="ScreenCommandShowСклады"
+      Target="!module/Methods[ShowСклады]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowПоставщики"
+      Target="!module/Methods[ShowПоставщики]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowСпецификации"
+      Target="!module/Methods[ShowСпецификации]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowМатериалы"
+      Target="!module/Methods[ShowМатериалы]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowБлоки"
+      Target="!module/Methods[ShowБлоки]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowГотовыеИзделия"
+      Target="!module/Methods[ShowГотовыеИзделия]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowСписание"
+      Target="!module/Methods[ShowСписание]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowПриходПокупныхКомплектующих"
+      Target="!module/Methods[ShowПриходПокупныхКомплектующих]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowПеремещениеОтправка"
+      Target="!module/Methods[ShowПеремещениеОтправка]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowИзготовлениеОтправка"
+      Target="!module/Methods[ShowИзготовлениеОтправка]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowИзготовлениеПриход"
+      Target="!module/Methods[ShowИзготовлениеПриход]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowПеремещениеПриход2"
+      Target="!module/Methods[ShowПеремещениеПриход2]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОстатки"
+      Target="!module/Methods[ShowОстатки]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОтветственные"
+      Target="!module/Methods[ShowОтветственные]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОтчетКоличества"
+      Target="!module/Methods[ShowОтчетКоличества]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowMatsAndGoodsListDetail"
+      Target="!module/Methods[ShowMatsAndGoodsListDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОтчетЛогКоличества"
+      Target="!module/Methods[ShowОтчетЛогКоличества]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОтчетЛогПеремещенияИСоздание"
+      Target="!module/Methods[ShowОтчетЛогПеремещенияИСоздание]" />
+  </Application.Commands>
+  <Application.NavigationItems>
+    <ApplicationNavigationGroup
+      Name="Tasks"
+      DefaultItem="!module/NavigationItems[Tasks]/Children[Склады]">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Справочники" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="Склады"
+        Command="!module/Commands[ScreenCommandShowСклады]" />
+      <ApplicationNavigationLink
+        Name="Поставщики"
+        Command="!module/Commands[ScreenCommandShowПоставщики]" />
+      <ApplicationNavigationLink
+        Name="Ответственные"
+        Command="!module/Commands[ScreenCommandShowОтветственные]" />
+      <ApplicationNavigationLink
+        Name="Спецификации"
+        Command="!module/Commands[ScreenCommandShowСпецификации]" />
+      <ApplicationNavigationLink
+        Name="Материалы"
+        Command="!module/Commands[ScreenCommandShowМатериалы]" />
+      <ApplicationNavigationLink
+        Name="Блоки"
+        Command="!module/Commands[ScreenCommandShowБлоки]" />
+      <ApplicationNavigationLink
+        Name="ГотовыеИзделия"
+        Command="!module/Commands[ScreenCommandShowГотовыеИзделия]" />
+      <ApplicationNavigationLink
+        Name="MatsAndGoodsListDetail"
+        Command="!module/Commands[ScreenCommandShowMatsAndGoodsListDetail]" />
+      <ApplicationNavigationLink
+        Name="ОтчетЛогКоличества"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
+      <ApplicationNavigationLink
+        Name="ОтчетЛогПеремещенияИСоздание"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогПеремещенияИСоздание]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="Administration">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Administration" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="RolesScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]" />
+      <ApplicationNavigationLink
+        Name="UsersScreen"
+        Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Документы" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="ПриходПокупныхКомплектующих"
+        Command="!module/Commands[ScreenCommandShowПриходПокупныхКомплектующих]" />
+      <ApplicationNavigationLink
+        Name="ИзготовлениеОтправка"
+        Command="!module/Commands[ScreenCommandShowИзготовлениеОтправка]" />
+      <ApplicationNavigationLink
+        Name="link"
+        Command="!module/Commands[ScreenCommandShowИзготовлениеПриход]" />
+      <ApplicationNavigationLink
+        Name="ПеремещениеОтправка"
+        Command="!module/Commands[ScreenCommandShowПеремещениеОтправка]" />
+      <ApplicationNavigationLink
+        Name="link1"
+        Command="!module/Commands[ScreenCommandShowПеремещениеПриход2]" />
+      <ApplicationNavigationLink
+        Name="Списание"
+        Command="!module/Commands[ScreenCommandShowСписание]" />
+    </ApplicationNavigationGroup>
+    <ApplicationNavigationGroup
+      Name="group1">
+      <ApplicationNavigationGroup.Attributes>
+        <DisplayName
+          Value="Отчеты" />
+      </ApplicationNavigationGroup.Attributes>
+      <ApplicationNavigationLink
+        Name="link2"
+        Command="!module/Commands[ScreenCommandShowОстатки]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowОтчетКоличества]" />
+    </ApplicationNavigationGroup>
+  </Application.NavigationItems>
+</Application>

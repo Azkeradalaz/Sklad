@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="SkladiItem">
+    <EntityType.Attributes>
+      <DisplayName
+        Value="Склад" />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="ID"
+        IsReadOnly="True"
+        PropertyType=":Decimal">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <DecimalConstraint
+            Precision="18"
+            Scale="0" />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+          <DisplayName
+            Value="Название" />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Adress"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="100" />
+          <DisplayName
+            Value="Адрес" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Note"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <DisplayName
+            Value="Комментарий" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Actions"
+        Association="FK_Actions_Skladi"
+        FromEnd="Skladi"
+        ToEnd="Actions" />
+      <NavigationProperty
+        Name="Actions1"
+        Association="FK_Actions_Skladi1"
+        FromEnd="Skladi"
+        ToEnd="Actions" />
+      <NavigationProperty
+        Name="MatsAndGoodsQuantities"
+        Association="FK_MatsAndGoodsQuantities_Skladi"
+        FromEnd="Skladi"
+        ToEnd="MatsAndGoodsQuantities" />
+      <NavigationProperty
+        Name="CraftAction"
+        Association="FK_CraftAction_Skladi"
+        FromEnd="Skladi"
+        ToEnd="CraftAction" />
+      <EntityProperty
+        Name="Status"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Responsible"
+        Association="FK_Responsible_Skladi"
+        FromEnd="Skladi"
+        ToEnd="Responsible" />
+      <NavigationProperty
+        Name="LogMatsAndGoodsQuantities"
+        Association="FK_LogMatsAndGoodsQuantities_Skladi"
+        FromEnd="Skladi"
+        ToEnd="LogMatsAndGoodsQuantities" />
+      <NavigationProperty
+        Name="LogActionsAndCraft"
+        Association="FK_LogActionsAndCraft_LogActionsAndCraft1"
+        FromEnd="Skladi"
+        ToEnd="LogActionsAndCraft" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="skladData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="Skladi"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="SkladiItem" />
+    <QueryOperation
+      Name="Skladi_Single"
+      ReturnType="SkladiItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Skladi" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="Skladi_SingleOrDefault"
+      ReturnType="SkladiItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ID" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="ID" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Skladi" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ID"
+        ParameterType="Microsoft.LightSwitch:Decimal?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;ID&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="FK_Actions_Skladi"
+      Association="FK_Actions_Skladi">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="Actions"
+        EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Actions_Skladi1"
+      Association="FK_Actions_Skladi1">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="Actions"
+        EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_MatsAndGoodsQuantities_Skladi"
+      Association="FK_MatsAndGoodsQuantities_Skladi">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="MatsAndGoodsQuantities"
+        EntitySet="MatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_CraftAction_Skladi"
+      Association="FK_CraftAction_Skladi">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="CraftAction"
+        EntitySet="CraftAction" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Responsible_Skladi"
+      Association="FK_Responsible_Skladi">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="Responsible"
+        EntitySet="Responsible" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_LogMatsAndGoodsQuantities_Skladi"
+      Association="FK_LogMatsAndGoodsQuantities_Skladi">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="LogMatsAndGoodsQuantities"
+        EntitySet="LogMatsAndGoodsQuantities" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_LogActionsAndCraft_LogActionsAndCraft1"
+      Association="FK_LogActionsAndCraft_LogActionsAndCraft1">
+      <AssociationSetEnd
+        Name="Skladi"
+        EntitySet="Skladi" />
+      <AssociationSetEnd
+        Name="LogActionsAndCraft"
+        EntitySet="LogActionsAndCraft" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association
+    Name="FK_Actions_Skladi">
+    <AssociationEnd
+      Name="Skladi"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Actions"
+      Multiplicity="Many"
+      EntityType="ActionsItem" />
+  </Association>
+  <Association
+    Name="FK_Actions_Skladi1">
+    <AssociationEnd
+      Name="Skladi"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Actions"
+      Multiplicity="Many"
+      EntityType="ActionsItem" />
+  </Association>
+  <Association
+    Name="FK_MatsAndGoodsQuantities_Skladi">
+    <AssociationEnd
+      Name="Skladi"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MatsAndGoodsQuantities"
+      Multiplicity="Many"
+      EntityType="MatsAndGoodsQuantitiesItem" />
+  </Association>
+  <Association
+    Name="FK_CraftAction_Skladi">
+    <AssociationEnd
+      Name="Skladi"
+      Multiplicity="One"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="CraftAction"
+      Multiplicity="Many"
+      EntityType="CraftActionItem" />
+  </Association>
+  <Association
+    Name="FK_Responsible_Skladi">
+    <AssociationEnd
+      Name="Skladi"
+      Multiplicity="One"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Responsible"
+      Multiplicity="Many"
+      EntityType="ResponsibleItem" />
+  </Association>
+  <Association
+    Name="FK_LogMatsAndGoodsQuantities_Skladi">
+    <AssociationEnd
+      Name="Skladi"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LogMatsAndGoodsQuantities"
+      Multiplicity="Many"
+      EntityType="LogMatsAndGoodsQuantitiesItem" />
+  </Association>
+  <Association
+    Name="FK_LogActionsAndCraft_LogActionsAndCraft1">
+    <AssociationEnd
+      Name="Skladi"
+      EntityType="SkladiItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="LogActionsAndCraft"
+      Multiplicity="Many"
+      EntityType="LogActionsAndCraftItem" />
+  </Association>
+  <DataService
+    Name="skladDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="Skladi">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Skladi" />
+        <SsdlProperty
+          Name="ID"
+          Nullable="False"
+          StoreGeneratedPattern="Identity"
+          Type="decimal"
+          Property="SkladiItem/Properties[ID]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Name"
+          Nullable="False"
+          Type="nvarchar"
+          Property="SkladiItem/Properties[Name]" />
+        <SsdlProperty
+          MaxLength="100"
+          Name="Adress"
+          Nullable="True"
+          Type="nvarchar"
+          Property="SkladiItem/Properties[Adress]" />
+        <SsdlProperty
+          Name="Note"
+          Nullable="True"
+          Type="nvarchar(max)"
+          Property="SkladiItem/Properties[Note]" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="Status"
+          Nullable="True"
+          Type="nvarchar"
+          Property="SkladiItem/Properties[Status]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Actions_Skladi">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Actions_Skladi" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Actions_Skladi]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Actions_Skladi]/Members[Actions]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FromSkladID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Actions_Skladi1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Actions_Skladi1" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Actions_Skladi1]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Actions_Skladi1]/Members[Actions]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ToSkladID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_CraftAction_Skladi">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_CraftAction_Skladi" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftAction_Skladi]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_CraftAction_Skladi]/Members[CraftAction]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SkladID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_LogActionsAndCraft_LogActionsAndCraft1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_LogActionsAndCraft_LogActionsAndCraft" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogActionsAndCraft_LogActionsAndCraft1]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogActionsAndCraft_LogActionsAndCraft1]/Members[LogActionsAndCraft]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Sklad" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_LogMatsAndGoodsQuantities_Skladi">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_LogMatsAndGoodsQuantities_Skladi" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogMatsAndGoodsQuantities_Skladi]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_LogMatsAndGoodsQuantities_Skladi]/Members[LogMatsAndGoodsQuantities]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SkladItemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MatsAndGoodsQuantities_Skladi">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MatsAndGoodsQuantities_Skladi" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsQuantities_Skladi]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsQuantities_Skladi]/Members[MatsAndGoodsQuantities]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SkladID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Responsible_Skladi">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Responsible_Skladi" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Responsible_Skladi]/Members[Skladi]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_Responsible_Skladi]/Members[Responsible]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SkladID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>
