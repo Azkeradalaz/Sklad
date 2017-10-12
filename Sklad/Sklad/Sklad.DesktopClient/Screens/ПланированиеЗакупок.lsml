@@ -5,7 +5,7 @@
     <Partial />
   </Application.Attributes>
   <Screen
-    Name="ОтчетКоличества">
+    Name="ПланированиеЗакупок">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="skladData" />
@@ -35,7 +35,7 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="ОтчетКоличества/Properties[MatsAndGoods]" />
+                      Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
@@ -152,7 +152,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ОтчетКоличества/Properties[MatsAndGoods]" />
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
                         <CallExpression
                           Target="AddAndEditNew" />
                       </ChainExpression>
@@ -167,7 +167,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ОтчетКоличества/Properties[MatsAndGoods]" />
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
                         <CallExpression
                           Target="EditSelected" />
                       </ChainExpression>
@@ -182,7 +182,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="ОтчетКоличества/Properties[MatsAndGoods]" />
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
                         <CallExpression
                           Target="DeleteSelected" />
                       </ChainExpression>
@@ -200,7 +200,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="ОтчетКоличества/Methods[Calculate]" />
+                          Target="ПланированиеЗакупок/Methods[Calculate]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -216,7 +216,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="ОтчетКоличества/Methods[QuantsCompute]" />
+                          Target="ПланированиеЗакупок/Methods[QuantsCompute]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -232,7 +232,7 @@
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <CallExpression
-                          Target="ОтчетКоличества/Methods[Clear]" />
+                          Target="ПланированиеЗакупок/Methods[Clear]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -286,7 +286,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ОтчетКоличества/Properties[MatsAndGoods1]" />
+                        Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -403,7 +403,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[MatsAndGoods1]" />
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
                           <CallExpression
                             Target="AddAndEditNew" />
                         </ChainExpression>
@@ -418,7 +418,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[MatsAndGoods1]" />
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
                           <CallExpression
                             Target="EditSelected" />
                         </ChainExpression>
@@ -433,7 +433,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[MatsAndGoods1]" />
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
                           <CallExpression
                             Target="DeleteSelected" />
                         </ChainExpression>
@@ -451,7 +451,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <CallExpression
-                            Target="ОтчетКоличества/Methods[HideZero]" />
+                            Target="ПланированиеЗакупок/Methods[HideZero]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -488,7 +488,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ОтчетКоличества/Properties[Actions]" />
+                        Member="ПланированиеЗакупок/Properties[Actions]" />
                       <MemberExpression
                         Member="SelectedItem" />
                       <MemberExpression
@@ -509,7 +509,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ОтчетКоличества/Properties[ActionsFiller]" />
+                        Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -652,7 +652,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[ActionsFiller]" />
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
                           <CallExpression
                             Target="AddAndEditNew" />
                         </ChainExpression>
@@ -667,7 +667,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[ActionsFiller]" />
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
                           <CallExpression
                             Target="EditSelected" />
                         </ChainExpression>
@@ -682,7 +682,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="ОтчетКоличества/Properties[ActionsFiller]" />
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
                           <CallExpression
                             Target="DeleteSelected" />
                         </ChainExpression>
@@ -758,7 +758,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="ОтчетКоличества/Methods[CloseWaybill]" />
+                        Target="ПланированиеЗакупок/Methods[CloseWaybill]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -801,7 +801,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ОтчетКоличества/Properties[ActionsFiller1]" />
+                        Member="ПланированиеЗакупок/Properties[ActionsFiller1]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -818,6 +818,24 @@
                       <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    Name="PricePerUnit"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money?"
+                    View="Microsoft.LightSwitch.RichClient:Label">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Уровень" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[PricePerUnit]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                   <ContentItem
                     Name="Category1"
                     Kind="Value"
@@ -867,11 +885,49 @@
                     Name="Quantity3"
                     Kind="Value"
                     DataType=":Decimal">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Планируемое" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
                             Member="ActionsFillerItem/Properties[Quantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity11"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Итог" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity1]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity21"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Остаток на складах" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity2]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -903,7 +959,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <CallExpression
-                        Target="ОтчетКоличества/Methods[CloseQuants]" />
+                        Target="ПланированиеЗакупок/Methods[CloseQuants]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -942,7 +998,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="ОтчетКоличества/Methods[Save]" />
+                    Target="ПланированиеЗакупок/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -955,7 +1011,7 @@
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="ОтчетКоличества/Methods[Refresh]" />
+                    Target="ПланированиеЗакупок/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -1089,7 +1145,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[MatsAndGoods]/Query" />
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1117,7 +1173,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[Recipes]/Query" />
+              Target="ПланированиеЗакупок/Properties[Recipes]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1167,12 +1223,12 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[RecipesComponents]/Query">
+              Target="ПланированиеЗакупок/Properties[RecipesComponents]/Query">
               <ArgumentExpression
                 Parameter="IDRecipe">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетКоличества/Properties[IDRecipe]" />
+                    Member="ПланированиеЗакупок/Properties[IDRecipe]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -1225,12 +1281,12 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[MatsAndGoodsQuantities]/Query">
+              Target="ПланированиеЗакупок/Properties[MatsAndGoodsQuantities]/Query">
               <ArgumentExpression
                 Parameter="IDForTotalNum">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетКоличества/Properties[IDForTotalNum]" />
+                    Member="ПланированиеЗакупок/Properties[IDForTotalNum]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -1279,7 +1335,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[MatsAndGoods1]/Query" />
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods1]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1310,7 +1366,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[MatsAndGoods2]/Query" />
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods2]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1338,7 +1394,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[Actions]/Query" />
+              Target="ПланированиеЗакупок/Properties[Actions]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1359,7 +1415,7 @@
               <QuerySourceExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетКоличества/Properties[Actions]" />
+                    Member="ПланированиеЗакупок/Properties[Actions]" />
                   <MemberExpression
                     Member="SelectedItem" />
                   <MemberExpression
@@ -1372,7 +1428,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[ActionsFiller]/Query" />
+              Target="ПланированиеЗакупок/Properties[ActionsFiller]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1399,13 +1455,14 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[Actions1]/Query" />
+              Target="ПланированиеЗакупок/Properties[Actions1]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="ActionsFiller1"
         DisablePaging="True"
+        DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$ActionsFillerItem">
         <ScreenCollectionProperty.Query>
@@ -1419,7 +1476,7 @@
               <QuerySourceExpressionTree>
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетКоличества/Properties[Actions1]" />
+                    Member="ПланированиеЗакупок/Properties[Actions1]" />
                   <MemberExpression
                     Member="SelectedItem" />
                   <MemberExpression
@@ -1432,7 +1489,7 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетКоличества/Properties[ActionsFiller1]/Query" />
+              Target="ПланированиеЗакупок/Properties[ActionsFiller1]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1440,10 +1497,10 @@
   </Screen>
   <Application.Methods>
     <ApplicationMethod
-      Name="ShowОтчетКоличества">
+      Name="ShowПланированиеЗакупок">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="ОтчетКоличества" />
+          TargetScreen="ПланированиеЗакупок" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
   </Application.Methods>

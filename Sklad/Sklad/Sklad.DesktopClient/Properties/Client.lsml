@@ -169,8 +169,8 @@
       Name="ScreenCommandShowОтветственные"
       Target="!module/Methods[ShowОтветственные]" />
     <ApplicationCommand
-      Name="ScreenCommandShowОтчетКоличества"
-      Target="!module/Methods[ShowОтчетКоличества]" />
+      Name="ScreenCommandShowПланированиеЗакупок"
+      Target="!module/Methods[ShowПланированиеЗакупок]" />
     <ApplicationCommand
       Name="ScreenCommandShowMatsAndGoodsListDetail"
       Target="!module/Methods[ShowMatsAndGoodsListDetail]" />
@@ -268,8 +268,8 @@
         Name="link2"
         Command="!module/Commands[ScreenCommandShowОстатки]" />
       <ApplicationNavigationLink
-        Name="link3"
-        Command="!module/Commands[ScreenCommandShowОтчетКоличества]" />
+        Name="ПланированиеЗакупок"
+        Command="!module/Commands[ScreenCommandShowПланированиеЗакупок]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

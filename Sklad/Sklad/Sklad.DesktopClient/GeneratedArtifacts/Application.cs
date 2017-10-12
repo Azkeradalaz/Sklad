@@ -157,18 +157,18 @@ namespace LightSwitchApplication
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void ОтчетКоличества_CanRun(ref bool result);
+        partial void ПланированиеЗакупок_CanRun(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void ОтчетКоличества_Run(ref bool handled);
+        partial void ПланированиеЗакупок_Run(ref bool handled);
     
         /// <summary>
-        /// Открывает экран ShowОтчетКоличества.  Если экран уже открыт, он активируется и отображается.
+        /// Открывает экран ShowПланированиеЗакупок.  Если экран уже открыт, он активируется и отображается.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public void ShowОтчетКоличества()
+        public void ShowПланированиеЗакупок()
         {
-            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowОтчетКоличества);
+            ((global::Microsoft.LightSwitch.Details.Client.IClientApplicationDetails)this.Details).InvokeMethod(this.Details.Methods.ShowПланированиеЗакупок);
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -381,8 +381,8 @@ namespace LightSwitchApplication
                         return global::LightSwitchApplication.Остатки.CreateInstance();
                     case "Ответственные":
                         return global::LightSwitchApplication.Ответственные.CreateInstance();
-                    case "ОтчетКоличества":
-                        return global::LightSwitchApplication.ОтчетКоличества.CreateInstance();
+                    case "ПланированиеЗакупок":
+                        return global::LightSwitchApplication.ПланированиеЗакупок.CreateInstance();
                     case "ОтчетЛогКоличества":
                         return global::LightSwitchApplication.ОтчетЛогКоличества.CreateInstance();
                     case "ОтчетЛогПеремещенияИСоздание":
@@ -494,12 +494,12 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowОтчетКоличества
+                public global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowПланированиеЗакупок
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowОтчетКоличества);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties.ShowПланированиеЗакупок);
                     }
                 }
 
@@ -665,12 +665,12 @@ namespace LightSwitchApplication
                     }
                 }
 
-                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowОтчетКоличества
+                public global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass> ShowПланированиеЗакупок
                 {
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>)
-                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowОтчетКоличества);
+                               base.GetItem(global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties.ShowПланированиеЗакупок);
                     }
                 }
 
@@ -884,17 +884,17 @@ namespace LightSwitchApplication
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowОтчетКоличества = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowОтчетКоличества",
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowОтчетКоличества_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowОтчетКоличества_CreateExecutableObject);
-                private static void _ShowОтчетКоличества_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowПланированиеЗакупок = new global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowПланированиеЗакупок",
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowПланированиеЗакупок_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.CommandSetProperties._ShowПланированиеЗакупок_CreateExecutableObject);
+                private static void _ShowПланированиеЗакупок_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowОтчетКоличестваCommand, sf);
+                    c(d, ref d._ShowПланированиеЗакупокCommand, sf);
                 }
-                private static global::Microsoft.LightSwitch.IExecutable _ShowОтчетКоличества_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
+                private static global::Microsoft.LightSwitch.IExecutable _ShowПланированиеЗакупок_CreateExecutableObject(global::LightSwitchApplication.Application.DetailsClass d)
                 {
-                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowОтчетКоличества.CreateInvocation(new object[0]);
+                    return ((global::LightSwitchApplication.Application.DetailsClass)d).Methods.ShowПланированиеЗакупок.CreateInvocation(new object[0]);
                 }
 
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
@@ -1240,28 +1240,28 @@ namespace LightSwitchApplication
                 }
  
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry
-                    ShowОтчетКоличества = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
-                        "ShowОтчетКоличества",
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowОтчетКоличества_Stub,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowОтчетКоличества_CanInvoke,
-                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowОтчетКоличества_InvokeMethod);
-                private static void _ShowОтчетКоличества_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
+                    ShowПланированиеЗакупок = new global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Entry(
+                        "ShowПланированиеЗакупок",
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowПланированиеЗакупок_Stub,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowПланированиеЗакупок_CanInvoke,
+                        global::LightSwitchApplication.Application.DetailsClass.MethodSetProperties._ShowПланированиеЗакупок_InvokeMethod);
+                private static void _ShowПланированиеЗакупок_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Application.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data> c, global::LightSwitchApplication.Application.DetailsClass d, object sf)
                 {
-                    c(d, ref d._ShowОтчетКоличестваMethod, sf);
+                    c(d, ref d._ShowПланированиеЗакупокMethod, sf);
                 }
-                private static global::System.Exception _ShowОтчетКоличества_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                private static global::System.Exception _ShowПланированиеЗакупок_CanInvoke(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
                 {
                     bool result = true;
-                    d.Application.ОтчетКоличества_CanRun(ref result);
+                    d.Application.ПланированиеЗакупок_CanRun(ref result);
                     return result ? null : ex;
                 }
-                private static void _ShowОтчетКоличества_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                private static void _ShowПланированиеЗакупок_InvokeMethod(global::LightSwitchApplication.Application.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
                 {
                     bool handled = false;
-                    d.Application.ОтчетКоличества_Run(ref handled);
+                    d.Application.ПланированиеЗакупок_Run(ref handled);
                     if (!handled)
                     {
-                        d.ShowScreen("LightSwitchApplication.Sklad.DesktopClient:ОтчетКоличества", () => global::LightSwitchApplication.ОтчетКоличества.CreateInstance(), args);
+                        d.ShowScreen("LightSwitchApplication.Sklad.DesktopClient:ПланированиеЗакупок", () => global::LightSwitchApplication.ПланированиеЗакупок.CreateInstance(), args);
                     }
                 }
  
@@ -1517,7 +1517,7 @@ namespace LightSwitchApplication
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтветственныеMethod;
 
-            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтчетКоличестваMethod;
+            private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowПланированиеЗакупокMethod;
 
             private global::Microsoft.LightSwitch.Details.Framework.ApplicationMethod<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтчетЛогКоличестваMethod;
 
@@ -1553,7 +1553,7 @@ namespace LightSwitchApplication
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтветственныеCommand;
 
-            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтчетКоличестваCommand;
+            private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowПланированиеЗакупокCommand;
 
             private global::Microsoft.LightSwitch.Details.Framework.Base.ApplicationCommand<global::LightSwitchApplication.Application, global::LightSwitchApplication.Application.DetailsClass>.Data _ShowОтчетЛогКоличестваCommand;
 

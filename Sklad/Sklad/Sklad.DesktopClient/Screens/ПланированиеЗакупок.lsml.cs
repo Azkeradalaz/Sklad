@@ -19,26 +19,26 @@ using Microsoft.LightSwitch.Details;
 namespace LightSwitchApplication
 {
 
-    public partial class ОтчетКоличества
+    public partial class ПланированиеЗакупок
     {
         private ModalWindow WaybillHC;
         private ModalWindow QuantsHC;
+        private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQ = new Dictionary<MatsAndGoodsItem, decimal>();
 
-
-        partial void ОтчетКоличества_Created()
+        partial void ПланированиеЗакупок_Created()
         {
             WaybillHC.Initialise();
             QuantsHC.Initialise();
         }
 
-        partial void ОтчетКоличества_Saving(ref bool handled)
+        partial void ПланированиеЗакупок_Saving(ref bool handled)
         {
             this.DataWorkspace.skladData.Details.DiscardChanges();
             handled = true;
         }
 
 
-        partial void ОтчетКоличества_InitializeDataWorkspace(List<IDataService> saveChangesTo)
+        partial void ПланированиеЗакупок_InitializeDataWorkspace(List<IDataService> saveChangesTo)
         {
             QuantsHC = new ModalWindow(this.Actions1, "Quants", "123");
             WaybillHC = new ModalWindow(this.Actions, "Waybill", "накладную");
@@ -75,12 +75,27 @@ namespace LightSwitchApplication
             foreach (MatsAndGoodsItem MAGI in this.MatsAndGoods1)
             {
                 IDForTotalNum = MAGI.ID;
+                decimal tmpTotalNum = 0;
                 foreach (MatsAndGoodsQuantitiesItem MAGQI in this.MatsAndGoodsQuantities)
                 {
-                    MAGI.TotalQuantity += Convert.ToDecimal(MAGQI.Quantity);
+                    tmpTotalNum += Convert.ToDecimal(MAGQI.Quantity);
+                }
+                tmpMAGQ.Add(MAGI, tmpTotalNum);
+            }
+            IDForTotalNum = null;
+            foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in tmpMAGQ)
+            {
+                foreach(MatsAndGoodsItem MAG in MatsAndGoods1)
+                {
+                    if (MAG.ID == tmpEntry.Key.ID)
+                    {
+                        MAG.TotalQuantity = tmpEntry.Value;
+                    }
                 }
             }
             IDForTotalNum = null;
+
+
         }
         private void MAGICalc(MatsAndGoodsItem M, decimal count)
         {
@@ -275,20 +290,23 @@ namespace LightSwitchApplication
 
          }
 
+
+         
          partial void QuantsCompute_Execute()
          {
              QuantsHC.AddEntity();
-             this.FindControl("Quants").DisplayName = "";
+             this.FindControl("Quants").DisplayName = "";      
              foreach (MatsAndGoodsItem MAG in this.MatsAndGoods)
              {
                  if (MAG.Category == "Готовое изделие" && MAG.TotalQuantityNeeded >0)
                  {
+
                      var newMag = this.ActionsFiller1.AddNew();
                      newMag.MatsAndGoodsItem = MAG;
                      decimal tmp = Math.Round(Convert.ToDecimal(MAG.TotalQuantityNeeded), 0);
                      newMag.Quantity = tmp;
-
-                     MAGICalc2(MAG, tmp, QuantsHC);
+                     newMag.PricePerUnit = 1;
+                     MAGICalc2(MAG, tmp, QuantsHC, 2);
                      
                  }
              }
@@ -296,7 +314,7 @@ namespace LightSwitchApplication
          }
 
 
-         private void MAGICalc2(MatsAndGoodsItem M, decimal count, ModalWindow quants)
+         private void MAGICalc2(MatsAndGoodsItem M, decimal count, ModalWindow quants, int startLevel)
          {
              // decimal count = Math.Round((Convert.ToDecimal(M.TotalQuantityNeeded - M.TotalQuantity) > 0) ? Convert.ToDecimal(M.TotalQuantityNeeded - M.TotalQuantity) : 0 ,2);
              foreach (RecipesItem RI in this.Recipes)//цикл по рецептам
@@ -312,6 +330,7 @@ namespace LightSwitchApplication
                          newMag1.MatsAndGoodsItem = RCI.MatsAndGoodsItem;
                          decimal tmp = Math.Round(Convert.ToDecimal(RCI.Quantity) * count, 0);
                          newMag1.Quantity = tmp;
+                         newMag1.PricePerUnit = startLevel;
 
                          foreach (RecipesItem RI1 in this.Recipes)// проверка нет ли у компонента рецепта
                          {
@@ -325,7 +344,7 @@ namespace LightSwitchApplication
                                  {
                                      if (RCI.MatsAndGoodsItem == MM)
                                      {
-                                         MAGICalc2(RI1.MatsAndGoodsItem, tmp, quants);
+                                         MAGICalc2(RI1.MatsAndGoodsItem, tmp, quants, startLevel+1);
                                          break;
                                      }
                                  }
@@ -363,7 +382,7 @@ namespace LightSwitchApplication
 
          }
 
-         partial void ОтчетКоличества_Closing(ref bool cancel)
+         partial void ПланированиеЗакупок_Closing(ref bool cancel)
          {
              this.DataWorkspace.skladData.Details.DiscardChanges();
 

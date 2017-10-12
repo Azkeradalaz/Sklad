@@ -251,8 +251,8 @@
     <Compile Include="Screens\Остатки.lsml.cs">
       <DependentUpon>Остатки.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ОтчетКоличества.lsml.cs">
-      <DependentUpon>ОтчетКоличества.lsml</DependentUpon>
+    <Compile Include="Screens\ПланированиеЗакупок.lsml.cs">
+      <DependentUpon>ПланированиеЗакупок.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Блоки.lsml.cs">
       <DependentUpon>Блоки.lsml</DependentUpon>
@@ -318,7 +318,7 @@
     <LightSwitchModel Include="Screens\ПеремещениеПриход2.lsml" />
     <LightSwitchModel Include="Screens\Остатки.lsml" />
     <LightSwitchModel Include="Screens\Ответственные.lsml" />
-    <LightSwitchModel Include="Screens\ОтчетКоличества.lsml" />
+    <LightSwitchModel Include="Screens\ПланированиеЗакупок.lsml" />
     <LightSwitchModel Include="Properties\skladData\ActionsFiller.lsml" />
     <LightSwitchModel Include="Properties\skladData\Actions.lsml" />
     <LightSwitchModel Include="Screens\MatsAndGoodsListDetail.lsml" />
