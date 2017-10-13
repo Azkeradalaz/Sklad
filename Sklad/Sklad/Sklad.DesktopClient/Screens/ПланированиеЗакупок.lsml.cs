@@ -23,7 +23,8 @@ namespace LightSwitchApplication
     {
         private ModalWindow WaybillHC;
         private ModalWindow QuantsHC;
-        private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQ = new Dictionary<MatsAndGoodsItem, decimal>();
+        private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQright = new Dictionary<MatsAndGoodsItem, decimal>();
+        private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQleft = new Dictionary<MatsAndGoodsItem, decimal>();
 
         partial void ПланированиеЗакупок_Created()
         {
@@ -62,6 +63,7 @@ namespace LightSwitchApplication
                 {
                     MAGI.TotalQuantity += Convert.ToDecimal(MAGQI.Quantity);
                 }
+                tmpMAGQleft.Add(MAGI, Convert.ToDecimal(MAGI.TotalQuantity));
             }
             IDForTotalNum = null;
 
@@ -80,10 +82,10 @@ namespace LightSwitchApplication
                 {
                     tmpTotalNum += Convert.ToDecimal(MAGQI.Quantity);
                 }
-                tmpMAGQ.Add(MAGI, tmpTotalNum);
+                tmpMAGQright.Add(MAGI, tmpTotalNum);
             }
             IDForTotalNum = null;
-            foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in tmpMAGQ)
+            foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in tmpMAGQright)
             {
                 foreach(MatsAndGoodsItem MAG in MatsAndGoods1)
                 {
@@ -290,36 +292,55 @@ namespace LightSwitchApplication
 
          }
 
+         private Dictionary<MatsAndGoodsItem, decimal> MergeTwoDictionaries(Dictionary<MatsAndGoodsItem, decimal> dicOne, Dictionary<MatsAndGoodsItem, decimal> dicTwo)
+         {
+             Dictionary<MatsAndGoodsItem, decimal> tmpDic = new Dictionary<MatsAndGoodsItem, decimal>();
+             foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in dicOne)
+             {
+                 tmpDic.Add(tmpEntry.Key, tmpEntry.Value);
 
+             }
+             foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in dicTwo)
+             {
+                 tmpDic.Add(tmpEntry.Key, tmpEntry.Value);
+             }
+             return tmpDic;
+         }
          
+
+
          partial void QuantsCompute_Execute()
          {
+             Dictionary<MatsAndGoodsItem, decimal> tmpDic = new Dictionary<MatsAndGoodsItem, decimal>();
+             tmpDic = MergeTwoDictionaries(tmpMAGQleft, tmpMAGQright);
+
              QuantsHC.AddEntity();
-             this.FindControl("Quants").DisplayName = "";      
+             this.FindControl("Quants").DisplayName = "";
              foreach (MatsAndGoodsItem MAG in this.MatsAndGoods)
              {
-                 if (MAG.Category == "Готовое изделие" && MAG.TotalQuantityNeeded >0)
-                 {
+                     if (MAG.Category == "Готовое изделие" && MAG.TotalQuantityNeeded > 0)
+                     {
 
-                     var newMag = this.ActionsFiller1.AddNew();
-                     newMag.MatsAndGoodsItem = MAG;
-                     decimal tmp = Math.Round(Convert.ToDecimal(MAG.TotalQuantityNeeded), 0);
-                     newMag.Quantity = tmp;
-                     newMag.PricePerUnit = 1;
-                     MAGICalc2(MAG, tmp, QuantsHC, 2);
-                     
+                         var newMag = this.ActionsFiller1.AddNew();
+                         newMag.MatsAndGoodsItem = MAG;
+                         decimal tmp = Math.Round(Convert.ToDecimal(MAG.TotalQuantityNeeded), 0);
+                         newMag.Quantity = tmp;
+                         newMag.PricePerUnit = 1;
+                         MAGICalc2(MAG, tmp, QuantsHC, 2, tmpDic);
+                     }
                  }
-             }
+             
 
          }
 
 
-         private void MAGICalc2(MatsAndGoodsItem M, decimal count, ModalWindow quants, int startLevel)
+         private void MAGICalc2(MatsAndGoodsItem _MAGI, decimal _count, ModalWindow _quants, int _startLevel, Dictionary<MatsAndGoodsItem, decimal> _tmpDic)
          {
+         
              // decimal count = Math.Round((Convert.ToDecimal(M.TotalQuantityNeeded - M.TotalQuantity) > 0) ? Convert.ToDecimal(M.TotalQuantityNeeded - M.TotalQuantity) : 0 ,2);
              foreach (RecipesItem RI in this.Recipes)//цикл по рецептам
              {
-                 if (RI.MatsAndGoodsItem.ID == M.ID)//если  рецепт и изделие совпадают
+                 if (RI.MatsAndGoodsItem.ID == _MAGI.ID)//если  рецепт и изделие совпадают
                  {
 
                      IDRecipe = RI.ID; //сортировка для компонентов, что бы найти компоненты только этого рецепта
@@ -328,9 +349,37 @@ namespace LightSwitchApplication
                      {
                          var newMag1 = this.ActionsFiller1.AddNew();
                          newMag1.MatsAndGoodsItem = RCI.MatsAndGoodsItem;
-                         decimal tmp = Math.Round(Convert.ToDecimal(RCI.Quantity) * count, 0);
+                         decimal tmp = Math.Round(Convert.ToDecimal(RCI.Quantity) * _count, 0);
+                         decimal tmp2 = 8008;
+                         decimal tmp3 = 80088008;
+
+                         foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in _tmpDic)
+                         {
+                             if (RCI.MatsAndGoodsItem == tmpEntry.Key)
+                             {
+                                 if (tmpEntry.Value - tmp >= 0)
+                                 {
+                                     _tmpDic[tmpEntry.Key] = tmpEntry.Value - tmp;
+                                     tmp2 = 0;
+                                     tmp3 = _tmpDic[tmpEntry.Key];
+                                     break;
+                                 }
+                                 else if (tmpEntry.Value - tmp < 0)
+                                 {
+                                     _tmpDic[tmpEntry.Key] = 0;
+                                     tmp2 = Math.Abs(tmpEntry.Value - tmp);
+                                     tmp3 = _tmpDic[tmpEntry.Key];
+                                     break;
+                                 }
+                             }
+                         }
+
+
                          newMag1.Quantity = tmp;
-                         newMag1.PricePerUnit = startLevel;
+                         newMag1.Quantity1 = tmp2;
+                         newMag1.Quantity2 = tmp3;
+                         newMag1.PricePerUnit = _startLevel;
+                        
 
                          foreach (RecipesItem RI1 in this.Recipes)// проверка нет ли у компонента рецепта
                          {
@@ -344,7 +393,7 @@ namespace LightSwitchApplication
                                  {
                                      if (RCI.MatsAndGoodsItem == MM)
                                      {
-                                         MAGICalc2(RI1.MatsAndGoodsItem, tmp, quants, startLevel+1);
+                                         MAGICalc2(RI1.MatsAndGoodsItem, tmp, _quants, _startLevel+1, _tmpDic);
                                          break;
                                      }
                                  }
