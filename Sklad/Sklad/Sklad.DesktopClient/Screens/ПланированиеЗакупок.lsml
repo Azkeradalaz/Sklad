@@ -899,35 +899,35 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Quantity11"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Итог" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity1]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     Name="Quantity21"
                     Kind="Value"
                     DataType=":Decimal?">
                     <ContentItem.Attributes>
                       <DisplayName
-                        Value="Остаток на складах" />
+                        Value="Количество на складах" />
                     </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
                             Member="ActionsFillerItem/Properties[Quantity2]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity11"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Разница" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity1]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -1080,7 +1080,7 @@
                   NodeType="Or">
                   <BinaryExpression.Left>
                     <BinaryExpression
-                      NodeType="Or">
+                      NodeType="And">
                       <BinaryExpression.Left>
                         <BinaryExpression
                           NodeType="NotEqual">
@@ -1099,7 +1099,7 @@
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
                         <BinaryExpression
-                          NodeType="Equal">
+                          NodeType="NotEqual">
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression

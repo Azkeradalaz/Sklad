@@ -25,6 +25,7 @@ namespace LightSwitchApplication
         private ModalWindow QuantsHC;
         private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQright = new Dictionary<MatsAndGoodsItem, decimal>();
         private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQleft = new Dictionary<MatsAndGoodsItem, decimal>();
+        private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQ = new Dictionary<MatsAndGoodsItem, decimal>();
 
         partial void ПланированиеЗакупок_Created()
         {
@@ -96,7 +97,7 @@ namespace LightSwitchApplication
                 }
             }
             IDForTotalNum = null;
-
+            tmpMAGQ = MergeTwoDictionaries(tmpMAGQleft, tmpMAGQright);
 
         }
         private void MAGICalc(MatsAndGoodsItem M, decimal count)
@@ -298,7 +299,6 @@ namespace LightSwitchApplication
              foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in dicOne)
              {
                  tmpDic.Add(tmpEntry.Key, tmpEntry.Value);
-
              }
              foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in dicTwo)
              {
@@ -320,7 +320,6 @@ namespace LightSwitchApplication
              {
                      if (MAG.Category == "Готовое изделие" && MAG.TotalQuantityNeeded > 0)
                      {
-
                          var newMag = this.ActionsFiller1.AddNew();
                          newMag.MatsAndGoodsItem = MAG;
                          decimal tmp = Math.Round(Convert.ToDecimal(MAG.TotalQuantityNeeded), 0);
@@ -332,7 +331,6 @@ namespace LightSwitchApplication
              
 
          }
-
 
          private void MAGICalc2(MatsAndGoodsItem _MAGI, decimal _count, ModalWindow _quants, int _startLevel, Dictionary<MatsAndGoodsItem, decimal> _tmpDic)
          {
@@ -350,9 +348,9 @@ namespace LightSwitchApplication
                          var newMag1 = this.ActionsFiller1.AddNew();
                          newMag1.MatsAndGoodsItem = RCI.MatsAndGoodsItem;
                          decimal tmp = Math.Round(Convert.ToDecimal(RCI.Quantity) * _count, 0);
-                         decimal tmp2 = 8008;
-                         decimal tmp3 = 80088008;
-
+                         decimal tmp2 = 0;
+                         decimal tmp3 = 0;
+                         decimal tmp4 = 0;
                          foreach (KeyValuePair<MatsAndGoodsItem, decimal> tmpEntry in _tmpDic)
                          {
                              if (RCI.MatsAndGoodsItem == tmpEntry.Key)
@@ -362,6 +360,7 @@ namespace LightSwitchApplication
                                      _tmpDic[tmpEntry.Key] = tmpEntry.Value - tmp;
                                      tmp2 = 0;
                                      tmp3 = _tmpDic[tmpEntry.Key];
+                                     tmp4 = tmpMAGQ[tmpEntry.Key];
                                      break;
                                  }
                                  else if (tmpEntry.Value - tmp < 0)
@@ -369,51 +368,46 @@ namespace LightSwitchApplication
                                      _tmpDic[tmpEntry.Key] = 0;
                                      tmp2 = Math.Abs(tmpEntry.Value - tmp);
                                      tmp3 = _tmpDic[tmpEntry.Key];
+                                     tmp4 = tmpMAGQ[tmpEntry.Key];
                                      break;
                                  }
                              }
                          }
-
+                         
 
                          newMag1.Quantity = tmp;
                          newMag1.Quantity1 = tmp2;
-                         newMag1.Quantity2 = tmp3;
+                         newMag1.Quantity2 = tmp4;
                          newMag1.PricePerUnit = _startLevel;
                         
 
                          foreach (RecipesItem RI1 in this.Recipes)// проверка нет ли у компонента рецепта
                          {
-
                              if (RCI.MatsAndGoodsItem.ID == RI1.MatsAndGoodsItem.ID)
                              {
-
                                  ActDeeper = true;
                                  IDRecipe = null;
-                                 foreach (MatsAndGoodsItem MM in this.MatsAndGoods2)
+                                 if (RCI.MatsAndGoodsItem.Category == "Материал")
                                  {
-                                     if (RCI.MatsAndGoodsItem == MM)
+                                     ActDeeper = false;
+                                 }
+                                 if (ActDeeper)
+                                 {
+                                     foreach (MatsAndGoodsItem MM in this.MatsAndGoods2)
                                      {
-                                         MAGICalc2(RI1.MatsAndGoodsItem, tmp, _quants, _startLevel+1, _tmpDic);
-                                         break;
+                                         if (RCI.MatsAndGoodsItem == MM)
+                                         {
+                                             MAGICalc2(RI1.MatsAndGoodsItem, tmp, _quants, _startLevel + 1, _tmpDic);
+
+                                             break;
+                                         }
                                      }
                                  }
                                  break;
                              }
                              ActDeeper = false;
                          }
-                         //if (!ActDeeper)
-                         //{
-                         //    foreach (MatsAndGoodsItem MAGI1 in this.MatsAndGoods1)//цикл по списку для добавления компонентов на закупку
-                         //    {
-                         //        if (RCI.MatsAndGoodsItem.ID == MAGI1.ID)// если компонент совпадает со списком
-                         //        {
-                         //            MAGI1.TotalQuantityNeeded += Math.Round(Convert.ToDecimal(RCI.Quantity * count), 0);//прибавить
-                         //            break;
-                         //        }
-                         //    }
-                         //}
                      }
-
                  }
                  IDRecipe = null;
 
@@ -426,11 +420,9 @@ namespace LightSwitchApplication
          }
 
          partial void CloseQuants_Execute()
-         {
+         {        
              QuantsHC.DialogCancel();
-
          }
-
          partial void ПланированиеЗакупок_Closing(ref bool cancel)
          {
              this.DataWorkspace.skladData.Details.DiscardChanges();

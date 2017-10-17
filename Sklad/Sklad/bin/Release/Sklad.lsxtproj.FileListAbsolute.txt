@@ -53,3 +53,5 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\DesktopClient\Silverlight.js
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\DesktopClient\web\Sklad.DesktopClient.xap
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\bin\OfficeIntegration.Common.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\bin\OfficeIntegration.Server.dll
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\LogIn.aspx
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\LogOut.aspx

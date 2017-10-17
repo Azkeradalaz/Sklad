@@ -125,6 +125,12 @@
         Target="ServiceInterface:ViewAdminRed" />
     </Permission.Attributes>
   </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:ViewReports" />
+    </Permission.Attributes>
+  </Permission>
   <Application.Commands>
     <ApplicationCommand
       Name="ScreenCommandShowСклады"
@@ -175,11 +181,11 @@
       Name="ScreenCommandShowMatsAndGoodsListDetail"
       Target="!module/Methods[ShowMatsAndGoodsListDetail]" />
     <ApplicationCommand
+      Name="ScreenCommandShowОтчетЛогДвижение"
+      Target="!module/Methods[ShowОтчетЛогДвижение]" />
+    <ApplicationCommand
       Name="ScreenCommandShowОтчетЛогКоличества"
       Target="!module/Methods[ShowОтчетЛогКоличества]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowОтчетЛогПеремещенияИСоздание"
-      Target="!module/Methods[ShowОтчетЛогПеремещенияИСоздание]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -213,12 +219,6 @@
       <ApplicationNavigationLink
         Name="MatsAndGoodsListDetail"
         Command="!module/Commands[ScreenCommandShowMatsAndGoodsListDetail]" />
-      <ApplicationNavigationLink
-        Name="ОтчетЛогКоличества"
-        Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
-      <ApplicationNavigationLink
-        Name="ОтчетЛогПеремещенияИСоздание"
-        Command="!module/Commands[ScreenCommandShowОтчетЛогПеремещенияИСоздание]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
@@ -270,6 +270,12 @@
       <ApplicationNavigationLink
         Name="ПланированиеЗакупок"
         Command="!module/Commands[ScreenCommandShowПланированиеЗакупок]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогДвижение]" />
+      <ApplicationNavigationLink
+        Name="link4"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

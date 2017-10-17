@@ -76,6 +76,5 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\System.Ser
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\Microsoft.Data.OData.SL.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\System.Xml.Serialization.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\System.Spatial.SL.resources.dll
-D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.csprojResolveAssemblyReference.cache
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.pdb

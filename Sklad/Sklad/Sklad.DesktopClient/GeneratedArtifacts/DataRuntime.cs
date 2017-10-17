@@ -615,6 +615,14 @@ namespace LightSwitchApplication
         }
         
         /// <summary>
+        /// Отсутствует описание модели
+        /// </summary>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.SkladiItem> WorkingSkladi()
+        {
+            return this.Details.Methods.WorkingSkladi.CreateInvocation().Execute();
+        }
+        
+        /// <summary>
         /// Возвращает сущность, идентификатор которой задан параметрами.
         /// </summary>
         /// <param name="ID">
@@ -889,6 +897,14 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.skladData.DetailsClass.MethodSetProperties.Skladi_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem> WorkingSkladi
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.skladData.DetailsClass.MethodSetProperties.WorkingSkladi) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>;
                     }
                 }
                 
@@ -1302,6 +1318,16 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry
+                    WorkingSkladi = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry(
+                        "WorkingSkladi",
+                        global::LightSwitchApplication.skladData.DetailsClass.MethodSetProperties._WorkingSkladi_Stub);
+                private static void _WorkingSkladi_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.skladData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data> c, global::LightSwitchApplication.skladData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._WorkingSkladi, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SuppliersItem>.Entry
                     Suppliers_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SuppliersItem>.Entry(
                         "Suppliers_Single",
@@ -1590,6 +1616,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data _Skladi_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data _WorkingSkladi;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.skladData, global::LightSwitchApplication.skladData.DetailsClass, global::LightSwitchApplication.SuppliersItem>.Data _Suppliers_Single;

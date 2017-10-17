@@ -19,10 +19,10 @@
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
     <ApplicationClientType>Desktop</ApplicationClientType>
-    <ApplicationServerType>LocalHost</ApplicationServerType>
+    <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>None</AuthenticationType>
-    <ApplicationName>Sklad_Adm</ApplicationName>
-    <AssemblyVersion>0.9.44.0</AssemblyVersion>
+    <ApplicationName>Sklad</ApplicationName>
+    <AssemblyVersion>0.9.46.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -31,11 +31,11 @@
     <AdministratorUserName>admin</AdministratorUserName>
     <AllowUntrustedCertificate>False</AllowUntrustedCertificate>
     <DeployDatabase>False</DeployDatabase>
-    <AddAdministrator>True</AddAdministrator>
+    <AddAdministrator>False</AddAdministrator>
     <BootstrapperComponentsUrl />
     <DefaultInstallLocation>Sklad</DefaultInstallLocation>
     <DeploySchema>True</DeploySchema>
-    <PublishLocation>D:\VS_PRO\projects\publish\2017.10.11a</PublishLocation>
+    <PublishLocation>D:\VS_PRO\projects\publish\2017.10.17b\</PublishLocation>
     <PublishNewDatabase>True</PublishNewDatabase>
     <PublishUrl />
     <PublishSite>Default Web Site/Sklad</PublishSite>
@@ -56,7 +56,7 @@
     <AzureCredentials />
     <SharePointServerToServerCertificatePath />
     <SharePointServerToServerCertificateIssuerId />
-    <RequireSecureConnection>True</RequireSecureConnection>
+    <RequireSecureConnection>False</RequireSecureConnection>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug</OutputPath>

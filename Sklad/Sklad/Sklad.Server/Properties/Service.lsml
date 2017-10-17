@@ -138,4 +138,11 @@
         Value="Доступ к экрану редактору(без ограничений)" />
     </Permission.Attributes>
   </Permission>
+  <Permission
+    Name="ViewReports">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Доступ к Отчетам" />
+    </Permission.Attributes>
+  </Permission>
 </ServiceApplication>

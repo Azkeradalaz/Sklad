@@ -14,3 +14,4 @@ Sklad.Server.DataSources.skladData.CraftAction.lsml
 Sklad.Server.DataSources.skladData.Responsible.lsml
 Sklad.Server.DataSources.skladData.LogActionsAndCraft.lsml
 Sklad.Server.DataSources.skladData.LogMatsAndGoodsQuantities.lsml
+Sklad.Server.DataSources.skladData.WorkingSkladi.lsml

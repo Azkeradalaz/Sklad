@@ -10,17 +10,7 @@
   <parameter name="Sklad_IisWebApplication" description="Расположение содержимого веб-приложения IIS" defaultValue="Default Web Site/Sklad" tags="IisApp">
     <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\VS_PRO\\projects\\Sklad\\Sklad\\Sklad\\bin\\Release\\app\.publish\\$" />
   </parameter>
-  <parameter name="skladData" description="Настройка ConnectionString" defaultValue="data source=TS02/MANTARAY;initial catalog=sklad;integrated security=True" tags="SqlConnectionString">
+  <parameter name="skladData" description="Настройка ConnectionString" defaultValue="data source=TS02\MANTARAY;initial catalog=sklad;integrated security=True" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='skladData']/@connectionString" />
-  </parameter>
-  <parameter name="Имя пользователя администратора приложения" description="Имя пользователя, который будет определять пользователей и роли в приложении." defaultValue="" tags="applicationSettings">
-    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.UserName' and @value='AdministratorUserName']/@value" />
-  </parameter>
-  <parameter name="Полное имя администратора приложения" description="Полное имя пользователя, который будет определять пользователей и роли в приложении." defaultValue="" tags="applicationSettings">
-    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.FullName' and @value='AdministratorFullName']/@value" />
-  </parameter>
-  <parameter name="Пароль администратора приложения" description="Пароль пользователя, который будет определять пользователей и роли в приложении." defaultValue="" tags="Password,New,applicationSettings">
-    <parameterValidation kind="RegularExpression" validationString="^(?=.{7,})(?=(.*[\W\p{Pc}].*){1,})" />
-    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.Password' and @value='AdministratorPassword']/@value" />
   </parameter>
 </parameters>

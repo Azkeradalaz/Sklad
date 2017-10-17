@@ -37,6 +37,15 @@ namespace LightSwitchApplication.Implementation
         }
     
     #region Queries
+        public global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.SkladiItem> WorkingSkladi()
+        {
+            global::System.Linq.IQueryable<global::LightSwitchApplication.Implementation.SkladiItem> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::LightSwitchApplication.Implementation.SkladiItem>("Skladi"),
+                (s) => (s.Status.CompareTo("Функционирует") == 0));
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods

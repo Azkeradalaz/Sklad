@@ -576,6 +576,21 @@ namespace LightSwitchApplication
         partial void SaveChanges_ExecuteFailed(global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void WorkingSkladi_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void WorkingSkladi_Executing();
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void WorkingSkladi_PreprocessQuery(ref global::System.Linq.IQueryable<global::LightSwitchApplication.SkladiItem> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void WorkingSkladi_Executed(global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.SkladiItem> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void WorkingSkladi_ExecuteFailed(global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1691,6 +1706,40 @@ namespace LightSwitchApplication
             private static void __SaveChanges_Failed(global::LightSwitchApplication.skladDataService d, object[] args, global::System.Exception ex)
             {
                 d.SaveChanges_ExecuteFailed(ex);
+            }
+            
+            [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.skladDataService, global::LightSwitchApplication.SkladiItem>
+                __WorkingSkladiEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.skladDataService, global::LightSwitchApplication.SkladiItem>(
+                    "WorkingSkladi",
+                    global::LightSwitchApplication.skladDataService.DetailsClass.__WorkingSkladi_CanExecute,
+                    global::LightSwitchApplication.skladDataService.DetailsClass.__WorkingSkladi_Executing,
+                    global::LightSwitchApplication.skladDataService.DetailsClass.__WorkingSkladi_Executed,
+                    global::LightSwitchApplication.skladDataService.DetailsClass.__WorkingSkladi_Failed,
+                    global::LightSwitchApplication.skladDataService.DetailsClass.__WorkingSkladi_PreprocessQuery);
+            private static bool __WorkingSkladi_CanExecute(global::LightSwitchApplication.skladDataService d, bool r)
+            {
+                d.WorkingSkladi_CanExecute(ref r);
+                return r;
+            }
+            private static void __WorkingSkladi_Executing(global::LightSwitchApplication.skladDataService d, object[] args)
+            {
+                d.WorkingSkladi_Executing();
+            }
+            private static void __WorkingSkladi_Executed(global::LightSwitchApplication.skladDataService d, object[] args)
+            {
+                d.WorkingSkladi_Executed((global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.SkladiItem>)args[0]);
+            }
+            private static void __WorkingSkladi_Failed(global::LightSwitchApplication.skladDataService d, object[] args, global::System.Exception ex)
+            {
+                d.WorkingSkladi_ExecuteFailed(ex);
+            }
+            private static global::System.Linq.IQueryable __WorkingSkladi_PreprocessQuery(global::LightSwitchApplication.skladDataService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.SkladiItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.SkladiItem>)args[0];
+                d.WorkingSkladi_PreprocessQuery(ref query);
+                return query;
             }
     
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]

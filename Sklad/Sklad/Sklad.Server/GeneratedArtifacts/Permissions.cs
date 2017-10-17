@@ -80,6 +80,10 @@ namespace LightSwitchApplication
         /// ViewAdminRed
         /// </summary>
         public const string ViewAdminRed = "LightSwitchApplication:ViewAdminRed";
+        /// <summary>
+        /// ViewReports
+        /// </summary>
+        public const string ViewReports = "LightSwitchApplication:ViewReports";
 
         /// <summary>
         /// Получение всех разрешений, определенных для приложения.  К ним также относятся системные и определяемые пользователем разрешения.

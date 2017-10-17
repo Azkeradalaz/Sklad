@@ -19,9 +19,68 @@
           Name="ScreenLayout"
           Kind="Group">
           <ContentItem
+            Name="Group"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:GroupBox">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Поиск" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="c_DateMore"
+              Kind="Value"
+              DataType=":DateTime">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="C" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогКоличества/Properties[c_DateMore]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="c_DateLess"
+              Kind="Value"
+              DataType=":DateTime">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="По" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогКоличества/Properties[c_DateLess]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:GroupBox/Properties[ShowDisplayName]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
             Name="grid"
             Kind="Collection"
             DataType="CollectionView$LogMatsAndGoodsQuantitiesItem">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Отчет Лог Количества" />
+            </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
@@ -243,7 +302,64 @@
             Name="LogMatsAndGoodsQuantitiesQuery"
             ReturnType="LogMatsAndGoodsQuantitiesItem*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="GreaterThanOrEqual">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="LogMatsAndGoodsQuantitiesItem/Properties[c_Date]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="c_DateMore" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="LessThanOrEqual">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="LogMatsAndGoodsQuantitiesItem/Properties[c_Date]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="c_DateLess" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="LogMatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
+                          <MemberExpression
+                            Member="Status" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ConstantExpression
+                          Value="Функционирует"
+                          ResultType=":String?" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
@@ -251,15 +367,52 @@
                   Member="skladData/Members[LogMatsAndGoodsQuantities]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="c_DateMore"
+                ParameterType=":DateTime?" />
+              <QueryParameter
+                Name="c_DateLess"
+                ParameterType=":DateTime?" />
+            </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетЛогКоличества/Properties[LogMatsAndGoodsQuantities]/Query" />
+              Target="ОтчетЛогКоличества/Properties[LogMatsAndGoodsQuantities]/Query">
+              <ArgumentExpression
+                Parameter="c_DateMore">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ОтчетЛогКоличества/Properties[c_DateMore]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="c_DateLess">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ОтчетЛогКоличества/Properties[c_DateLess]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="c_DateMore"
+        PropertyType=":DateTime">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="c_DateLess"
+        PropertyType=":DateTime">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

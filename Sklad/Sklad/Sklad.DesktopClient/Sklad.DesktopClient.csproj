@@ -45,7 +45,7 @@
     <SignManifests>False</SignManifests>
     <ManifestCertificateThumbprint />
     <ManifestKeyFile />
-    <ApplicationName>Sklad_Adm</ApplicationName>
+    <ApplicationName>Sklad</ApplicationName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -260,8 +260,8 @@
     <Compile Include="Screens\ИзготовлениеПриход.lsml.cs">
       <DependentUpon>ИзготовлениеПриход.lsml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ОтчетЛогПеремещенияИСоздание.lsml.cs">
-      <DependentUpon>ОтчетЛогПеремещенияИСоздание.lsml</DependentUpon>
+    <Compile Include="Screens\ОтчетЛогДвижение.lsml.cs">
+      <DependentUpon>ОтчетЛогДвижение.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\ПеремещениеПриход2.lsml.cs">
       <DependentUpon>ПеремещениеПриход2.lsml</DependentUpon>
@@ -323,7 +323,7 @@
     <LightSwitchModel Include="Properties\skladData\Actions.lsml" />
     <LightSwitchModel Include="Screens\MatsAndGoodsListDetail.lsml" />
     <LightSwitchModel Include="Screens\ОтчетЛогКоличества.lsml" />
-    <LightSwitchModel Include="Screens\ОтчетЛогПеремещенияИСоздание.lsml" />
+    <LightSwitchModel Include="Screens\ОтчетЛогДвижение.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

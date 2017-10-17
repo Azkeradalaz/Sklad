@@ -142,6 +142,13 @@
         Value="Доступ к экрану редактору(без ограничений)" />
     </Permission.Attributes>
   </Permission>
+  <Permission
+    Name="ViewReports">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Доступ к Отчетам" />
+    </Permission.Attributes>
+  </Permission>
   <EntityType
     Name="SuppliersItem">
     <EntityType.Attributes>
@@ -1227,6 +1234,16 @@
         Name="LogActionsAndCraft"
         EntitySet="LogActionsAndCraft" />
     </AssociationSet>
+    <QueryOperation
+      Name="WorkingSkladi"
+      ReturnType="SkladiItem*">
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="Skladi" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+    </QueryOperation>
     <EntitySet
       Name="Suppliers"
       CanDelete="True"
@@ -14380,7 +14397,7 @@
     </Screen.Properties>
   </Screen>
   <Screen
-    Name="ПланированиеЗакупок">
+    Name="ОтчетЛогДвижение">
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="skladData" />
@@ -14392,723 +14409,238 @@
         View="Microsoft.LightSwitch.RichClient:Screen">
         <ContentItem
           Name="ScreenLayout"
-          Kind="Group"
-          View="Microsoft.LightSwitch.RichClient:RowsLayout">
+          Kind="Group">
           <ContentItem
             Name="Group"
             Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+            View="Microsoft.LightSwitch.RichClient:GroupBox">
             <ContentItem
-              Name="grid"
-              Kind="Collection"
-              DataType="CollectionView$MatsAndGoodsItem">
+              Name="c_DateMore"
+              Kind="Value"
+              DataType=":DateTime">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Готовые изделия и Блоки" />
+                  Value="С" />
               </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression
-                      Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                      Member="ОтчетЛогДвижение/Properties[c_DateMore]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="c_DateLess"
+              Kind="Value"
+              DataType=":DateTime">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="По" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогДвижение/Properties[c_DateLess]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="ID"
+              Kind="Details"
+              DataType="MatsAndGoodsItem">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Изделие" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогДвижение/Properties[ID]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="RowTemplate"
+                Name="MatsAndGoodsItem"
                 Kind="Details"
                 DataType="MatsAndGoodsItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Готовые изделия и Блоки" />
-                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="Name"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MatsAndGoodsItem/Properties[Name]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Category"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MatsAndGoodsItem/Properties[Category]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="TotalQuantity"
-                  Kind="Value"
-                  DataType=":Decimal?">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Кол-во на складах" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MatsAndGoodsItem/Properties[TotalQuantity]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="TotalQuantityNeeded"
-                  Kind="Value"
-                  DataType=":Decimal?"
-                  View="Microsoft.LightSwitch.RichClient:TextBox">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Планируемое" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MatsAndGoodsItem/Properties[TotalQuantityNeeded]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="TotalQuantityDifference"
-                  Kind="Value"
-                  DataType=":Decimal?">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Разница" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="MatsAndGoodsItem/Properties[TotalQuantityDifference]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Name="MatsAndGoods_AddAndEditNew"
-                  IsHidden="True"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
-                        <CallExpression
-                          Target="AddAndEditNew" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="MatsAndGoods_EditSelected"
-                  IsHidden="True"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
-                        <CallExpression
-                          Target="EditSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="MatsAndGoods_DeleteSelected"
-                  IsHidden="True"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
-                        <CallExpression
-                          Target="DeleteSelected" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Calculate"
-                  Kind="Command">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Подсчет" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="ПланированиеЗакупок/Methods[Calculate]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="QuantsCompute"
-                  Kind="Command">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="По блокам" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="ПланированиеЗакупок/Methods[QuantsCompute]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Clear"
-                  Kind="Command">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Очистить" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="ПланированиеЗакупок/Methods[Clear]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Stretch"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Collapsed"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="False"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem
-              Name="Group2"
-              Kind="Group">
-              <ContentItem
-                Name="MatsAndGoods1"
-                Kind="Collection"
-                DataType="CollectionView$MatsAndGoodsItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Материалы (покупные)" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="MatsAndGoods1Template"
-                  Kind="Details"
-                  DataType="MatsAndGoodsItem">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Материалы (покупные)" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="Name1"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[Name]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Unit"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[Unit]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="TotalQuantity1"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Кол-во на складах" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[TotalQuantity]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="TotalQuantityNeeded1"
-                    Kind="Value"
-                    DataType=":Decimal?"
-                    View="Microsoft.LightSwitch.RichClient:Label">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Планируемое" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[TotalQuantityNeeded]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="TotalQuantityDifference1"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Разница" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[TotalQuantityDifference]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="True"
-                            ResultType=":Boolean" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Name="MatsAndGoods1_AddAndEditNew"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
-                          <CallExpression
-                            Target="AddAndEditNew" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="MatsAndGoods1_EditSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
-                          <CallExpression
-                            Target="EditSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="MatsAndGoods1_DeleteSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
-                          <CallExpression
-                            Target="DeleteSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="HideZero"
-                    Kind="Command">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Убрать 0" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <CallExpression
-                            Target="ПланированиеЗакупок/Methods[HideZero]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem.CommandItems>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="False"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
               </ContentItem>
             </ContentItem>
           </ContentItem>
           <ContentItem
-            Name="Waybill"
-            Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:ModalWindow">
+            Name="grid"
+            Kind="Collection"
+            DataType="CollectionView$LogActionsAndCraftItem">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Отчет Лог Движение" />
+            </ContentItem.Attributes>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ОтчетЛогДвижение/Properties[LogActionsAndCraft]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
             <ContentItem
-              Name="Group1"
-              Kind="Group">
+              Name="RowTemplate"
+              Kind="Details"
+              DataType="LogActionsAndCraftItem">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
               <ContentItem
-                Name="Actions_SelectedItem_ID"
-                IsHidden="True"
+                Name="c_Date"
                 Kind="Value"
-                DataType=":Decimal">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ПланированиеЗакупок/Properties[Actions]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="ID" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="ActionsFiller"
-                Kind="Collection"
-                DataType="CollectionView$ActionsFillerItem">
+                DataType=":DateTime?">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Материалы" />
+                    Value="Дата" />
                 </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression
-                        Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
+                        Member="LogActionsAndCraftItem/Properties[c_Date]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Action"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Действие" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[Action]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="WayBillNumber"
+                Kind="Value"
+                DataType=":String?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Номер накладной" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[WayBillNumber]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Quantity"
+                Kind="Value"
+                DataType=":Decimal?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Количество" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[Quantity]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="QuantityOnSklad"
+                Kind="Value"
+                DataType=":Decimal?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Количество на складе" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[QuantityOnSklad]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="MatsAndGoodsItem1"
+                Kind="Details"
+                DataType="MatsAndGoodsItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Изделие" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[MatsAndGoodsItem1]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="ActionsFillerTemplate"
+                  Name="RowTemplate1"
                   Kind="Details"
-                  DataType="ActionsFillerItem">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Материалы" />
-                  </ContentItem.Attributes>
+                  DataType="MatsAndGoodsItem">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem
-                    Name="MatsAndGoodsItem"
-                    Kind="Details"
-                    DataType="MatsAndGoodsItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="MatsAndGoodsItem1"
-                      Kind="Details"
-                      DataType="MatsAndGoodsItem"
-                      View="Microsoft.LightSwitch.RichClient:TableLayout">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                      <ContentItem
-                        Name="Name2"
-                        Kind="Value"
-                        DataType=":String">
-                        <ContentItem.DataSource>
-                          <ScreenExpressionTree>
-                            <ChainExpression>
-                              <MemberExpression
-                                Member="MatsAndGoodsItem/Properties[Name]" />
-                            </ChainExpression>
-                          </ScreenExpressionTree>
-                        </ContentItem.DataSource>
-                      </ContentItem>
-                      <ContentItem
-                        Name="Unit1"
-                        Kind="Value"
-                        DataType=":String">
-                        <ContentItem.DataSource>
-                          <ScreenExpressionTree>
-                            <ChainExpression>
-                              <MemberExpression
-                                Member="MatsAndGoodsItem/Properties[Unit]" />
-                            </ChainExpression>
-                          </ScreenExpressionTree>
-                        </ContentItem.DataSource>
-                      </ContentItem>
-                    </ContentItem>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Unit2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
-                          <MemberExpression
-                            Member="Unit" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity1"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Кол-во на складах" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity1]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity2"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Планируемое" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity2]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity"
-                    Kind="Value"
-                    DataType=":Decimal">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Разница" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
                 </ContentItem>
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Name="ActionsFiller_AddAndEditNew"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
-                          <CallExpression
-                            Target="AddAndEditNew" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="ActionsFiller_EditSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
-                          <CallExpression
-                            Target="EditSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="ActionsFiller_DeleteSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
-                          <CallExpression
-                            Target="DeleteSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem.CommandItems>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+              </ContentItem>
+              <ContentItem
+                Name="SkladiItem"
+                Kind="Details"
+                DataType="SkladiItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Склад" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LogActionsAndCraftItem/Properties[SkladiItem]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="RowTemplate2"
+                  Kind="Details"
+                  DataType="SkladiItem">
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="False"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
+                      <ChainExpression />
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
+                  </ContentItem.DataSource>
+                </ContentItem>
               </ContentItem>
               <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="500"
-                        ResultType=":Double" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Top"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Left"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
                 <ControlPropertySource
                   Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
                   <ScreenExpressionTree>
@@ -15121,238 +14653,29 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="CloseWaybill1"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Закрыть" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="ПланированиеЗакупок/Methods[CloseWaybill]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem.CommandItems>
             <ContentItem.PropertySources>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      Value="False"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-          </ContentItem>
-          <ContentItem
-            Name="Quants"
-            Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:ModalWindow">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Quants" />
-            </ContentItem.Attributes>
-            <ContentItem
-              Name="Group4"
-              Kind="Group"
-              View="Microsoft.LightSwitch.RichClient:TableLayout">
-              <ContentItem
-                Name="ActionsFiller1"
-                Kind="Collection"
-                DataType="CollectionView$ActionsFillerItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value=" " />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ПланированиеЗакупок/Properties[ActionsFiller1]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="ActionsFiller1Template"
-                  Kind="Details"
-                  DataType="ActionsFillerItem">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value=" " />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="PricePerUnit"
-                    Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:Money?"
-                    View="Microsoft.LightSwitch.RichClient:Label">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Уровень" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[PricePerUnit]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Category1"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
-                          <MemberExpression
-                            Member="Category" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Name3"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
-                          <MemberExpression
-                            Member="Name" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Unit3"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
-                          <MemberExpression
-                            Member="Unit" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity3"
-                    Kind="Value"
-                    DataType=":Decimal">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Планируемое" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity11"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Итог" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity1]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity21"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.Attributes>
-                      <DisplayName
-                        Value="Остаток на складах" />
-                    </ContentItem.Attributes>
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ActionsFillerItem/Properties[Quantity2]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="False"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="CloseQuants"
-                Kind="Command">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Закрыть" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="ПланированиеЗакупок/Methods[CloseQuants]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem.CommandItems>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
+                      Value="Stretch"
+                      ResultType=":String" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
               <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Collapsed"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
@@ -15367,26 +14690,24 @@
         <ContentItem.CommandItems>
           <ContentItem
             Name="Save"
-            IsHidden="True"
             Kind="Command">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="ПланированиеЗакупок/Methods[Save]" />
+                    Target="ОтчетЛогДвижение/Methods[Save]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
           </ContentItem>
           <ContentItem
             Name="Refresh"
-            IsHidden="True"
             Kind="Command">
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
                   <CallExpression
-                    Target="ПланированиеЗакупок/Methods[Refresh]" />
+                    Target="ОтчетЛогДвижение/Methods[Refresh]" />
                 </ChainExpression>
               </ScreenExpressionTree>
             </ContentItem.DataSource>
@@ -15423,68 +14744,51 @@
           <Generated />
         </ScreenMethod.Attributes>
       </ScreenMethod>
-      <ScreenMethod
-        Name="Calculate" />
-      <ScreenMethod
-        Name="Clear" />
-      <ScreenMethod
-        Name="HideZero" />
-      <ScreenMethod
-        Name="CloseWaybill" />
-      <ScreenMethod
-        Name="ExportDataGrid" />
-      <ScreenMethod
-        Name="QuantsCompute" />
-      <ScreenMethod
-        Name="CloseQuants" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="MatsAndGoods"
+        Name="LogActionsAndCraft"
         DisablePaging="True"
-        DisableSearch="True"
         PageSize="45"
-        PropertyType="CollectionView$MatsAndGoodsItem">
+        PropertyType="CollectionView$LogActionsAndCraftItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
-            Name="MatsAndGoodsQuery"
-            ReturnType="MatsAndGoodsItem*">
+            Name="LogActionsAndCraftQuery"
+            ReturnType="LogActionsAndCraftItem*">
             <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
-                  NodeType="Or">
+                  NodeType="And">
                   <BinaryExpression.Left>
                     <BinaryExpression
-                      NodeType="Or">
+                      NodeType="And">
                       <BinaryExpression.Left>
                         <BinaryExpression
-                          NodeType="NotEqual">
+                          NodeType="GreaterThanOrEqual">
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression
-                                Member="MatsAndGoodsItem/Properties[Category]" />
+                                Member="LogActionsAndCraftItem/Properties[c_Date]" />
                             </ChainExpression>
                           </BinaryExpression.Left>
                           <BinaryExpression.Right>
-                            <ConstantExpression
-                              Value="Материал"
-                              ResultType=":String" />
+                            <ParameterExpression
+                              Parameter="c_DateMore" />
                           </BinaryExpression.Right>
                         </BinaryExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
                         <BinaryExpression
-                          NodeType="Equal">
+                          NodeType="LessThanOrEqual">
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression
-                                Member="MatsAndGoodsItem/Properties[Category]" />
+                                Member="LogActionsAndCraftItem/Properties[c_Date]" />
                             </ChainExpression>
                           </BinaryExpression.Left>
                           <BinaryExpression.Right>
-                            <ConstantExpression
-                              Value="Блок"
-                              ResultType=":String" />
+                            <ParameterExpression
+                              Parameter="c_DateLess" />
                           </BinaryExpression.Right>
                         </BinaryExpression>
                       </BinaryExpression.Right>
@@ -15496,13 +14800,14 @@
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
-                            Member="MatsAndGoodsItem/Properties[Category]" />
+                            Member="LogActionsAndCraftItem/Properties[MatsAndGoodsItem1]" />
+                          <MemberExpression
+                            Member="ID" />
                         </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
-                        <ConstantExpression
-                          Value="Готовое изделие"
-                          ResultType=":String" />
+                        <ParameterExpression
+                          Parameter="ID" />
                       </BinaryExpression.Right>
                     </BinaryExpression>
                   </BinaryExpression.Right>
@@ -15512,85 +14817,18 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="skladData/Members[MatsAndGoods]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[MatsAndGoods]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Recipes"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$RecipesItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="RecipesQuery"
-            ReturnType="RecipesItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[Recipes]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[Recipes]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="RecipesComponents"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$RecipesComponentsItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="RecipesComponentsQuery"
-            ReturnType="RecipesComponentsItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="RecipesComponentsItem/Properties[RecipesItem]" />
-                      <MemberExpression
-                        Member="ID" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ParameterExpression
-                      Parameter="IDRecipe" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[RecipesComponents]" />
+                  Member="skladData/Members[LogActionsAndCraft]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
               <QueryParameter
-                Name="IDRecipe"
-                IsOptional="True"
+                Name="c_DateMore"
+                ParameterType=":DateTime?" />
+              <QueryParameter
+                Name="c_DateLess"
+                ParameterType=":DateTime?" />
+              <QueryParameter
+                Name="ID"
                 ParameterType=":Decimal?" />
             </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
@@ -15598,70 +14836,28 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ПланированиеЗакупок/Properties[RecipesComponents]/Query">
+              Target="ОтчетЛогДвижение/Properties[LogActionsAndCraft]/Query">
               <ArgumentExpression
-                Parameter="IDRecipe">
+                Parameter="c_DateMore">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ПланированиеЗакупок/Properties[IDRecipe]" />
+                    Member="ОтчетЛогДвижение/Properties[c_DateMore]" />
                 </ChainExpression>
               </ArgumentExpression>
-            </CallExpression>
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="MatsAndGoodsQuantities"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$MatsAndGoodsQuantitiesItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="MatsAndGoodsQuantitiesQuery"
-            ReturnType="MatsAndGoodsQuantitiesItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="MatsAndGoodsQuantitiesItem/Properties[MatsAndGoodsItem]" />
-                      <MemberExpression
-                        Member="ID" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ParameterExpression
-                      Parameter="IDForTotalNum" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[MatsAndGoodsQuantities]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.Parameters>
-              <QueryParameter
-                Name="IDForTotalNum"
-                IsOptional="True"
-                ParameterType=":Decimal?" />
-            </ScreenQueryDefinition.Parameters>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[MatsAndGoodsQuantities]/Query">
               <ArgumentExpression
-                Parameter="IDForTotalNum">
+                Parameter="c_DateLess">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ПланированиеЗакупок/Properties[IDForTotalNum]" />
+                    Member="ОтчетЛогДвижение/Properties[c_DateLess]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="ID">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ОтчетЛогДвижение/Properties[ID]" />
+                  <MemberExpression
+                    Member="ID" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -15669,205 +14865,42 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
-        Name="IDForTotalNum"
-        PropertyType=":Decimal?" />
-      <ScreenCollectionProperty
-        Name="MatsAndGoods1"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$MatsAndGoodsItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="MatsAndGoods1Query"
-            ReturnType="MatsAndGoodsItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree>
-                <BinaryExpression
-                  NodeType="Equal">
-                  <BinaryExpression.Left>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="MatsAndGoodsItem/Properties[Category]" />
-                    </ChainExpression>
-                  </BinaryExpression.Left>
-                  <BinaryExpression.Right>
-                    <ConstantExpression
-                      Value="Материал"
-                      ResultType=":String" />
-                  </BinaryExpression.Right>
-                </BinaryExpression>
-              </QueryFilterExpressionTree>
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[MatsAndGoods]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[MatsAndGoods1]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
+        Name="c_DateMore"
+        PropertyType=":DateTime">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
       <ScreenProperty
-        Name="IDRecipe"
-        PropertyType=":Decimal?" />
-      <ScreenCollectionProperty
-        Name="MatsAndGoods2"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$MatsAndGoodsItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="MatsAndGoods2Query"
-            ReturnType="MatsAndGoodsItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[MatsAndGoods]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
+        Name="c_DateLess"
+        PropertyType=":DateTime">
+        <ScreenProperty.Attributes>
+          <Required />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="MatsAndGoodsItem"
+        PropertyType="MatsAndGoodsItem">
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ПланированиеЗакупок/Properties[MatsAndGoods2]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Actions"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$ActionsItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="ActionsQuery"
-            ReturnType="ActionsItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[Actions]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[Actions]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="ActionsFiller"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$ActionsFillerItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="ActionsFillerQuery"
-            ReturnType="ActionsFillerItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
+              Target="skladData/Members[MatsAndGoods_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="ID">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ПланированиеЗакупок/Properties[Actions]" />
+                    Member="ОтчетЛогДвижение/Properties[ID]" />
                   <MemberExpression
-                    Member="SelectedItem" />
-                  <MemberExpression
-                    Member="ActionsFiller" />
+                    Member="ID" />
                 </ChainExpression>
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[ActionsFiller]/Query" />
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Actions1"
-        DisablePaging="True"
-        PageSize="45"
-        PropertyType="CollectionView$ActionsItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="Actions1Query"
-            ReturnType="ActionsItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[Actions]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[Actions1]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="ActionsFiller1"
-        DisablePaging="True"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$ActionsFillerItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="ActionsFiller1Query"
-            ReturnType="ActionsFillerItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="ПланированиеЗакупок/Properties[Actions1]" />
-                  <MemberExpression
-                    Member="SelectedItem" />
-                  <MemberExpression
-                    Member="ActionsFiller" />
-                </ChainExpression>
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ПланированиеЗакупок/Properties[ActionsFiller1]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
+      </ScreenProperty>
+      <ScreenProperty
+        Name="ID"
+        PropertyType="MatsAndGoodsItem" />
     </Screen.Properties>
   </Screen>
   <Screen
@@ -15885,9 +14918,68 @@
           Name="ScreenLayout"
           Kind="Group">
           <ContentItem
+            Name="Group"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:GroupBox">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Поиск" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="c_DateMore"
+              Kind="Value"
+              DataType=":DateTime">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="C" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогКоличества/Properties[c_DateMore]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem
+              Name="c_DateLess"
+              Kind="Value"
+              DataType=":DateTime">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="По" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ОтчетЛогКоличества/Properties[c_DateLess]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:GroupBox/Properties[ShowDisplayName]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
             Name="grid"
             Kind="Collection"
             DataType="CollectionView$LogMatsAndGoodsQuantitiesItem">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Отчет Лог Количества" />
+            </ContentItem.Attributes>
             <ContentItem.DataSource>
               <ScreenExpressionTree>
                 <ChainExpression>
@@ -16109,381 +15201,6 @@
             Name="LogMatsAndGoodsQuantitiesQuery"
             ReturnType="LogMatsAndGoodsQuantitiesItem*">
             <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="skladData/Members[LogMatsAndGoodsQuantities]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="ОтчетЛогКоличества/Properties[LogMatsAndGoodsQuantities]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-    </Screen.Properties>
-  </Screen>
-  <Screen
-    Name="ОтчетЛогПеремещенияИСоздание">
-    <Screen.Attributes>
-      <SaveChangesTo
-        EntityContainer="skladData" />
-    </Screen.Attributes>
-    <Screen.RootContentItem>
-      <ContentItem
-        Name="RootContentItem"
-        Kind="Screen"
-        View="Microsoft.LightSwitch.RichClient:Screen">
-        <ContentItem
-          Name="ScreenLayout"
-          Kind="Group">
-          <ContentItem
-            Name="Group"
-            Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:GroupBox">
-            <ContentItem
-              Name="c_DateMore"
-              Kind="Value"
-              DataType=":DateTime">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="С" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="ОтчетЛогПеремещенияИСоздание/Properties[c_DateMore]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-            <ContentItem
-              Name="c_DateLess"
-              Kind="Value"
-              DataType=":DateTime">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="По" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="ОтчетЛогПеремещенияИСоздание/Properties[c_DateLess]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-            </ContentItem>
-            <ContentItem
-              Name="ID"
-              Kind="Details"
-              DataType="MatsAndGoodsItem">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Изделие" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="ОтчетЛогПеремещенияИСоздание/Properties[ID]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="MatsAndGoodsItem"
-                Kind="Details"
-                DataType="MatsAndGoodsItem">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-          </ContentItem>
-          <ContentItem
-            Name="grid"
-            Kind="Collection"
-            DataType="CollectionView$LogActionsAndCraftItem">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="ОтчетЛогПеремещенияИСоздание/Properties[LogActionsAndCraft]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-            <ContentItem
-              Name="RowTemplate"
-              Kind="Details"
-              DataType="LogActionsAndCraftItem">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression />
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="c_Date"
-                Kind="Value"
-                DataType=":DateTime?">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Дата" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[c_Date]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Action"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Действие" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[Action]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="WayBillNumber"
-                Kind="Value"
-                DataType=":String?">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Номер накладной" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[WayBillNumber]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="Quantity"
-                Kind="Value"
-                DataType=":Decimal?">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Количество" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[Quantity]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="QuantityOnSklad"
-                Kind="Value"
-                DataType=":Decimal?">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Количество на складе" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[QuantityOnSklad]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="MatsAndGoodsItem1"
-                Kind="Details"
-                DataType="MatsAndGoodsItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Изделие" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[MatsAndGoodsItem1]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate1"
-                  Kind="Details"
-                  DataType="MatsAndGoodsItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="SkladiItem"
-                Kind="Details"
-                DataType="SkladiItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Склад" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="LogActionsAndCraftItem/Properties[SkladiItem]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate2"
-                  Kind="Details"
-                  DataType="SkladiItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="True"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Stretch"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="Collapsed"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="False"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-          </ContentItem>
-        </ContentItem>
-        <ContentItem.CommandItems>
-          <ContentItem
-            Name="Save"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="ОтчетЛогПеремещенияИСоздание/Methods[Save]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
-            Name="Refresh"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="ОтчетЛогПеремещенияИСоздание/Methods[Refresh]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-        </ContentItem.CommandItems>
-      </ContentItem>
-    </Screen.RootContentItem>
-    <Screen.Methods>
-      <ScreenMethod
-        Name="Save">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-          <ImageResource
-            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-      <ScreenMethod
-        Name="Refresh">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-          <ImageResource
-            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-      <ScreenMethod
-        Name="Close">
-        <ScreenMethod.Attributes>
-          <DisplayMethodByDefault
-            Display="True" />
-          <Generated />
-        </ScreenMethod.Attributes>
-      </ScreenMethod>
-    </Screen.Methods>
-    <Screen.Properties>
-      <ScreenCollectionProperty
-        Name="LogActionsAndCraft"
-        DisablePaging="True"
-        PageSize="45"
-        PropertyType="CollectionView$LogActionsAndCraftItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="LogActionsAndCraftQuery"
-            ReturnType="LogActionsAndCraftItem*">
-            <ScreenQueryDefinition.FilterExpression>
               <QueryFilterExpressionTree>
                 <BinaryExpression
                   NodeType="And">
@@ -16496,7 +15213,7 @@
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression
-                                Member="LogActionsAndCraftItem/Properties[c_Date]" />
+                                Member="LogMatsAndGoodsQuantitiesItem/Properties[c_Date]" />
                             </ChainExpression>
                           </BinaryExpression.Left>
                           <BinaryExpression.Right>
@@ -16511,7 +15228,7 @@
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression
-                                Member="LogActionsAndCraftItem/Properties[c_Date]" />
+                                Member="LogMatsAndGoodsQuantitiesItem/Properties[c_Date]" />
                             </ChainExpression>
                           </BinaryExpression.Left>
                           <BinaryExpression.Right>
@@ -16528,14 +15245,15 @@
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
-                            Member="LogActionsAndCraftItem/Properties[MatsAndGoodsItem1]" />
+                            Member="LogMatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
                           <MemberExpression
-                            Member="ID" />
+                            Member="Status" />
                         </ChainExpression>
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
-                        <ParameterExpression
-                          Parameter="ID" />
+                        <ConstantExpression
+                          Value="Функционирует"
+                          ResultType=":String?" />
                       </BinaryExpression.Right>
                     </BinaryExpression>
                   </BinaryExpression.Right>
@@ -16545,7 +15263,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="skladData/Members[LogActionsAndCraft]" />
+                  Member="skladData/Members[LogMatsAndGoodsQuantities]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
             <ScreenQueryDefinition.Parameters>
@@ -16555,37 +15273,25 @@
               <QueryParameter
                 Name="c_DateLess"
                 ParameterType=":DateTime?" />
-              <QueryParameter
-                Name="ID"
-                ParameterType=":Decimal?" />
             </ScreenQueryDefinition.Parameters>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="ОтчетЛогПеремещенияИСоздание/Properties[LogActionsAndCraft]/Query">
+              Target="ОтчетЛогКоличества/Properties[LogMatsAndGoodsQuantities]/Query">
               <ArgumentExpression
                 Parameter="c_DateMore">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетЛогПеремещенияИСоздание/Properties[c_DateMore]" />
+                    Member="ОтчетЛогКоличества/Properties[c_DateMore]" />
                 </ChainExpression>
               </ArgumentExpression>
               <ArgumentExpression
                 Parameter="c_DateLess">
                 <ChainExpression>
                   <MemberExpression
-                    Member="ОтчетЛогПеремещенияИСоздание/Properties[c_DateLess]" />
-                </ChainExpression>
-              </ArgumentExpression>
-              <ArgumentExpression
-                Parameter="ID">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="ОтчетЛогПеремещенияИСоздание/Properties[ID]" />
-                  <MemberExpression
-                    Member="ID" />
+                    Member="ОтчетЛогКоличества/Properties[c_DateLess]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -16606,29 +15312,6 @@
           <Required />
         </ScreenProperty.Attributes>
       </ScreenProperty>
-      <ScreenProperty
-        Name="MatsAndGoodsItem"
-        PropertyType="MatsAndGoodsItem">
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="skladData/Members[MatsAndGoods_SingleOrDefault]">
-              <ArgumentExpression
-                Parameter="ID">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="ОтчетЛогПеремещенияИСоздание/Properties[ID]" />
-                  <MemberExpression
-                    Member="ID" />
-                </ChainExpression>
-              </ArgumentExpression>
-            </CallExpression>
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="ID"
-        PropertyType="MatsAndGoodsItem" />
     </Screen.Properties>
   </Screen>
   <Screen
@@ -20346,6 +19029,1497 @@
             Value="Склад получатель" />
         </ScreenProperty.Attributes>
       </ScreenProperty>
+    </Screen.Properties>
+  </Screen>
+  <Screen
+    Name="ПланированиеЗакупок">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="skladData" />
+    </Screen.Attributes>
+    <Screen.RootContentItem>
+      <ContentItem
+        Name="RootContentItem"
+        Kind="Screen"
+        View="Microsoft.LightSwitch.RichClient:Screen">
+        <ContentItem
+          Name="ScreenLayout"
+          Kind="Group"
+          View="Microsoft.LightSwitch.RichClient:RowsLayout">
+          <ContentItem
+            Name="Group"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+            <ContentItem
+              Name="grid"
+              Kind="Collection"
+              DataType="CollectionView$MatsAndGoodsItem">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Готовые изделия и Блоки" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="RowTemplate"
+                Kind="Details"
+                DataType="MatsAndGoodsItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Готовые изделия и Блоки" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="Name"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MatsAndGoodsItem/Properties[Name]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Category"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MatsAndGoodsItem/Properties[Category]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="TotalQuantity"
+                  Kind="Value"
+                  DataType=":Decimal?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Кол-во на складах" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MatsAndGoodsItem/Properties[TotalQuantity]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="TotalQuantityNeeded"
+                  Kind="Value"
+                  DataType=":Decimal?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Планируемое" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MatsAndGoodsItem/Properties[TotalQuantityNeeded]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="TotalQuantityDifference"
+                  Kind="Value"
+                  DataType=":Decimal?">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Разница" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="MatsAndGoodsItem/Properties[TotalQuantityDifference]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Name="MatsAndGoods_AddAndEditNew"
+                  IsHidden="True"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="MatsAndGoods_EditSelected"
+                  IsHidden="True"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="MatsAndGoods_DeleteSelected"
+                  IsHidden="True"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Calculate"
+                  Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Подсчет" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ПланированиеЗакупок/Methods[Calculate]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="QuantsCompute"
+                  Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="По блокам" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ПланированиеЗакупок/Methods[QuantsCompute]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Clear"
+                  Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Очистить" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="ПланированиеЗакупок/Methods[Clear]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Stretch"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Collapsed"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="False"
+                        ResultType=":Boolean" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="Group2"
+              Kind="Group">
+              <ContentItem
+                Name="MatsAndGoods1"
+                Kind="Collection"
+                DataType="CollectionView$MatsAndGoodsItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Материалы (покупные)" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="MatsAndGoods1Template"
+                  Kind="Details"
+                  DataType="MatsAndGoodsItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Материалы (покупные)" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Name1"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[Name]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Unit"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[Unit]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="TotalQuantity1"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Кол-во на складах" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[TotalQuantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="TotalQuantityNeeded1"
+                    Kind="Value"
+                    DataType=":Decimal?"
+                    View="Microsoft.LightSwitch.RichClient:Label">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Планируемое" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[TotalQuantityNeeded]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="TotalQuantityDifference1"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Разница" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[TotalQuantityDifference]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="True"
+                            ResultType=":Boolean" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="MatsAndGoods1_AddAndEditNew"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
+                          <CallExpression
+                            Target="AddAndEditNew" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="MatsAndGoods1_EditSelected"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
+                          <CallExpression
+                            Target="EditSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="MatsAndGoods1_DeleteSelected"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[MatsAndGoods1]" />
+                          <CallExpression
+                            Target="DeleteSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="HideZero"
+                    Kind="Command">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Убрать 0" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="ПланированиеЗакупок/Methods[HideZero]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Name="Waybill"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:ModalWindow">
+            <ContentItem
+              Name="Group1"
+              Kind="Group">
+              <ContentItem
+                Name="Actions_SelectedItem_ID"
+                IsHidden="True"
+                Kind="Value"
+                DataType=":Decimal">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ПланированиеЗакупок/Properties[Actions]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="ID" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="ActionsFiller"
+                Kind="Collection"
+                DataType="CollectionView$ActionsFillerItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Материалы" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="ActionsFillerTemplate"
+                  Kind="Details"
+                  DataType="ActionsFillerItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Материалы" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="MatsAndGoodsItem"
+                    Kind="Details"
+                    DataType="MatsAndGoodsItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="MatsAndGoodsItem1"
+                      Kind="Details"
+                      DataType="MatsAndGoodsItem"
+                      View="Microsoft.LightSwitch.RichClient:TableLayout">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                      <ContentItem
+                        Name="Name2"
+                        Kind="Value"
+                        DataType=":String">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="MatsAndGoodsItem/Properties[Name]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                      <ContentItem
+                        Name="Unit1"
+                        Kind="Value"
+                        DataType=":String">
+                        <ContentItem.DataSource>
+                          <ScreenExpressionTree>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="MatsAndGoodsItem/Properties[Unit]" />
+                            </ChainExpression>
+                          </ScreenExpressionTree>
+                        </ContentItem.DataSource>
+                      </ContentItem>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Unit2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Unit" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity1"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Кол-во на складах" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity1]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity2"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Планируемое" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity2]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity"
+                    Kind="Value"
+                    DataType=":Decimal">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Разница" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="ActionsFiller_AddAndEditNew"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
+                          <CallExpression
+                            Target="AddAndEditNew" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="ActionsFiller_EditSelected"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
+                          <CallExpression
+                            Target="EditSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="ActionsFiller_DeleteSelected"
+                    IsHidden="True"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ПланированиеЗакупок/Properties[ActionsFiller]" />
+                          <CallExpression
+                            Target="DeleteSelected" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="500"
+                        ResultType=":Double" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Top"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="Left"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="True"
+                        ResultType=":Boolean" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="CloseWaybill1"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Закрыть" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ПланированиеЗакупок/Methods[CloseWaybill]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="Quants"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:ModalWindow">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Quants" />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="Group4"
+              Kind="Group"
+              View="Microsoft.LightSwitch.RichClient:TableLayout">
+              <ContentItem
+                Name="ActionsFiller1"
+                Kind="Collection"
+                DataType="CollectionView$ActionsFillerItem">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value=" " />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="ПланированиеЗакупок/Properties[ActionsFiller1]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="ActionsFiller1Template"
+                  Kind="Details"
+                  DataType="ActionsFillerItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value=" " />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="PricePerUnit"
+                    Kind="Value"
+                    DataType="Microsoft.LightSwitch.Extensions:Money?"
+                    View="Microsoft.LightSwitch.RichClient:Label">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Уровень" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[PricePerUnit]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Category1"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Category" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Name3"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Name" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Unit3"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Unit" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity3"
+                    Kind="Value"
+                    DataType=":Decimal">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Планируемое" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity21"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Количество на складах" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity2]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity11"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Разница" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="ActionsFillerItem/Properties[Quantity1]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="CloseQuants"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Закрыть" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="ПланированиеЗакупок/Methods[CloseQuants]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+        </ContentItem>
+        <ContentItem.CommandItems>
+          <ContentItem
+            Name="Save"
+            IsHidden="True"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ПланированиеЗакупок/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Name="Refresh"
+            IsHidden="True"
+            Kind="Command">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="ПланированиеЗакупок/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+      </ContentItem>
+    </Screen.RootContentItem>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Calculate" />
+      <ScreenMethod
+        Name="Clear" />
+      <ScreenMethod
+        Name="HideZero" />
+      <ScreenMethod
+        Name="CloseWaybill" />
+      <ScreenMethod
+        Name="ExportDataGrid" />
+      <ScreenMethod
+        Name="QuantsCompute" />
+      <ScreenMethod
+        Name="CloseQuants" />
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="MatsAndGoods"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoodsQuery"
+            ReturnType="MatsAndGoodsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Or">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="NotEqual">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="MatsAndGoodsItem/Properties[Category]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ConstantExpression
+                              Value="Материал"
+                              ResultType=":String" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="NotEqual">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="MatsAndGoodsItem/Properties[Category]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ConstantExpression
+                              Value="Блок"
+                              ResultType=":String" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="Equal">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsItem/Properties[Category]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ConstantExpression
+                          Value="Готовое изделие"
+                          ResultType=":String" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[MatsAndGoods]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Recipes"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$RecipesItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="RecipesQuery"
+            ReturnType="RecipesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[Recipes]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[Recipes]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="RecipesComponents"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$RecipesComponentsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="RecipesComponentsQuery"
+            ReturnType="RecipesComponentsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="RecipesComponentsItem/Properties[RecipesItem]" />
+                      <MemberExpression
+                        Member="ID" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="IDRecipe" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[RecipesComponents]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="IDRecipe"
+                IsOptional="True"
+                ParameterType=":Decimal?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[RecipesComponents]/Query">
+              <ArgumentExpression
+                Parameter="IDRecipe">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[IDRecipe]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="MatsAndGoodsQuantities"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsQuantitiesItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoodsQuantitiesQuery"
+            ReturnType="MatsAndGoodsQuantitiesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="MatsAndGoodsQuantitiesItem/Properties[MatsAndGoodsItem]" />
+                      <MemberExpression
+                        Member="ID" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="IDForTotalNum" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[MatsAndGoodsQuantities]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="IDForTotalNum"
+                IsOptional="True"
+                ParameterType=":Decimal?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[MatsAndGoodsQuantities]/Query">
+              <ArgumentExpression
+                Parameter="IDForTotalNum">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[IDForTotalNum]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="IDForTotalNum"
+        PropertyType=":Decimal?" />
+      <ScreenCollectionProperty
+        Name="MatsAndGoods1"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoods1Query"
+            ReturnType="MatsAndGoodsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="MatsAndGoodsItem/Properties[Category]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ConstantExpression
+                      Value="Материал"
+                      ResultType=":String" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[MatsAndGoods]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="IDRecipe"
+        PropertyType=":Decimal?" />
+      <ScreenCollectionProperty
+        Name="MatsAndGoods2"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoods2Query"
+            ReturnType="MatsAndGoodsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[MatsAndGoods]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[MatsAndGoods2]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Actions"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$ActionsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ActionsQuery"
+            ReturnType="ActionsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[Actions]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[Actions]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="ActionsFiller"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$ActionsFillerItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ActionsFillerQuery"
+            ReturnType="ActionsFillerItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[Actions]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="ActionsFiller" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[ActionsFiller]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Actions1"
+        DisablePaging="True"
+        PageSize="45"
+        PropertyType="CollectionView$ActionsItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="Actions1Query"
+            ReturnType="ActionsItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[Actions]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[Actions1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="ActionsFiller1"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$ActionsFillerItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="ActionsFiller1Query"
+            ReturnType="ActionsFillerItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[Actions1]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="ActionsFiller" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[ActionsFiller1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Screen
@@ -28774,11 +28948,11 @@
       Name="ScreenCommandShowMatsAndGoodsListDetail"
       Target="!module/Methods[ShowMatsAndGoodsListDetail]" />
     <ApplicationCommand
+      Name="ScreenCommandShowОтчетЛогДвижение"
+      Target="!module/Methods[ShowОтчетЛогДвижение]" />
+    <ApplicationCommand
       Name="ScreenCommandShowОтчетЛогКоличества"
       Target="!module/Methods[ShowОтчетЛогКоличества]" />
-    <ApplicationCommand
-      Name="ScreenCommandShowОтчетЛогПеремещенияИСоздание"
-      Target="!module/Methods[ShowОтчетЛогПеремещенияИСоздание]" />
   </Application.Commands>
   <Application.Methods>
     <ApplicationMethod
@@ -28838,10 +29012,10 @@
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
-      Name="ShowПланированиеЗакупок">
+      Name="ShowОтчетЛогДвижение">
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
-          TargetScreen="ПланированиеЗакупок" />
+          TargetScreen="ОтчетЛогДвижение" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
@@ -28849,13 +29023,6 @@
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
           TargetScreen="ОтчетЛогКоличества" />
-      </ApplicationMethod.Attributes>
-    </ApplicationMethod>
-    <ApplicationMethod
-      Name="ShowОтчетЛогПеремещенияИСоздание">
-      <ApplicationMethod.Attributes>
-        <ShowScreenMethod
-          TargetScreen="ОтчетЛогПеремещенияИСоздание" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
@@ -28870,6 +29037,13 @@
       <ApplicationMethod.Attributes>
         <ShowScreenMethod
           TargetScreen="ПеремещениеПриход2" />
+      </ApplicationMethod.Attributes>
+    </ApplicationMethod>
+    <ApplicationMethod
+      Name="ShowПланированиеЗакупок">
+      <ApplicationMethod.Attributes>
+        <ShowScreenMethod
+          TargetScreen="ПланированиеЗакупок" />
       </ApplicationMethod.Attributes>
     </ApplicationMethod>
     <ApplicationMethod
@@ -28940,12 +29114,6 @@
       <ApplicationNavigationLink
         Name="MatsAndGoodsListDetail"
         Command="!module/Commands[ScreenCommandShowMatsAndGoodsListDetail]" />
-      <ApplicationNavigationLink
-        Name="ОтчетЛогКоличества"
-        Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
-      <ApplicationNavigationLink
-        Name="ОтчетЛогПеремещенияИСоздание"
-        Command="!module/Commands[ScreenCommandShowОтчетЛогПеремещенияИСоздание]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">
@@ -28997,6 +29165,12 @@
       <ApplicationNavigationLink
         Name="ПланированиеЗакупок"
         Command="!module/Commands[ScreenCommandShowПланированиеЗакупок]" />
+      <ApplicationNavigationLink
+        Name="link3"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогДвижение]" />
+      <ApplicationNavigationLink
+        Name="link4"
+        Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

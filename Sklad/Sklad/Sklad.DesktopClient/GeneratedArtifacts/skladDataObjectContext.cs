@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Исходное имя файла:
-// Дата создания: 10.10.2017 12:54:58
+// Дата создания: 17.10.2017 20:20:05
 namespace LightSwitchApplication.Implementation
 {
     
@@ -833,10 +833,12 @@ namespace LightSwitchApplication.Implementation
                 "adi\" /><End Role=\"LogActionsAndCraft\" EntitySet=\"LogActionsAndCraft\" /></Associa" +
                 "tionSet><AssociationSet Name=\"FK_Actions_Suppliers\" Association=\"LightSwitchAppl" +
                 "ication.FK_Actions_Suppliers\"><End Role=\"Suppliers\" EntitySet=\"Suppliers\" /><End" +
-                " Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><FunctionImport Name=\"Mic" +
-                "rosoft_LightSwitch_GetCanInformation\" ReturnType=\"Edm.String\" m:HttpMethod=\"GET\"" +
-                "><Parameter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" /></FunctionIm" +
-                "port></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
+                " Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><FunctionImport Name=\"Wor" +
+                "kingSkladi\" ReturnType=\"Collection(LightSwitchApplication.SkladiItem)\" EntitySet" +
+                "=\"Skladi\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Microsoft_LightSwitch_GetCa" +
+                "nInformation\" ReturnType=\"Edm.String\" m:HttpMethod=\"GET\"><Parameter Name=\"dataSe" +
+                "rviceMembers\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport></EntityContainer><" +
+                "/Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {

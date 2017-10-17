@@ -1,9 +1,9 @@
 ﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Microsoft.LightSwitch.Client.Internal" EntryPointType="Microsoft.LightSwitch.Runtime.Shell.Implementation.App" RuntimeVersion="5.0.61118.0">
   <Deployment.OutOfBrowserSettings>
-    <OutOfBrowserSettings ShortName="Sklad_Adm" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
-      <OutOfBrowserSettings.Blurb>Sklad_Adm</OutOfBrowserSettings.Blurb>
+    <OutOfBrowserSettings ShortName="Sklad" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+      <OutOfBrowserSettings.Blurb>Sklad</OutOfBrowserSettings.Blurb>
       <OutOfBrowserSettings.WindowSettings>
-        <WindowSettings Title="Sklad_Adm" Top="0" Left="0" WindowStartupLocation="Manual" />
+        <WindowSettings Title="Sklad" Top="0" Left="0" WindowStartupLocation="Manual" />
       </OutOfBrowserSettings.WindowSettings>
       <OutOfBrowserSettings.SecuritySettings>
         <SecuritySettings ElevatedPermissions="Required" />

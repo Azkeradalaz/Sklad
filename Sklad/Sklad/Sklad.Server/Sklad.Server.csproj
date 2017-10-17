@@ -236,6 +236,9 @@
     <LightSwitchModel Include="DataSources\skladData\Responsible.lsml" />
     <LightSwitchModel Include="DataSources\skladData\LogActionsAndCraft.lsml" />
     <LightSwitchModel Include="DataSources\skladData\LogMatsAndGoodsQuantities.lsml" />
+    <LightSwitchModel Include="DataSources\skladData\WorkingSkladi.lsml">
+      <DependentUpon>Skladi.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

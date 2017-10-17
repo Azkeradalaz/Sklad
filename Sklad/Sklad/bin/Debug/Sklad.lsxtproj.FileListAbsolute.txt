@@ -49,7 +49,7 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\bin\ru\System.ServiceModel.Domain
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\bin\ru\System.ServiceModel.DomainServices.Hosting.OData.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\bin\ru\System.ServiceModel.DomainServices.Server.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\packages.config
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\skladData.svc
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\default.htm
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\Silverlight.js
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\web\Sklad.DesktopClient.xap
-D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\skladData.svc

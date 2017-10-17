@@ -50,4 +50,3 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\bin\Debug\ru\System.ServiceMod
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\bin\Debug\ru\System.ServiceModel.DomainServices.Server.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\obj\Debug\Application.Server.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\obj\Debug\Application.Server.pdb
-D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\obj\Debug\Sklad.Server.csprojResolveAssemblyReference.cache
