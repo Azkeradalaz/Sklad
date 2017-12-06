@@ -15,7 +15,6 @@
     <AzureManagementThumbprint />
     <SharePointServerToServerCertificatePassword />
     <SchemaManagementDatabaseIncludesSecurityObjects>True</SchemaManagementDatabaseIncludesSecurityObjects>
-    <GrantedPermissions>
-    </GrantedPermissions>
+    <GrantedPermissions>LightSwitchApplication:ViewBloki,LightSwitchApplication:ViewProducts,LightSwitchApplication:ViewCraftOut,LightSwitchApplication:ViewCraftIn,LightSwitchApplication:ViewMaterials,LightSwitchApplication:ViewRemains,LightSwitchApplication:ViewMoveOut,LightSwitchApplication:ViewMoveIn,LightSwitchApplication:ViewSuppliers,LightSwitchApplication:ViewWayBills,LightSwitchApplication:ViewStorages,LightSwitchApplication:ViewRecipes,LightSwitchApplication:ViewDefect,LightSwitchApplication:ViewQuantitiesReport,LightSwitchApplication:ViewReports,LightSwitchApplication:ViewAdminRed,Microsoft.LightSwitch.Security:SecurityAdministration</GrantedPermissions>
   </PropertyGroup>
 </Project>

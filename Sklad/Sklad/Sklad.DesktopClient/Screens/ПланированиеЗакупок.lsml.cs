@@ -26,6 +26,8 @@ namespace LightSwitchApplication
         private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQright = new Dictionary<MatsAndGoodsItem, decimal>();
         private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQleft = new Dictionary<MatsAndGoodsItem, decimal>();
         private Dictionary<MatsAndGoodsItem, decimal> tmpMAGQ = new Dictionary<MatsAndGoodsItem, decimal>();
+        private Dictionary<MatsAndGoodsItem, bool> tmpHasRecipe = new Dictionary<MatsAndGoodsItem, bool>();
+
 
         partial void ПланированиеЗакупок_Created()
         {
@@ -98,6 +100,20 @@ namespace LightSwitchApplication
             }
             IDForTotalNum = null;
             tmpMAGQ = MergeTwoDictionaries(tmpMAGQleft, tmpMAGQright);
+
+            foreach (MatsAndGoodsItem MAGI in this.MatsAndGoods2)//заполнение tmpHasRecipe
+            {
+                bool tmpBool = false;
+                foreach (RecipesItem RI in this.Recipes)
+                {
+                    if (RI.MatsAndGoodsItem.ID == MAGI.ID)
+                    {
+                        tmpBool = true;
+                        break;
+                    }
+                }
+                tmpHasRecipe.Add(MAGI, tmpBool);
+            }
 
         }
         private void MAGICalc(MatsAndGoodsItem M, decimal count)
@@ -379,40 +395,58 @@ namespace LightSwitchApplication
                          newMag1.Quantity1 = tmp2;
                          newMag1.Quantity2 = tmp4;
                          newMag1.PricePerUnit = _startLevel;
-                        
 
-                         foreach (RecipesItem RI1 in this.Recipes)// проверка нет ли у компонента рецепта
+                         foreach (KeyValuePair<MatsAndGoodsItem, bool> _hasRecipe in tmpHasRecipe)// проверка нет ли у компонента рецепта
                          {
-                             if (RCI.MatsAndGoodsItem.ID == RI1.MatsAndGoodsItem.ID)
+                             if (RCI.MatsAndGoodsItem.ID == _hasRecipe.Key.ID && _hasRecipe.Value == true)
                              {
-                                 ActDeeper = true;
                                  IDRecipe = null;
-                                 if (RCI.MatsAndGoodsItem.Category == "Материал")
-                                 {
-                                     ActDeeper = false;
-                                 }
-                                 if (ActDeeper)
-                                 {
-                                     foreach (MatsAndGoodsItem MM in this.MatsAndGoods2)
-                                     {
-                                         if (RCI.MatsAndGoodsItem == MM)
-                                         {
-                                             MAGICalc2(RI1.MatsAndGoodsItem, tmp, _quants, _startLevel + 1, _tmpDic);
+                                 MAGICalc2(_hasRecipe.Key, tmp, _quants, _startLevel + 1, _tmpDic);
+                                 break;
 
-                                             break;
-                                         }
-                                     }
-                                 }
+                             }
+                             else if (RCI.MatsAndGoodsItem.ID == _hasRecipe.Key.ID && _hasRecipe.Value == false)
+                             {
                                  break;
                              }
-                             ActDeeper = false;
+                                 
+                             
                          }
+                     }
+
+                         //foreach (RecipesItem RI1 in this.Recipes)// проверка нет ли у компонента рецепта
+                         //{
+                         //    if (RCI.MatsAndGoodsItem.ID == RI1.MatsAndGoodsItem.ID)
+                         //    {
+                         //        ActDeeper = true;
+                         //        IDRecipe = null;
+                         //        if (RCI.MatsAndGoodsItem.Category == "Материал")
+                         //        {
+                         //            ActDeeper = false;
+                         //        }
+                         //        if (ActDeeper)
+                         //        {
+                         //            foreach (MatsAndGoodsItem MM in this.MatsAndGoods2)
+                         //            {
+                         //                if (RCI.MatsAndGoodsItem == MM)
+                         //                {
+                         //                    MAGICalc2(RI1.MatsAndGoodsItem, tmp, _quants, _startLevel + 1, _tmpDic);
+
+                         //                    break;
+                         //                }
+                         //            }
+                         //        }
+                         //        break;
+                         //    }
+                         //    ActDeeper = false;
+                         //}
                      }
                  }
                  IDRecipe = null;
 
              }
-         }
+
+    
          partial void QuantsCompute_CanExecute(ref bool result)
          {
              result = QuantsHC.CanAdd();

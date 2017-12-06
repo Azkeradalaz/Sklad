@@ -1214,7 +1214,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Suppliers"
-        DisablePaging="True"
         DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$SuppliersItem">

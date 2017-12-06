@@ -1780,13 +1780,11 @@ namespace LightSwitchApplication
                     return null;
                 }
 
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
-                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
-                            loader,
-                            (m) => (m.SkladiItem.Status.CompareTo("Функционирует") == 0)),
-                        (m) => m.MatsAndGoodsItem.Name),
-                    "SkladiItem");
+                return global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                        loader,
+                        (m) => (m.SkladiItem.Status.CompareTo("Функционирует") == 0)),
+                    (m) => m.MatsAndGoodsItem.Name);
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoods1Query()
@@ -2771,13 +2769,11 @@ namespace LightSwitchApplication
                     return null;
                 }
 
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
-                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
-                            loader,
-                            (m) => (m.SkladiItem.Status.CompareTo("Функционирует") == 0)),
-                        (m) => m.MatsAndGoodsItem.Name),
-                    "SkladiItem");
+                return global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                        loader,
+                        (m) => (m.SkladiItem.Status.CompareTo("Функционирует") == 0)),
+                    (m) => m.MatsAndGoodsItem.Name);
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoods1Query()
@@ -7018,13 +7014,11 @@ namespace LightSwitchApplication
                     return null;
                 }
 
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
-                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
-                            loader,
-                            (m) => ((m.SkladiItem.Status.CompareTo("Функционирует") == 0) && ((SkladName == null) || m.SkladiItem.Name.Contains(SkladName)))),
-                        (m) => m.MatsAndGoodsItem.Name),
-                    "SkladiItem");
+                return global::Microsoft.LightSwitch.DataServiceQueryable.OrderBy(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                        loader,
+                        (m) => ((m.SkladiItem.Status.CompareTo("Функционирует") == 0) && ((SkladName == null) || m.SkladiItem.Name.Contains(SkladName)))),
+                    (m) => m.MatsAndGoodsItem.Name);
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoods1Query()
@@ -12566,7 +12560,7 @@ namespace LightSwitchApplication
             {
                 return global::Microsoft.LightSwitch.DataServiceQueryable.Where(
                     this.Screen.DataWorkspace.skladData.MatsAndGoods,
-                    (m) => ((((m.Category.CompareTo("Материал") == 0) == false) && ((m.Category.CompareTo("Блок") == 0) == false)) || (m.Category.CompareTo("Готовое изделие") == 0)));
+                    (m) => (m.Category.CompareTo("Готовое изделие") == 0));
             }
 
             private global::Microsoft.LightSwitch.IDataServiceQueryable RecipesQuery()
@@ -16649,9 +16643,7 @@ namespace LightSwitchApplication
                     return null;
                 }
 
-                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
-                    loader,
-                    "MatsAndGoodsItem");
+                return loader;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]

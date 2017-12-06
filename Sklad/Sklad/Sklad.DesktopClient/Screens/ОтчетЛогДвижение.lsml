@@ -356,7 +356,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="LogActionsAndCraft"
-        DisablePaging="True"
         PageSize="45"
         PropertyType="CollectionView$LogActionsAndCraftItem">
         <ScreenCollectionProperty.Query>

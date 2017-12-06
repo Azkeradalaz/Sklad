@@ -2239,7 +2239,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="CraftAction"
-        DisablePaging="True"
         DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$CraftActionItem">
@@ -2474,9 +2473,8 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Craft"
-        DisablePaging="True"
         DisableSearch="True"
-        PageSize="15"
+        PageSize="45"
         PropertyType="CollectionView$CraftItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -2508,9 +2506,8 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="CraftFiller"
-        DisablePaging="True"
         DisableSearch="True"
-        PageSize="15"
+        PageSize="45"
         PropertyType="CollectionView$CraftFillerItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition

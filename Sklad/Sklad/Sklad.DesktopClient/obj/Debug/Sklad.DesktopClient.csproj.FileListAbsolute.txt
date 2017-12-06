@@ -78,3 +78,4 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\System.Xml
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\Bin\Debug\ru\System.Spatial.SL.resources.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.pdb
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.DesktopClient\obj\Debug\Sklad.DesktopClient.csprojResolveAssemblyReference.cache

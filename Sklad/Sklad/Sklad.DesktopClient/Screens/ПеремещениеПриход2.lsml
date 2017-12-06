@@ -1101,7 +1101,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Actions"
-        DisablePaging="True"
         DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$ActionsItem">
@@ -1410,9 +1409,8 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="ActionsFiller"
-        DisablePaging="True"
         DisableSearch="True"
-        PageSize="15"
+        PageSize="45"
         PropertyType="CollectionView$ActionsFillerItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition

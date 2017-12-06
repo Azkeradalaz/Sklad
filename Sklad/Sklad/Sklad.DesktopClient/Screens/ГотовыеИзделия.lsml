@@ -240,152 +240,6 @@
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem
-              Name="Group5"
-              Kind="Group">
-              <ContentItem
-                Name="MatsAndGoodsQuantities"
-                Kind="Collection"
-                DataType="CollectionView$MatsAndGoodsQuantitiesItem">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Кол-во на складах" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="ГотовыеИзделия/Properties[MatsAndGoodsQuantities]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="MatsAndGoodsQuantitiesTemplate"
-                  Kind="Details"
-                  DataType="MatsAndGoodsQuantitiesItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="SkladiItem"
-                    Kind="Details"
-                    DataType="SkladiItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="SkladiItem1"
-                      Kind="Details"
-                      DataType="SkladiItem">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Quantity"
-                    Kind="Value"
-                    DataType=":Decimal?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="MatsAndGoodsQuantitiesItem/Properties[Quantity]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem.CommandItems>
-                  <ContentItem
-                    Name="MatsAndGoodsQuantities_AddAndEditNew"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ГотовыеИзделия/Properties[MatsAndGoodsQuantities]" />
-                          <CallExpression
-                            Target="AddAndEditNew" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="MatsAndGoodsQuantities_EditSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ГотовыеИзделия/Properties[MatsAndGoodsQuantities]" />
-                          <CallExpression
-                            Target="EditSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="MatsAndGoodsQuantities_DeleteSelected"
-                    IsHidden="True"
-                    Kind="Command">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="ГотовыеИзделия/Properties[MatsAndGoodsQuantities]" />
-                          <CallExpression
-                            Target="DeleteSelected" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem.CommandItems>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                    <ScreenExpressionTree>
-                      <ConstantExpression
-                        Value="False"
-                        ResultType=":Boolean" />
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsHorizontalScrollBarEnabled]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="True"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="True"
-                        ResultType=":Boolean" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
           </ContentItem>
           <ContentItem
             Name="NewMAG"
@@ -739,7 +593,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="MatsAndGoods"
-        DisablePaging="True"
         DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$MatsAndGoodsItem">
@@ -824,7 +677,6 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="MatsAndGoodsQuantities"
-        DisablePaging="True"
         DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$MatsAndGoodsQuantitiesItem">

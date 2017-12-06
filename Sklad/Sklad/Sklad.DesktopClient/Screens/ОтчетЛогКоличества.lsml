@@ -294,7 +294,6 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="LogMatsAndGoodsQuantities"
-        DisablePaging="True"
         PageSize="45"
         PropertyType="CollectionView$LogMatsAndGoodsQuantitiesItem">
         <ScreenCollectionProperty.Query>
