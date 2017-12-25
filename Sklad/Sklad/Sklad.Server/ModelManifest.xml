@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\ApplicationData\Table1ItemSet.lsml" Checksum="9A50303C5D77CF1355FD1CAF6601E2920D67F3B3B950CB6236F477BCB0D983F1" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Actions.lsml" Checksum="AABF39DF90A26C788FD80FE271D4D0353A6FFA71165D5824DC34DB266BA85D15" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\ActionsFiller.lsml" Checksum="E054A91661527446BA5239A5DEC22CEF0E14EE22AC75B0DB8B7787A342BBCDAE" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Craft.lsml" Checksum="5A6A02901DB63911766FB762084E11C3CD57206210472E1BBEE8548ABE7EEED3" />
@@ -8,15 +9,17 @@
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\CraftFiller.lsml" Checksum="422AD49FE6E314DC01DF3354918050963C30FBEF80F766B2DACE55354279E557" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\LogActionsAndCraft.lsml" Checksum="A951E16DF05FE3140E60B34AAB1992C5F6A7AE051FEBCEBACC83D7AE6231B9EB" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\LogMatsAndGoodsQuantities.lsml" Checksum="CEB659B550A157F6D386BB016A80DCEDFB7D5492064FCED48DF57107B3F35C39" />
-    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\MatsAndGoods.lsml" Checksum="2757EC09E35F816EDDA82671F7A43C3C30793689B6AF69EC8AD247AC630BC35E" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\MatsAndGoods.lsml" Checksum="D4A3797033BA066A50D530AD53933C7305601928418DD11A341FC2C551902959" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\MatsAndGoodsPrices.lsml" Checksum="17E002F89162301F45628BC379520228739BFFEF58E81F8C2C4D62655AE2D435" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\MatsAndGoodsQuantities.lsml" Checksum="9FFE53983080371D12593F58E07875242795146593EFB5A1021290751B8119FB" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Recipes.lsml" Checksum="44D3B27D06EB4430ED7E35ACAA8880FD2F82A273A2646D4191E03CEF41775A85" />
-    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\RecipesComponents.lsml" Checksum="EE4A1E866F999382550FA577183FCA80D939DE2E6B5E9A0A2596E5AC598D7821" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\RecipesComponents.lsml" Checksum="B42BD442B1493691082036BFC2774DEB2EF7361AE2E34A9817F2EE0A43ED1CCD" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Responsible.lsml" Checksum="F856A41FF71F44C4564FB0C12BD6A5BF9ECF4936F49DFAEAD63AD9B4E0B9F843" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Skladi.lsml" Checksum="5426FAB45454D19B0143A7B595C4ACBBCEFF6BC50DD2F992E03DFDA1458F4402" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\WorkingSkladi.lsml" Checksum="C219A35A1584633536746BCB402718C8EDE5D50179B57457D1AB075D1B6D2463" />
-    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Suppliers.lsml" Checksum="5835ED4C0C5A5B6E84F4BFBA4534CD4FFE445B0C73972370A8EBD7CF8640F0EF" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\DataSources\skladData\Suppliers.lsml" Checksum="46B7047C8E48C353184E5140B2A5496E4A962DB039743497DCA783AAAC8337F4" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\Properties\DataSources\ApplicationData.lsml" Checksum="986A4E2C3BC71E61B26C49DBB7451F9203AA85AB5825740AC6E35E7095E0722C" />
     <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\Properties\DataSources\skladData.lsml" Checksum="14508466EEF4D0EDB196541C8F0C0C5BCD4C05C196A341CF6EAE38AB62AEDDA2" />
-    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\Properties\Service.lsml" Checksum="CE243789E09A942BB3D1ED03E95266A349F2B7F67E0CB0E35C3236391AD7EC74" />
+    <Document FullPath="D:\VS_PRO\projects\Sklad\Sklad\Sklad\Sklad.Server\Properties\Service.lsml" Checksum="A14240A9C8871E1D4001BEA6BF688E87AB3885F55CF509ACBD4419CE8FA8AE8A" />
   </Documents>
 </ModelDocumentManifest>

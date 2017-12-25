@@ -53,3 +53,6 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\skladData.svc
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\default.htm
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\Silverlight.js
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\DesktopClient\web\Sklad.DesktopClient.xap
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\ApplicationData.svc
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\LogIn.aspx
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Debug\LogOut.aspx

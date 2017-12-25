@@ -34,12 +34,6 @@
         Target="ServiceInterface:RecipesItem" />
     </EntityType.Attributes>
   </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:RecipesComponentsItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <Association>
     <Association.Attributes>
       <Proxy
@@ -208,4 +202,28 @@
         Target="ServiceInterface:FK_LogActionsAndCraft_LogActionsAndCraft1" />
     </Association.Attributes>
   </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_MatsAndGoodsPrices_MatsAndGoodsPrices" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_MatsAndGoodsPrices_Suppliers" />
+    </Association.Attributes>
+  </Association>
+  <EntityContainer>
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:ApplicationData" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Table1Item" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

@@ -9,6 +9,7 @@
     <EntitySet Name="LogActionsAndCraft" EntityType="skladDataStore.LogActionsAndCraftItem" store:Type="Tables" Schema="dbo" Table="LogActionsAndCraft" />
     <EntitySet Name="LogMatsAndGoodsQuantities" EntityType="skladDataStore.LogMatsAndGoodsQuantitiesItem" store:Type="Tables" Schema="dbo" Table="LogMatsAndGoodsQuantities" />
     <EntitySet Name="MatsAndGoods" EntityType="skladDataStore.MatsAndGoodsItem" store:Type="Tables" Schema="dbo" Table="MatsAndGoods" />
+    <EntitySet Name="MatsAndGoodsPrices" EntityType="skladDataStore.MatsAndGoodsPricesItem" store:Type="Tables" Schema="dbo" Table="MatsAndGoodsPrices" />
     <EntitySet Name="MatsAndGoodsQuantities" EntityType="skladDataStore.MatsAndGoodsQuantitiesItem" store:Type="Tables" Schema="dbo" Table="MatsAndGoodsQuantities" />
     <EntitySet Name="Recipes" EntityType="skladDataStore.RecipesItem" store:Type="Tables" Schema="dbo" Table="Recipes" />
     <EntitySet Name="RecipesComponents" EntityType="skladDataStore.RecipesComponentsItem" store:Type="Tables" Schema="dbo" Table="RecipesComponents" />
@@ -55,6 +56,10 @@
       <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
       <End Role="LogMatsAndGoodsQuantities" EntitySet="LogMatsAndGoodsQuantities" />
     </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsPrices_MatsAndGoodsPrices" Association="skladDataStore.FK_MatsAndGoodsPrices_MatsAndGoodsPrices">
+      <End Role="MatsAndGoods" EntitySet="MatsAndGoods" />
+      <End Role="MatsAndGoodsPrices" EntitySet="MatsAndGoodsPrices" />
+    </AssociationSet>
     <AssociationSet Name="FK_RecipesComponents_Recipes" Association="skladDataStore.FK_RecipesComponents_Recipes">
       <End Role="Recipes" EntitySet="Recipes" />
       <End Role="RecipesComponents" EntitySet="RecipesComponents" />
@@ -98,6 +103,10 @@
     <AssociationSet Name="FK_Actions_Suppliers" Association="skladDataStore.FK_Actions_Suppliers">
       <End Role="Suppliers" EntitySet="Suppliers" />
       <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatsAndGoodsPrices_Suppliers" Association="skladDataStore.FK_MatsAndGoodsPrices_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="MatsAndGoodsPrices" EntitySet="MatsAndGoodsPrices" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="ActionsItem">
@@ -200,6 +209,16 @@
     <Property Name="TotalQuantity" Type="numeric" Scale="3" />
     <Property Name="TotalQuantityNeeded" Type="numeric" Scale="3" />
     <Property Name="TotalQuantityDifference" Type="numeric" Scale="3" />
+  </EntityType>
+  <EntityType Name="MatsAndGoodsPricesItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="decimal" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LastPrice" Type="numeric" Scale="3" />
+    <Property Name="LastDate" Type="datetime" />
+    <Property Name="MAGID" Type="decimal" Nullable="false" />
+    <Property Name="SupplierID" Type="decimal" />
   </EntityType>
   <EntityType Name="MatsAndGoodsQuantitiesItem">
     <Key>
@@ -408,6 +427,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_MatsAndGoodsPrices_MatsAndGoodsPrices">
+    <End Role="MatsAndGoods" Type="skladDataStore.MatsAndGoodsItem" Multiplicity="1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="MatsAndGoodsPrices" Type="skladDataStore.MatsAndGoodsPricesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatsAndGoods">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsPrices">
+        <PropertyRef Name="MAGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RecipesComponents_Recipes">
     <End Role="Recipes" Type="skladDataStore.RecipesItem" Multiplicity="1">
       <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
@@ -558,6 +591,20 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Actions">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatsAndGoodsPrices_Suppliers">
+    <End Role="Suppliers" Type="skladDataStore.SuppliersItem" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Unset" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="MatsAndGoodsPrices" Type="skladDataStore.MatsAndGoodsPricesItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MatsAndGoodsPrices">
         <PropertyRef Name="SupplierID" />
       </Dependent>
     </ReferentialConstraint>

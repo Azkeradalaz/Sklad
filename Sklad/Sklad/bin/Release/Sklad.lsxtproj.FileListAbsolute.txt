@@ -55,3 +55,4 @@ D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\bin\OfficeIntegration.Common.dl
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\bin\OfficeIntegration.Server.dll
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\LogIn.aspx
 D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\LogOut.aspx
+D:\VS_PRO\projects\Sklad\Sklad\Sklad\bin\Release\ApplicationData.svc

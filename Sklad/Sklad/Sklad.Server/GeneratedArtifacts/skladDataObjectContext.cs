@@ -29,6 +29,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_CraftFiller_MatsAndGoods", "MatsAndGoods", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.MatsAndGoodsItem), "CraftFiller", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.CraftFillerItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_LogActionsAndCraft_MatsAndGoods", "MatsAndGoods", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.MatsAndGoodsItem), "LogActionsAndCraft", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.LogActionsAndCraftItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_LogMatsAndGoodsQuantities_MatsAndGoods", "MatsAndGoods", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.MatsAndGoodsItem), "LogMatsAndGoodsQuantities", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.LogMatsAndGoodsQuantitiesItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.MatsAndGoodsItem), "MatsAndGoodsPrices", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.MatsAndGoodsPricesItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_RecipesComponents_Recipes", "Recipes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LightSwitchApplication.Implementation.RecipesItem), "RecipesComponents", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.RecipesComponentsItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_Craft_Recipes", "Recipes", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.RecipesItem), "Craft", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.CraftItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_CraftAction_Responsible", "Responsible", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.ResponsibleItem), "CraftAction", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.CraftActionItem), true)]
@@ -40,6 +41,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_LogMatsAndGoodsQuantities_Skladi", "Skladi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.SkladiItem), "LogMatsAndGoodsQuantities", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.LogMatsAndGoodsQuantitiesItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_LogActionsAndCraft_LogActionsAndCraft1", "Skladi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.SkladiItem), "LogActionsAndCraft", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.LogActionsAndCraftItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_Actions_Suppliers", "Suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.SuppliersItem), "Actions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.ActionsItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_Suppliers", "Suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(LightSwitchApplication.Implementation.SuppliersItem), "MatsAndGoodsPrices", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LightSwitchApplication.Implementation.MatsAndGoodsPricesItem), true)]
 
 #endregion
 
@@ -219,6 +221,22 @@ namespace LightSwitchApplication.Implementation
         /// <summary>
         /// Нет доступной документации по метаданным.
         /// </summary>
+        public ObjectSet<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                if ((_MatsAndGoodsPrices == null))
+                {
+                    _MatsAndGoodsPrices = base.CreateObjectSet<MatsAndGoodsPricesItem>("MatsAndGoodsPrices");
+                }
+                return _MatsAndGoodsPrices;
+            }
+        }
+        private ObjectSet<MatsAndGoodsPricesItem> _MatsAndGoodsPrices;
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
         public ObjectSet<MatsAndGoodsQuantitiesItem> MatsAndGoodsQuantities
         {
             get
@@ -378,6 +396,14 @@ namespace LightSwitchApplication.Implementation
         public void AddToMatsAndGoods(MatsAndGoodsItem matsAndGoodsItem)
         {
             base.AddObject("MatsAndGoods", matsAndGoodsItem);
+        }
+    
+        /// <summary>
+        /// Устаревший метод для добавления новых объектов в набор EntitySet MatsAndGoodsPrices. Взамен можно использовать метод .Add связанного свойства ObjectSet&lt;T&gt;.
+        /// </summary>
+        public void AddToMatsAndGoodsPrices(MatsAndGoodsPricesItem matsAndGoodsPricesItem)
+        {
+            base.AddObject("MatsAndGoodsPrices", matsAndGoodsPricesItem);
         }
     
         /// <summary>
@@ -3003,6 +3029,263 @@ namespace LightSwitchApplication.Implementation
                 }
             }
         }
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoodsPrices")]
+        public EntityCollection<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MatsAndGoodsPricesItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoodsPrices");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MatsAndGoodsPricesItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoodsPrices", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// Нет доступной документации по метаданным.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="MatsAndGoodsPricesItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class MatsAndGoodsPricesItem : EntityObject
+    {
+        #region Фабричный метод
+    
+        /// <summary>
+        /// Создание нового объекта MatsAndGoodsPricesItem.
+        /// </summary>
+        /// <param name="id">Исходное значение свойства ID.</param>
+        /// <param name="mAGID">Исходное значение свойства MAGID.</param>
+        public static MatsAndGoodsPricesItem CreateMatsAndGoodsPricesItem(global::System.Decimal id, global::System.Decimal mAGID)
+        {
+            MatsAndGoodsPricesItem matsAndGoodsPricesItem = new MatsAndGoodsPricesItem();
+            matsAndGoodsPricesItem.ID = id;
+            matsAndGoodsPricesItem.MAGID = mAGID;
+            return matsAndGoodsPricesItem;
+        }
+
+        #endregion
+
+        #region Свойства-примитивы
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = value;
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Decimal _ID;
+        partial void OnIDChanging(global::System.Decimal value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> LastPrice
+        {
+            get
+            {
+                return _LastPrice;
+            }
+            set
+            {
+                OnLastPriceChanging(value);
+                ReportPropertyChanging("LastPrice");
+                _LastPrice = value;
+                ReportPropertyChanged("LastPrice");
+                OnLastPriceChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _LastPrice;
+        partial void OnLastPriceChanging(Nullable<global::System.Decimal> value);
+        partial void OnLastPriceChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> LastDate
+        {
+            get
+            {
+                return _LastDate;
+            }
+            set
+            {
+                OnLastDateChanging(value);
+                ReportPropertyChanging("LastDate");
+                _LastDate = value;
+                ReportPropertyChanged("LastDate");
+                OnLastDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _LastDate;
+        partial void OnLastDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnLastDateChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal MAGID
+        {
+            get
+            {
+                return _MAGID;
+            }
+            set
+            {
+                OnMAGIDChanging(value);
+                ReportPropertyChanging("MAGID");
+                _MAGID = value;
+                ReportPropertyChanged("MAGID");
+                OnMAGIDChanged();
+            }
+        }
+        private global::System.Decimal _MAGID;
+        partial void OnMAGIDChanging(global::System.Decimal value);
+        partial void OnMAGIDChanged();
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> SupplierID
+        {
+            get
+            {
+                return _SupplierID;
+            }
+            set
+            {
+                OnSupplierIDChanging(value);
+                ReportPropertyChanging("SupplierID");
+                _SupplierID = value;
+                ReportPropertyChanged("SupplierID");
+                OnSupplierIDChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _SupplierID;
+        partial void OnSupplierIDChanging(Nullable<global::System.Decimal> value);
+        partial void OnSupplierIDChanged();
+
+        #endregion
+
+    
+        #region Свойства навигации
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods")]
+        public MatsAndGoodsItem MatsAndGoodsItem
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MatsAndGoodsItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MatsAndGoodsItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods").Value = value;
+            }
+        }
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<MatsAndGoodsItem> MatsAndGoodsItemReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<MatsAndGoodsItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<MatsAndGoodsItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_MatsAndGoodsPrices", "MatsAndGoods", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_Suppliers", "Suppliers")]
+        public SuppliersItem SuppliersItem
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SuppliersItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "Suppliers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SuppliersItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "Suppliers").Value = value;
+            }
+        }
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<SuppliersItem> SuppliersItemReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SuppliersItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "Suppliers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SuppliersItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "Suppliers", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -4594,6 +4877,28 @@ namespace LightSwitchApplication.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ActionsItem>("LightSwitchApplication.FK_Actions_Suppliers", "Actions", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Нет доступной документации по метаданным.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_MatsAndGoodsPrices_Suppliers", "MatsAndGoodsPrices")]
+        public EntityCollection<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<MatsAndGoodsPricesItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "MatsAndGoodsPrices");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<MatsAndGoodsPricesItem>("LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers", "MatsAndGoodsPrices", value);
                 }
             }
         }

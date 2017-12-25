@@ -174,6 +174,11 @@
         Association="FK_LogMatsAndGoodsQuantities_MatsAndGoods"
         FromEnd="MatsAndGoods"
         ToEnd="LogMatsAndGoodsQuantities" />
+      <NavigationProperty
+        Name="MatsAndGoodsPrices"
+        Association="FK_MatsAndGoodsPrices_MatsAndGoodsPrices"
+        FromEnd="MatsAndGoods"
+        ToEnd="MatsAndGoodsPrices" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -337,6 +342,16 @@
         Name="LogMatsAndGoodsQuantities"
         EntitySet="LogMatsAndGoodsQuantities" />
     </AssociationSet>
+    <AssociationSet
+      Name="FK_MatsAndGoodsPrices_MatsAndGoodsPrices"
+      Association="FK_MatsAndGoodsPrices_MatsAndGoodsPrices">
+      <AssociationSetEnd
+        Name="MatsAndGoods"
+        EntitySet="MatsAndGoods" />
+      <AssociationSetEnd
+        Name="MatsAndGoodsPrices"
+        EntitySet="MatsAndGoodsPrices" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_MatsAndGoodsQuantities_MatsAndGoods">
@@ -437,6 +452,21 @@
       Name="LogMatsAndGoodsQuantities"
       Multiplicity="Many"
       EntityType="LogMatsAndGoodsQuantitiesItem" />
+  </Association>
+  <Association
+    Name="FK_MatsAndGoodsPrices_MatsAndGoodsPrices">
+    <AssociationEnd
+      Name="MatsAndGoods"
+      Multiplicity="One"
+      EntityType="MatsAndGoodsItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MatsAndGoodsPrices"
+      Multiplicity="Many"
+      EntityType="MatsAndGoodsPricesItem" />
   </Association>
   <DataService
     Name="skladDataDataService">
@@ -590,6 +620,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="MatsAndGoodsItemID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MatsAndGoodsPrices_MatsAndGoodsPrices">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MatsAndGoodsPrices_MatsAndGoodsPrices" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsPrices_MatsAndGoodsPrices]/Members[MatsAndGoods]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsPrices_MatsAndGoodsPrices]/Members[MatsAndGoodsPrices]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="MAGID" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

@@ -13,6 +13,67 @@ namespace LightSwitchApplication.Implementation
 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public class ApplicationDataDataService
+        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataService<global::LightSwitchApplication.Implementation.ApplicationData>
+    {
+    
+        public ApplicationDataDataService() : base()
+        {
+        }
+    
+        protected override global::Microsoft.LightSwitch.IDataService GetDataService(global::Microsoft.LightSwitch.IDataWorkspace dataWorkspace)
+        {
+            return ((global::LightSwitchApplication.DataWorkspace)dataWorkspace).ApplicationData;
+        }
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public class ApplicationDataServiceImplementation
+        : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataServiceImplementation<global::LightSwitchApplication.Implementation.ApplicationData>
+    {
+        public ApplicationDataServiceImplementation(global::Microsoft.LightSwitch.IDataService dataService) : base(dataService)
+        {
+        }
+    
+    #region Queries
+    #endregion
+
+    #region Protected Methods
+        protected override object CreateObject(global::System.Type type)
+        {
+            if (type == typeof(global::LightSwitchApplication.Implementation.Table1Item))
+            {
+                return new global::LightSwitchApplication.Implementation.Table1Item();
+            }
+    
+            return base.CreateObject(type);
+        }
+    
+        protected override global::LightSwitchApplication.Implementation.ApplicationData CreateObjectContext()
+        {
+            string assemblyName = global::System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+            return new global::LightSwitchApplication.Implementation.ApplicationData(this.GetEntityConnectionString(
+                "_IntrinsicData",
+                "res://" + assemblyName + "/ApplicationData.csdl|res://" + assemblyName + "/ApplicationData.ssdl|res://" + assemblyName + "/ApplicationData.msl",
+                "System.Data.SqlClient",
+                true));
+        }
+    
+        protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
+        {
+            if (typeof(T) == typeof(global::LightSwitchApplication.Table1Item))
+            {
+                return new global::LightSwitchApplication.Implementation.Table1Item();
+            }
+            return null;
+        }
+    
+    #endregion
+    
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public class skladDataDataService
         : global::Microsoft.LightSwitch.ServerGenerated.Implementation.DataService<global::LightSwitchApplication.Implementation.skladData>
     {
@@ -82,6 +143,10 @@ namespace LightSwitchApplication.Implementation
             if (type == typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsItem))
             {
                 return new global::LightSwitchApplication.Implementation.MatsAndGoodsItem();
+            }
+            if (type == typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsPricesItem))
+            {
+                return new global::LightSwitchApplication.Implementation.MatsAndGoodsPricesItem();
             }
             if (type == typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsQuantitiesItem))
             {
@@ -155,6 +220,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::LightSwitchApplication.Implementation.MatsAndGoodsItem();
             }
+            if (typeof(T) == typeof(global::LightSwitchApplication.MatsAndGoodsPricesItem))
+            {
+                return new global::LightSwitchApplication.Implementation.MatsAndGoodsPricesItem();
+            }
             if (typeof(T) == typeof(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem))
             {
                 return new global::LightSwitchApplication.Implementation.MatsAndGoodsQuantitiesItem();
@@ -197,6 +266,10 @@ namespace LightSwitchApplication.Implementation
     
         protected override global::Microsoft.LightSwitch.IDataService CreateDataService(global::System.Type dataServiceType)
         {
+            if (dataServiceType == typeof(global::LightSwitchApplication.ApplicationDataService))
+            {
+                return new global::LightSwitchApplication.ApplicationDataService();
+            }
             if (dataServiceType == typeof(global::LightSwitchApplication.skladDataService))
             {
                 return new global::LightSwitchApplication.skladDataService();
@@ -206,6 +279,10 @@ namespace LightSwitchApplication.Implementation
     
         protected override global::Microsoft.LightSwitch.Internal.IDataServiceImplementation CreateDataServiceImplementation<TDataService>(TDataService dataService)
         {
+            if (typeof(TDataService) == typeof(global::LightSwitchApplication.ApplicationDataService))
+            {
+                return new global::LightSwitchApplication.Implementation.ApplicationDataServiceImplementation(dataService);
+            }
             if (typeof(TDataService) == typeof(global::LightSwitchApplication.skladDataService))
             {
                 return new global::LightSwitchApplication.Implementation.skladDataServiceImplementation(dataService);
@@ -224,6 +301,10 @@ namespace LightSwitchApplication.Implementation
     {
         global::System.Type global::Microsoft.LightSwitch.Internal.ITypeMappingProvider.GetImplementationType(global::System.Type definitionType)
         {
+            if (typeof(global::LightSwitchApplication.Table1Item) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.Table1Item);
+            }
             if (typeof(global::LightSwitchApplication.ActionsItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.ActionsItem);
@@ -256,6 +337,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsItem);
             }
+            if (typeof(global::LightSwitchApplication.MatsAndGoodsPricesItem) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsPricesItem);
+            }
             if (typeof(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.MatsAndGoodsQuantitiesItem);
@@ -283,6 +368,41 @@ namespace LightSwitchApplication.Implementation
             return null;
         }
     }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class Table1Item :
+        global::LightSwitchApplication.Table1Item.DetailsClass.IImplementation,
+        global::Microsoft.LightSwitch.Internal.ICreatedModifiedPropertiesImplementation
+    
+    {
+    
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class ActionsItem :
@@ -960,6 +1080,95 @@ namespace LightSwitchApplication.Implementation
             }
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.IImplementation.MatsAndGoodsPrices
+        {
+            get
+            {
+                return this.MatsAndGoodsPrices;
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class MatsAndGoodsPricesItem :
+        global::LightSwitchApplication.MatsAndGoodsPricesItem.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.MatsAndGoodsPricesItem.DetailsClass.IImplementation.MatsAndGoodsItem
+        {
+            get
+            {
+                return this.MatsAndGoodsItem;
+            }
+            set
+            {
+                this.MatsAndGoodsItem = (global::LightSwitchApplication.Implementation.MatsAndGoodsItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("MatsAndGoodsItem");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.MatsAndGoodsPricesItem.DetailsClass.IImplementation.SuppliersItem
+        {
+            get
+            {
+                return this.SuppliersItem;
+            }
+            set
+            {
+                this.SuppliersItem = (global::LightSwitchApplication.Implementation.SuppliersItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("SuppliersItem");
+                }
+            }
+        }
+        
+        partial void OnMAGIDChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("MatsAndGoodsItem");
+            }
+        }
+        
+        partial void OnSupplierIDChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("SuppliersItem");
+            }
+        }
+        
         #region IEntityImplementation Members
         private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
         
@@ -1387,6 +1596,14 @@ namespace LightSwitchApplication.Implementation
             get
             {
                 return this.Actions;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.SuppliersItem.DetailsClass.IImplementation.MatsAndGoodsPrices
+        {
+            get
+            {
+                return this.MatsAndGoodsPrices;
             }
         }
         

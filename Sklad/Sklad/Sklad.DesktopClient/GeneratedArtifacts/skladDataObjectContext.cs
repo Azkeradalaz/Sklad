@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Исходное имя файла:
-// Дата создания: 17.10.2017 20:20:05
+// Дата создания: 21.12.2017 15:59:38
 namespace LightSwitchApplication.Implementation
 {
     
@@ -197,6 +197,23 @@ namespace LightSwitchApplication.Implementation
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceQuery<MatsAndGoodsItem> _MatsAndGoods;
         /// <summary>
+        /// В схеме отсутствуют комментарии для MatsAndGoodsPrices.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceQuery<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                if ((this._MatsAndGoodsPrices == null))
+                {
+                    this._MatsAndGoodsPrices = base.CreateQuery<MatsAndGoodsPricesItem>("MatsAndGoodsPrices");
+                }
+                return this._MatsAndGoodsPrices;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<MatsAndGoodsPricesItem> _MatsAndGoodsPrices;
+        /// <summary>
         /// В схеме отсутствуют комментарии для MatsAndGoodsQuantities.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -361,6 +378,14 @@ namespace LightSwitchApplication.Implementation
         public void AddToMatsAndGoods(MatsAndGoodsItem matsAndGoodsItem)
         {
             base.AddObject("MatsAndGoods", matsAndGoodsItem);
+        }
+        /// <summary>
+        /// В схеме отсутствуют комментарии для MatsAndGoodsPrices.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToMatsAndGoodsPrices(MatsAndGoodsPricesItem matsAndGoodsPricesItem)
+        {
+            base.AddObject("MatsAndGoodsPrices", matsAndGoodsPricesItem);
         }
         /// <summary>
         /// В схеме отсутствуют комментарии для MatsAndGoodsQuantities.
@@ -555,290 +580,325 @@ namespace LightSwitchApplication.Implementation
                 "ationship=\"LightSwitchApplication.FK_LogActionsAndCraft_MatsAndGoods\" ToRole=\"Lo" +
                 "gActionsAndCraft\" FromRole=\"MatsAndGoods\" /><NavigationProperty Name=\"LogMatsAnd" +
                 "GoodsQuantities\" Relationship=\"LightSwitchApplication.FK_LogMatsAndGoodsQuantiti" +
-                "es_MatsAndGoods\" ToRole=\"LogMatsAndGoodsQuantities\" FromRole=\"MatsAndGoods\" /></" +
-                "EntityType><EntityType Name=\"MatsAndGoodsQuantitiesItem\"><Key><PropertyRef Name=" +
-                "\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"" +
-                "18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Quan" +
-                "tity\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"3\" ConcurrencyMode=\"Fixed\" /><Pro" +
-                "perty Name=\"MatsAndGoodID\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"0\" Concurren" +
-                "cyMode=\"Fixed\" /><Property Name=\"SkladID\" Type=\"Edm.Decimal\" Precision=\"18\" Scal" +
-                "e=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"MatsAndGoodsItem\" Rela" +
-                "tionship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods\" ToRole=" +
-                "\"MatsAndGoods\" FromRole=\"MatsAndGoodsQuantities\" /><NavigationProperty Name=\"Skl" +
-                "adiItem\" Relationship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi\" " +
-                "ToRole=\"Skladi\" FromRole=\"MatsAndGoodsQuantities\" /></EntityType><EntityType Nam" +
-                "e=\"RecipesItem\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"DoneID\" Type" +
-                "=\"Edm.Decimal\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name" +
-                "=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annotation:St" +
-                "oreGeneratedPattern=\"Identity\" /><Property Name=\"QuantityDone\" Type=\"Edm.Decimal" +
-                "\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"M" +
-                "atsAndGoodsItem\" Relationship=\"LightSwitchApplication.FK_Recipes_MatsAndGoods\" T" +
-                "oRole=\"MatsAndGoods\" FromRole=\"Recipes\" /><NavigationProperty Name=\"RecipesCompo" +
-                "nents\" Relationship=\"LightSwitchApplication.FK_RecipesComponents_Recipes\" ToRole" +
-                "=\"RecipesComponents\" FromRole=\"Recipes\" /><NavigationProperty Name=\"Craft\" Relat" +
-                "ionship=\"LightSwitchApplication.FK_Craft_Recipes\" ToRole=\"Craft\" FromRole=\"Recip" +
-                "es\" /></EntityType><EntityType Name=\"RecipesComponentsItem\"><Key><PropertyRef Na" +
-                "me=\"ID\" /></Key><Property Name=\"ComponentID\" Type=\"Edm.Decimal\" Nullable=\"false\"" +
-                " Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ID\" Type=\"Ed" +
-                "m.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annotation:StoreGeneratedPa" +
-                "ttern=\"Identity\" /><Property Name=\"Quantity\" Type=\"Edm.Decimal\" Nullable=\"false\"" +
-                " Precision=\"18\" Scale=\"3\" ConcurrencyMode=\"Fixed\" /><Property Name=\"RecipeID\" Ty" +
-                "pe=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixe" +
-                "d\" /><NavigationProperty Name=\"MatsAndGoodsItem\" Relationship=\"LightSwitchApplic" +
-                "ation.FK_RecipesComponents_MatsAndGoods\" ToRole=\"MatsAndGoods\" FromRole=\"Recipes" +
-                "Components\" /><NavigationProperty Name=\"RecipesItem\" Relationship=\"LightSwitchAp" +
-                "plication.FK_RecipesComponents_Recipes\" ToRole=\"Recipes\" FromRole=\"RecipesCompon" +
-                "ents\" /></EntityType><EntityType Name=\"ResponsibleItem\"><Key><PropertyRef Name=\"" +
-                "ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"1" +
-                "8\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Name\"" +
-                " Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" ConcurrencyMode=\"Fixed\" /><P" +
-                "roperty Name=\"SkladID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=" +
-                "\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Note\" Type=\"Edm.String\" MaxLength=" +
-                "\"100\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"CraftAction\" Relations" +
-                "hip=\"LightSwitchApplication.FK_CraftAction_Responsible\" ToRole=\"CraftAction\" Fro" +
-                "mRole=\"Responsible\" /><NavigationProperty Name=\"SkladiItem\" Relationship=\"LightS" +
-                "witchApplication.FK_Responsible_Skladi\" ToRole=\"Skladi\" FromRole=\"Responsible\" /" +
-                "></EntityType><EntityType Name=\"SkladiItem\"><Key><PropertyRef Name=\"ID\" /></Key>" +
-                "<Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\"" +
-                " annotation:StoreGeneratedPattern=\"Identity\" /><Property Name=\"Name\" Type=\"Edm.S" +
-                "tring\" Nullable=\"false\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=" +
-                "\"Adress\" Type=\"Edm.String\" MaxLength=\"100\" ConcurrencyMode=\"Fixed\" /><Property N" +
-                "ame=\"Note\" Type=\"Edm.String\" MaxLength=\"Max\" ConcurrencyMode=\"Fixed\" /><Property" +
-                " Name=\"Status\" Type=\"Edm.String\" MaxLength=\"20\" Concurrency";
+                "es_MatsAndGoods\" ToRole=\"LogMatsAndGoodsQuantities\" FromRole=\"MatsAndGoods\" /><N" +
+                "avigationProperty Name=\"MatsAndGoodsPrices\" Relationship=\"LightSwitchApplication" +
+                ".FK_MatsAndGoodsPrices_MatsAndGoodsPrices\" ToRole=\"MatsAndGoodsPrices\" FromRole=" +
+                "\"MatsAndGoods\" /></EntityType><EntityType Name=\"MatsAndGoodsPricesItem\"><Key><Pr" +
+                "opertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"fal" +
+                "se\" Precision=\"18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Identity\" /><Prop" +
+                "erty Name=\"LastPrice\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"3\" ConcurrencyMod" +
+                "e=\"Fixed\" /><Property Name=\"LastDate\" Type=\"Edm.DateTime\" Precision=\"3\" Concurre" +
+                "ncyMode=\"Fixed\" /><Property Name=\"MAGID\" Type=\"Edm.Decimal\" Nullable=\"false\" Pre" +
+                "cision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"SupplierID\" Type" +
+                "=\"Edm.Decimal\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationPro" +
+                "perty Name=\"MatsAndGoodsItem\" Relationship=\"LightSwitchApplication.FK_MatsAndGoo" +
+                "dsPrices_MatsAndGoodsPrices\" ToRole=\"MatsAndGoods\" FromRole=\"MatsAndGoodsPrices\"" +
+                " /><NavigationProperty Name=\"SuppliersItem\" Relationship=\"LightSwitchApplication" +
+                ".FK_MatsAndGoodsPrices_Suppliers\" ToRole=\"Suppliers\" FromRole=\"MatsAndGoodsPrice" +
+                "s\" /></EntityType><EntityType Name=\"MatsAndGoodsQuantitiesItem\"><Key><PropertyRe" +
+                "f Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Prec" +
+                "ision=\"18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Identity\" /><Property Nam" +
+                "e=\"Quantity\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"3\" ConcurrencyMode=\"Fixed\"" +
+                " /><Property Name=\"MatsAndGoodID\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"0\" Co" +
+                "ncurrencyMode=\"Fixed\" /><Property Name=\"SkladID\" Type=\"Edm.Decimal\" Precision=\"1" +
+                "8\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"MatsAndGoodsIte" +
+                "m\" Relationship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods\" " +
+                "ToRole=\"MatsAndGoods\" FromRole=\"MatsAndGoodsQuantities\" /><NavigationProperty Na" +
+                "me=\"SkladiItem\" Relationship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_S" +
+                "kladi\" ToRole=\"Skladi\" FromRole=\"MatsAndGoodsQuantities\" /></EntityType><EntityT" +
+                "ype Name=\"RecipesItem\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"DoneI" +
+                "D\" Type=\"Edm.Decimal\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Proper" +
+                "ty Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annota" +
+                "tion:StoreGeneratedPattern=\"Identity\" /><Property Name=\"QuantityDone\" Type=\"Edm." +
+                "Decimal\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><NavigationProperty " +
+                "Name=\"MatsAndGoodsItem\" Relationship=\"LightSwitchApplication.FK_Recipes_MatsAndG" +
+                "oods\" ToRole=\"MatsAndGoods\" FromRole=\"Recipes\" /><NavigationProperty Name=\"Recip" +
+                "esComponents\" Relationship=\"LightSwitchApplication.FK_RecipesComponents_Recipes\"" +
+                " ToRole=\"RecipesComponents\" FromRole=\"Recipes\" /><NavigationProperty Name=\"Craft" +
+                "\" Relationship=\"LightSwitchApplication.FK_Craft_Recipes\" ToRole=\"Craft\" FromRole" +
+                "=\"Recipes\" /></EntityType><EntityType Name=\"RecipesComponentsItem\"><Key><Propert" +
+                "yRef Name=\"ID\" /></Key><Property Name=\"ComponentID\" Type=\"Edm.Decimal\" Nullable=" +
+                "\"false\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"ID\" T" +
+                "ype=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annotation:StoreGene" +
+                "ratedPattern=\"Identity\" /><Property Name=\"Quantity\" Type=\"Edm.Decimal\" Nullable=" +
+                "\"false\" Precision=\"18\" Scale=\"3\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Recip" +
+                "eID\" Type=\"Edm.Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" ConcurrencyMod" +
+                "e=\"Fixed\" /><NavigationProperty Name=\"MatsAndGoodsItem\" Relationship=\"LightSwitc" +
+                "hApplication.FK_RecipesComponents_MatsAndGoods\" ToRole=\"MatsAndGoods\" FromRole=\"" +
+                "RecipesComponents\" /><NavigationProperty Name=\"RecipesItem\" Relationship=\"LightS" +
+                "witchApplication.FK_RecipesComponents_Recipes\" ToRole=\"Recipes\" FromRole=\"Recipe" +
+                "sComponents\" /></EntityType><EntityType Name=\"ResponsibleItem\"><Key><PropertyRef" +
+                " Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"false\" Preci" +
+                "sion=\"18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Ident";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart2 = "Mode=\"Fixed\" /><NavigationProperty Name=\"Actions\" Relationship=\"LightSwitchApplic" +
-                "ation.FK_Actions_Skladi\" ToRole=\"Actions\" FromRole=\"Skladi\" /><NavigationPropert" +
-                "y Name=\"Actions1\" Relationship=\"LightSwitchApplication.FK_Actions_Skladi1\" ToRol" +
-                "e=\"Actions\" FromRole=\"Skladi\" /><NavigationProperty Name=\"MatsAndGoodsQuantities" +
-                "\" Relationship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi\" ToRole=" +
-                "\"MatsAndGoodsQuantities\" FromRole=\"Skladi\" /><NavigationProperty Name=\"CraftActi" +
-                "on\" Relationship=\"LightSwitchApplication.FK_CraftAction_Skladi\" ToRole=\"CraftAct" +
-                "ion\" FromRole=\"Skladi\" /><NavigationProperty Name=\"Responsible\" Relationship=\"Li" +
-                "ghtSwitchApplication.FK_Responsible_Skladi\" ToRole=\"Responsible\" FromRole=\"Sklad" +
-                "i\" /><NavigationProperty Name=\"LogMatsAndGoodsQuantities\" Relationship=\"LightSwi" +
-                "tchApplication.FK_LogMatsAndGoodsQuantities_Skladi\" ToRole=\"LogMatsAndGoodsQuant" +
-                "ities\" FromRole=\"Skladi\" /><NavigationProperty Name=\"LogActionsAndCraft\" Relatio" +
-                "nship=\"LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1\" ToRole=" +
-                "\"LogActionsAndCraft\" FromRole=\"Skladi\" /></EntityType><EntityType Name=\"Supplier" +
-                "sItem\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal" +
-                "\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Id" +
-                "entity\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"50" +
-                "\" ConcurrencyMode=\"Fixed\" /><Property Name=\"FullName\" Type=\"Edm.String\" MaxLengt" +
-                "h=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Country\" Type=\"Edm.String\" MaxL" +
-                "ength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Region\" Type=\"Edm.String\" M" +
-                "axLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"City\" Type=\"Edm.String\" " +
-                "MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Adress\" Type=\"Edm.Strin" +
-                "g\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Postcode\" Type=\"Edm." +
-                "String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"INN_KPP\" Type=\"" +
-                "Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OGRN\" Type=" +
-                "\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OKPO\" Type" +
-                "=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OKVED\" Ty" +
-                "pe=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Contact" +
-                "Name\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=" +
-                "\"PhoneNumber\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"FaxNumb" +
-                "er\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Note\" Type=\"Edm.S" +
-                "tring\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"NDS\" Type=\"Edm.S" +
-                "tring\" MaxLength=\"10\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=\"Action" +
-                "s\" Relationship=\"LightSwitchApplication.FK_Actions_Suppliers\" ToRole=\"Actions\" F" +
-                "romRole=\"Suppliers\" /></EntityType><Association Name=\"FK_ActionsFiller_Actions\">" +
-                "<End Role=\"Actions\" Type=\"LightSwitchApplication.ActionsItem\" Multiplicity=\"0..1" +
-                "\" /><End Role=\"ActionsFiller\" Type=\"LightSwitchApplication.ActionsFillerItem\" Mu" +
-                "ltiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Actions\"><PropertyRef N" +
-                "ame=\"ID\" /></Principal><Dependent Role=\"ActionsFiller\"><PropertyRef Name=\"Action" +
-                "ID\" /></Dependent></ReferentialConstraint></Association><Association Name=\"FK_Cr" +
-                "aft_CraftAction\"><End Role=\"CraftAction\" Type=\"LightSwitchApplication.CraftActio" +
-                "nItem\" Multiplicity=\"0..1\" /><End Role=\"Craft\" Type=\"LightSwitchApplication.Craf" +
-                "tItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"CraftAction\"><" +
-                "PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Craft\"><PropertyRef Name=\"C" +
-                "raftID\" /></Dependent></ReferentialConstraint></Association><Association Name=\"F" +
-                "K_CraftFiller_Craft1\"><End Role=\"CraftAction\" Type=\"LightSwitchApplication.Craft" +
-                "ActionItem\" Multiplicity=\"0..1\" /><End Role=\"CraftFiller\" Type=\"LightSwitchAppli" +
-                "cation.CraftFillerItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Rol" +
-                "e=\"CraftAction\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"CraftFille" +
-                "r\"><PropertyRef Name=\"CraftID\" /></Dependent></ReferentialConstraint></Associati" +
-                "on><Association Name=\"FK_MatsAndGoodsQuantities_MatsAndGoods\"><End Role=\"MatsAnd" +
-                "Goods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"0..1\" /><End" +
-                " Role=\"MatsAndGoodsQuantities\" Type=\"LightSwitchApplication.MatsAndGoodsQuantiti" +
-                "esItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods\"" +
-                "><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"MatsAndGoodsQuantities\"><" +
-                "PropertyRef Name=\"MatsAndGoodID\" /></Dependent></ReferentialConstraint></Associa" +
-                "tion><Association Name=\"FK_Recipes_MatsAndGoods\"><End Role=\"MatsAndGoods\" Type=\"" +
-                "LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"0..1\" /><End Role=\"Recipe" +
-                "s\" Type=\"LightSwitchApplication.RecipesItem\" Multiplicity=\"*\" /><ReferentialCons" +
-                "traint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Depe" +
-                "ndent Role=\"Recipes\"><PropertyRef Name=\"DoneID\" /></Dependent></ReferentialConst" +
-                "raint></Association><Association Name=\"FK_RecipesComponents_MatsAndGoods\"><End R" +
-                "ole=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"" +
-                "1\" /><End Role=\"RecipesComponents\" Type=\"LightSwitchApplication.RecipesComponent" +
-                "sItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods\">" +
-                "<PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"RecipesComponents\"><Proper" +
-                "tyRef Name=\"ComponentID\" /></Dependent></ReferentialConstraint></Association><As" +
-                "sociation Name=\"FK_ActionsFiller_MatsAndGoods\"><End Role=\"MatsAndGoods\" Type=\"Li" +
-                "ghtSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"1\" /><End Role=\"ActionsFill" +
-                "er\" Type=\"LightSwitchApplication.ActionsFillerItem\" Multiplicity=\"*\" /><Referent" +
-                "ialConstraint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID\" /></Principa" +
-                "l><Dependent Role=\"ActionsFiller\"><PropertyRef Name=\"MAGID\" /></Dependent></Refe" +
-                "rentialConstraint></Association><Association Name=\"FK_CraftFiller_MatsAndGoods\">" +
-                "<End Role=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multipli" +
-                "city=\"0..1\" /><End Role=\"CraftFiller\" Type=\"LightSwitchApplication.CraftFillerIt" +
-                "em\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods\"><Pr" +
-                "opertyRef Name=\"ID\" /></Principal><Dependent Role=\"CraftFiller\"><PropertyRef Nam" +
-                "e=\"MAGID\" /></Dependent></ReferentialConstraint></Association><Association Name=" +
-                "\"FK_LogActionsAndCraft_MatsAndGoods\"><End Role=\"MatsAndGoods\" Type=\"LightSwitchA" +
-                "pplication.MatsAndGoodsItem\" Multiplicity=\"0..1\" /><End Role=\"LogActionsAndCraft" +
-                "\" Type=\"LightSwitchApplication.LogActionsAndCraftItem\" Multiplicity=\"*\" /><Refer" +
-                "entialConstraint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID\" /></Princ" +
-                "ipal><Dependent Role=\"LogActionsAndCraft\"><PropertyRef Name=\"MatsAndGoodsItem\" /" +
-                "></Dependent></ReferentialConstraint></Association><Association Name=\"FK_LogMats" +
-                "AndGoodsQuantities_MatsAndGoods\"><End Role=\"MatsAndGoods\" Type=\"LightSwitchAppli" +
-                "cation.MatsAndGoodsItem\" Multiplicity=\"0..1\" /><End Role=\"LogMatsAndGoodsQuantit" +
-                "ies\" Type=\"LightSwitchApplication.LogMatsAndGoodsQuantitiesItem\" Multiplicity=\"*" +
-                "\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID\"" +
-                " /></Principal><Dependent Role=\"LogMatsAndGoodsQuantities\"><PropertyRef Name=\"Ma" +
-                "tsAndGoodsItemID\" /></Dependent></ReferentialConstraint></Association><Associati" +
-                "on Name=\"FK_RecipesComponents_Recipes\"><End Role=\"Recipes\" Type=\"LightSwitchAppl" +
-                "ication.RecipesItem\" Multiplicity=\"1\" /><End Role=\"RecipesComponents\" Type=\"Ligh" +
-                "tSwitchApplication.RecipesComponentsItem\" Multiplicity=\"*\" /><ReferentialConstra" +
-                "int><Principal Role=\"Recipes\"><PropertyRef Name=\"ID\" /></Pr";
+            private const string ModelPart2 = "ity\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"100\" C" +
+                "oncurrencyMode=\"Fixed\" /><Property Name=\"SkladID\" Type=\"Edm.Decimal\" Nullable=\"f" +
+                "alse\" Precision=\"18\" Scale=\"0\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Note\" T" +
+                "ype=\"Edm.String\" MaxLength=\"100\" ConcurrencyMode=\"Fixed\" /><NavigationProperty N" +
+                "ame=\"CraftAction\" Relationship=\"LightSwitchApplication.FK_CraftAction_Responsibl" +
+                "e\" ToRole=\"CraftAction\" FromRole=\"Responsible\" /><NavigationProperty Name=\"Sklad" +
+                "iItem\" Relationship=\"LightSwitchApplication.FK_Responsible_Skladi\" ToRole=\"Sklad" +
+                "i\" FromRole=\"Responsible\" /></EntityType><EntityType Name=\"SkladiItem\"><Key><Pro" +
+                "pertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Decimal\" Nullable=\"fals" +
+                "e\" Precision=\"18\" Scale=\"0\" annotation:StoreGeneratedPattern=\"Identity\" /><Prope" +
+                "rty Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLength=\"50\" ConcurrencyMod" +
+                "e=\"Fixed\" /><Property Name=\"Adress\" Type=\"Edm.String\" MaxLength=\"100\" Concurrenc" +
+                "yMode=\"Fixed\" /><Property Name=\"Note\" Type=\"Edm.String\" MaxLength=\"Max\" Concurre" +
+                "ncyMode=\"Fixed\" /><Property Name=\"Status\" Type=\"Edm.String\" MaxLength=\"20\" Concu" +
+                "rrencyMode=\"Fixed\" /><NavigationProperty Name=\"Actions\" Relationship=\"LightSwitc" +
+                "hApplication.FK_Actions_Skladi\" ToRole=\"Actions\" FromRole=\"Skladi\" /><Navigation" +
+                "Property Name=\"Actions1\" Relationship=\"LightSwitchApplication.FK_Actions_Skladi1" +
+                "\" ToRole=\"Actions\" FromRole=\"Skladi\" /><NavigationProperty Name=\"MatsAndGoodsQua" +
+                "ntities\" Relationship=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi\" " +
+                "ToRole=\"MatsAndGoodsQuantities\" FromRole=\"Skladi\" /><NavigationProperty Name=\"Cr" +
+                "aftAction\" Relationship=\"LightSwitchApplication.FK_CraftAction_Skladi\" ToRole=\"C" +
+                "raftAction\" FromRole=\"Skladi\" /><NavigationProperty Name=\"Responsible\" Relations" +
+                "hip=\"LightSwitchApplication.FK_Responsible_Skladi\" ToRole=\"Responsible\" FromRole" +
+                "=\"Skladi\" /><NavigationProperty Name=\"LogMatsAndGoodsQuantities\" Relationship=\"L" +
+                "ightSwitchApplication.FK_LogMatsAndGoodsQuantities_Skladi\" ToRole=\"LogMatsAndGoo" +
+                "dsQuantities\" FromRole=\"Skladi\" /><NavigationProperty Name=\"LogActionsAndCraft\" " +
+                "Relationship=\"LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1\" " +
+                "ToRole=\"LogActionsAndCraft\" FromRole=\"Skladi\" /></EntityType><EntityType Name=\"S" +
+                "uppliersItem\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm." +
+                "Decimal\" Nullable=\"false\" Precision=\"18\" Scale=\"0\" annotation:StoreGeneratedPatt" +
+                "ern=\"Identity\" /><Property Name=\"Name\" Type=\"Edm.String\" Nullable=\"false\" MaxLen" +
+                "gth=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"FullName\" Type=\"Edm.String\" M" +
+                "axLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Country\" Type=\"Edm.Strin" +
+                "g\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Region\" Type=\"Edm.St" +
+                "ring\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"City\" Type=\"Edm.S" +
+                "tring\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Adress\" Type=\"Ed" +
+                "m.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Postcode\" Typ" +
+                "e=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"INN_KPP\"" +
+                " Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OGRN" +
+                "\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OKP" +
+                "O\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"OK" +
+                "VED\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"" +
+                "ContactName\" Type=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Propert" +
+                "y Name=\"PhoneNumber\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"" +
+                "FaxNumber\" Type=\"Edm.Int32\" ConcurrencyMode=\"Fixed\" /><Property Name=\"Note\" Type" +
+                "=\"Edm.String\" MaxLength=\"50\" ConcurrencyMode=\"Fixed\" /><Property Name=\"NDS\" Type" +
+                "=\"Edm.String\" MaxLength=\"10\" ConcurrencyMode=\"Fixed\" /><NavigationProperty Name=" +
+                "\"Actions\" Relationship=\"LightSwitchApplication.FK_Actions_Suppliers\" ToRole=\"Act" +
+                "ions\" FromRole=\"Suppliers\" /><NavigationProperty Name=\"MatsAndGoodsPrices\" Relat" +
+                "ionship=\"LightSwitchApplication.FK_MatsAndGoodsPrices_Suppliers\" ToRole=\"MatsAnd" +
+                "GoodsPrices\" FromRole=\"Suppliers\" /></EntityType><Association Name=\"FK_ActionsFi" +
+                "ller_Actions\"><End Role=\"Actions\" Type=\"LightSwitchApplication.ActionsItem\" Mult" +
+                "iplicity=\"0..1\" /><End Role=\"ActionsFiller\" Type=\"LightSwitchApplication.Actions" +
+                "FillerItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Actions\">" +
+                "<PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"ActionsFiller\"><PropertyRe" +
+                "f Name=\"ActionID\" /></Dependent></ReferentialConstraint></Association><Associati" +
+                "on Name=\"FK_Craft_CraftAction\"><End Role=\"CraftAction\" Type=\"LightSwitchApplicat" +
+                "ion.CraftActionItem\" Multiplicity=\"0..1\" /><End Role=\"Craft\" Type=\"LightSwitchAp" +
+                "plication.CraftItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"" +
+                "CraftAction\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Craft\"><Prope" +
+                "rtyRef Name=\"CraftID\" /></Dependent></ReferentialConstraint></Association><Assoc" +
+                "iation Name=\"FK_CraftFiller_Craft1\"><End Role=\"CraftAction\" Type=\"LightSwitchApp" +
+                "lication.CraftActionItem\" Multiplicity=\"0..1\" /><End Role=\"CraftFiller\" Type=\"Li" +
+                "ghtSwitchApplication.CraftFillerItem\" Multiplicity=\"*\" /><ReferentialConstraint>" +
+                "<Principal Role=\"CraftAction\"><PropertyRef Name=\"ID\" /></Principal><Dependent Ro" +
+                "le=\"CraftFiller\"><PropertyRef Name=\"CraftID\" /></Dependent></ReferentialConstrai" +
+                "nt></Association><Association Name=\"FK_MatsAndGoodsQuantities_MatsAndGoods\"><End" +
+                " Role=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity" +
+                "=\"0..1\" /><End Role=\"MatsAndGoodsQuantities\" Type=\"LightSwitchApplication.MatsAn" +
+                "dGoodsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=" +
+                "\"MatsAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"MatsAndGood" +
+                "sQuantities\"><PropertyRef Name=\"MatsAndGoodID\" /></Dependent></ReferentialConstr" +
+                "aint></Association><Association Name=\"FK_Recipes_MatsAndGoods\"><End Role=\"MatsAn" +
+                "dGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"0..1\" /><En" +
+                "d Role=\"Recipes\" Type=\"LightSwitchApplication.RecipesItem\" Multiplicity=\"*\" /><R" +
+                "eferentialConstraint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID\" /></P" +
+                "rincipal><Dependent Role=\"Recipes\"><PropertyRef Name=\"DoneID\" /></Dependent></Re" +
+                "ferentialConstraint></Association><Association Name=\"FK_RecipesComponents_MatsAn" +
+                "dGoods\"><End Role=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" " +
+                "Multiplicity=\"1\" /><End Role=\"RecipesComponents\" Type=\"LightSwitchApplication.Re" +
+                "cipesComponentsItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"" +
+                "MatsAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"RecipesCompo" +
+                "nents\"><PropertyRef Name=\"ComponentID\" /></Dependent></ReferentialConstraint></A" +
+                "ssociation><Association Name=\"FK_ActionsFiller_MatsAndGoods\"><End Role=\"MatsAndG" +
+                "oods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"1\" /><End Rol" +
+                "e=\"ActionsFiller\" Type=\"LightSwitchApplication.ActionsFillerItem\" Multiplicity=\"" +
+                "*\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods\"><PropertyRef Name=\"ID" +
+                "\" /></Principal><Dependent Role=\"ActionsFiller\"><PropertyRef Name=\"MAGID\" /></De" +
+                "pendent></ReferentialConstraint></Association><Association Name=\"FK_CraftFiller_" +
+                "MatsAndGoods\"><End Role=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoods" +
+                "Item\" Multiplicity=\"0..1\" /><End Role=\"CraftFiller\" Type=\"LightSwitchApplication" +
+                ".CraftFillerItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Mat" +
+                "sAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"CraftFiller\"><P" +
+                "ropertyRef Name=\"MAGID\" /></Dependent></ReferentialConstrai";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart3 = "incipal><Dependent Role=\"RecipesComponents\"><PropertyRef Name=\"RecipeID\" /></Depe" +
-                "ndent></ReferentialConstraint></Association><Association Name=\"FK_Craft_Recipes\"" +
-                "><End Role=\"Recipes\" Type=\"LightSwitchApplication.RecipesItem\" Multiplicity=\"0.." +
-                "1\" /><End Role=\"Craft\" Type=\"LightSwitchApplication.CraftItem\" Multiplicity=\"*\" " +
-                "/><ReferentialConstraint><Principal Role=\"Recipes\"><PropertyRef Name=\"ID\" /></Pr" +
-                "incipal><Dependent Role=\"Craft\"><PropertyRef Name=\"RecipeID\" /></Dependent></Ref" +
-                "erentialConstraint></Association><Association Name=\"FK_CraftAction_Responsible\">" +
-                "<End Role=\"Responsible\" Type=\"LightSwitchApplication.ResponsibleItem\" Multiplici" +
-                "ty=\"0..1\" /><End Role=\"CraftAction\" Type=\"LightSwitchApplication.CraftActionItem" +
-                "\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Responsible\"><Prope" +
-                "rtyRef Name=\"ID\" /></Principal><Dependent Role=\"CraftAction\"><PropertyRef Name=\"" +
-                "ResponsibleID\" /></Dependent></ReferentialConstraint></Association><Association " +
-                "Name=\"FK_Actions_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiI" +
-                "tem\" Multiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitchApplication.Acti" +
-                "onsItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><Pro" +
-                "pertyRef Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><PropertyRef Name=\"Fr" +
-                "omSkladID\" /></Dependent></ReferentialConstraint></Association><Association Name" +
-                "=\"FK_Actions_Skladi1\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem" +
-                "\" Multiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitchApplication.Actions" +
-                "Item\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><Proper" +
-                "tyRef Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><PropertyRef Name=\"ToSkl" +
+            private const string ModelPart3 = "nt></Association><Association Name=\"FK_LogActionsAndCraft_MatsAndGoods\"><End Role" +
+                "=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"0.." +
+                "1\" /><End Role=\"LogActionsAndCraft\" Type=\"LightSwitchApplication.LogActionsAndCr" +
+                "aftItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"MatsAndGoods" +
+                "\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"LogActionsAndCraft\"><Pro" +
+                "pertyRef Name=\"MatsAndGoodsItem\" /></Dependent></ReferentialConstraint></Associa" +
+                "tion><Association Name=\"FK_LogMatsAndGoodsQuantities_MatsAndGoods\"><End Role=\"Ma" +
+                "tsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Multiplicity=\"0..1\" /" +
+                "><End Role=\"LogMatsAndGoodsQuantities\" Type=\"LightSwitchApplication.LogMatsAndGo" +
+                "odsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Ma" +
+                "tsAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"LogMatsAndGood" +
+                "sQuantities\"><PropertyRef Name=\"MatsAndGoodsItemID\" /></Dependent></ReferentialC" +
+                "onstraint></Association><Association Name=\"FK_MatsAndGoodsPrices_MatsAndGoodsPri" +
+                "ces\"><End Role=\"MatsAndGoods\" Type=\"LightSwitchApplication.MatsAndGoodsItem\" Mul" +
+                "tiplicity=\"1\" /><End Role=\"MatsAndGoodsPrices\" Type=\"LightSwitchApplication.Mats" +
+                "AndGoodsPricesItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"M" +
+                "atsAndGoods\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"MatsAndGoodsP" +
+                "rices\"><PropertyRef Name=\"MAGID\" /></Dependent></ReferentialConstraint></Associa" +
+                "tion><Association Name=\"FK_RecipesComponents_Recipes\"><End Role=\"Recipes\" Type=\"" +
+                "LightSwitchApplication.RecipesItem\" Multiplicity=\"1\" /><End Role=\"RecipesCompone" +
+                "nts\" Type=\"LightSwitchApplication.RecipesComponentsItem\" Multiplicity=\"*\" /><Ref" +
+                "erentialConstraint><Principal Role=\"Recipes\"><PropertyRef Name=\"ID\" /></Principa" +
+                "l><Dependent Role=\"RecipesComponents\"><PropertyRef Name=\"RecipeID\" /></Dependent" +
+                "></ReferentialConstraint></Association><Association Name=\"FK_Craft_Recipes\"><End" +
+                " Role=\"Recipes\" Type=\"LightSwitchApplication.RecipesItem\" Multiplicity=\"0..1\" />" +
+                "<End Role=\"Craft\" Type=\"LightSwitchApplication.CraftItem\" Multiplicity=\"*\" /><Re" +
+                "ferentialConstraint><Principal Role=\"Recipes\"><PropertyRef Name=\"ID\" /></Princip" +
+                "al><Dependent Role=\"Craft\"><PropertyRef Name=\"RecipeID\" /></Dependent></Referent" +
+                "ialConstraint></Association><Association Name=\"FK_CraftAction_Responsible\"><End " +
+                "Role=\"Responsible\" Type=\"LightSwitchApplication.ResponsibleItem\" Multiplicity=\"0" +
+                "..1\" /><End Role=\"CraftAction\" Type=\"LightSwitchApplication.CraftActionItem\" Mul" +
+                "tiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Responsible\"><PropertyRe" +
+                "f Name=\"ID\" /></Principal><Dependent Role=\"CraftAction\"><PropertyRef Name=\"Respo" +
+                "nsibleID\" /></Dependent></ReferentialConstraint></Association><Association Name=" +
+                "\"FK_Actions_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" " +
+                "Multiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitchApplication.ActionsIt" +
+                "em\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><Property" +
+                "Ref Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><PropertyRef Name=\"FromSkl" +
                 "adID\" /></Dependent></ReferentialConstraint></Association><Association Name=\"FK_" +
-                "MatsAndGoodsQuantities_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.S" +
-                "kladiItem\" Multiplicity=\"0..1\" /><End Role=\"MatsAndGoodsQuantities\" Type=\"LightS" +
-                "witchApplication.MatsAndGoodsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialCons" +
-                "traint><Principal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Principal><Dependent " +
-                "Role=\"MatsAndGoodsQuantities\"><PropertyRef Name=\"SkladID\" /></Dependent></Refere" +
-                "ntialConstraint></Association><Association Name=\"FK_CraftAction_Skladi\"><End Rol" +
+                "Actions_Skladi1\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Mul" +
+                "tiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitchApplication.ActionsItem\"" +
+                " Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><PropertyRef" +
+                " Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><PropertyRef Name=\"ToSkladID\"" +
+                " /></Dependent></ReferentialConstraint></Association><Association Name=\"FK_MatsA" +
+                "ndGoodsQuantities_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.Skladi" +
+                "Item\" Multiplicity=\"0..1\" /><End Role=\"MatsAndGoodsQuantities\" Type=\"LightSwitch" +
+                "Application.MatsAndGoodsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialConstrain" +
+                "t><Principal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=" +
+                "\"MatsAndGoodsQuantities\"><PropertyRef Name=\"SkladID\" /></Dependent></Referential" +
+                "Constraint></Association><Association Name=\"FK_CraftAction_Skladi\"><End Role=\"Sk" +
+                "ladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplicity=\"1\" /><End Role=\"Cra" +
+                "ftAction\" Type=\"LightSwitchApplication.CraftActionItem\" Multiplicity=\"*\" /><Refe" +
+                "rentialConstraint><Principal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Principal>" +
+                "<Dependent Role=\"CraftAction\"><PropertyRef Name=\"SkladID\" /></Dependent></Refere" +
+                "ntialConstraint></Association><Association Name=\"FK_Responsible_Skladi\"><End Rol" +
                 "e=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplicity=\"1\" /><End Role" +
-                "=\"CraftAction\" Type=\"LightSwitchApplication.CraftActionItem\" Multiplicity=\"*\" />" +
+                "=\"Responsible\" Type=\"LightSwitchApplication.ResponsibleItem\" Multiplicity=\"*\" />" +
                 "<ReferentialConstraint><Principal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Princ" +
-                "ipal><Dependent Role=\"CraftAction\"><PropertyRef Name=\"SkladID\" /></Dependent></R" +
-                "eferentialConstraint></Association><Association Name=\"FK_Responsible_Skladi\"><En" +
-                "d Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplicity=\"1\" /><End" +
-                " Role=\"Responsible\" Type=\"LightSwitchApplication.ResponsibleItem\" Multiplicity=\"" +
-                "*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></" +
-                "Principal><Dependent Role=\"Responsible\"><PropertyRef Name=\"SkladID\" /></Dependen" +
-                "t></ReferentialConstraint></Association><Association Name=\"FK_LogMatsAndGoodsQua" +
-                "ntities_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Mult" +
-                "iplicity=\"0..1\" /><End Role=\"LogMatsAndGoodsQuantities\" Type=\"LightSwitchApplica" +
-                "tion.LogMatsAndGoodsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialConstraint><P" +
-                "rincipal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Log" +
-                "MatsAndGoodsQuantities\"><PropertyRef Name=\"SkladItemID\" /></Dependent></Referent" +
-                "ialConstraint></Association><Association Name=\"FK_LogActionsAndCraft_LogActionsA" +
-                "ndCraft1\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplici" +
-                "ty=\"0..1\" /><End Role=\"LogActionsAndCraft\" Type=\"LightSwitchApplication.LogActio" +
-                "nsAndCraftItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Sklad" +
-                "i\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"LogActionsAndCraft\"><Pr" +
-                "opertyRef Name=\"Sklad\" /></Dependent></ReferentialConstraint></Association><Asso" +
-                "ciation Name=\"FK_Actions_Suppliers\"><End Role=\"Suppliers\" Type=\"LightSwitchAppli" +
-                "cation.SuppliersItem\" Multiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitc" +
-                "hApplication.ActionsItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal R" +
-                "ole=\"Suppliers\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><" +
-                "PropertyRef Name=\"SupplierID\" /></Dependent></ReferentialConstraint></Associatio" +
-                "n><EntityContainer Name=\"skladData\" m:IsDefaultEntityContainer=\"true\"><EntitySet" +
-                " Name=\"Actions\" EntityType=\"LightSwitchApplication.ActionsItem\" /><EntitySet Nam" +
-                "e=\"ActionsFiller\" EntityType=\"LightSwitchApplication.ActionsFillerItem\" /><Entit" +
-                "ySet Name=\"Craft\" EntityType=\"LightSwitchApplication.CraftItem\" /><EntitySet Nam" +
-                "e=\"CraftAction\" EntityType=\"LightSwitchApplication.CraftActionItem\" /><EntitySet" +
-                " Name=\"CraftFiller\" EntityType=\"LightSwitchApplication.CraftFillerItem\" /><Entit" +
-                "ySet Name=\"LogActionsAndCraft\" EntityType=\"LightSwitchApplication.LogActionsAndC" +
-                "raftItem\" /><EntitySet Name=\"LogMatsAndGoodsQuantities\" EntityType=\"LightSwitchA" +
-                "pplication.LogMatsAndGoodsQuantitiesItem\" /><EntitySet Name=\"MatsAndGoods\" Entit" +
-                "yType=\"LightSwitchApplication.MatsAndGoodsItem\" /><EntitySet Name=\"MatsAndGoodsQ" +
-                "uantities\" EntityType=\"LightSwitchApplication.MatsAndGoodsQuantitiesItem\" /><Ent" +
-                "itySet Name=\"Recipes\" EntityType=\"LightSwitchApplication.RecipesItem\" /><EntityS" +
-                "et Name=\"RecipesComponents\" EntityType=\"LightSwitchApplication.RecipesComponents" +
-                "Item\" /><EntitySet Name=\"Responsible\" EntityType=\"LightSwitchApplication.Respons" +
-                "ibleItem\" /><EntitySet Name=\"Skladi\" EntityType=\"LightSwitchApplication.SkladiIt" +
-                "em\" /><EntitySet Name=\"Suppliers\" EntityType=\"LightSwitchApplication.SuppliersIt" +
-                "em\" /><AssociationSet Name=\"FK_ActionsFiller_Actions\" Association=\"LightSwitchAp" +
-                "plication.FK_ActionsFiller_Actions\"><End Role=\"Actions\" EntitySet=\"Actions\" /><E" +
-                "nd Role=\"ActionsFiller\" EntitySet=\"ActionsFiller\" /></AssociationSet><Associatio" +
-                "nSet Name=\"FK_Craft_CraftAction\" Association=\"LightSwitchApplication.FK_Craft_Cr" +
-                "aftAction\"><End Role=\"CraftAction\" EntitySet=\"CraftAction\" /><End Role=\"Craft\" E" +
-                "ntitySet=\"Craft\" /></AssociationSet><AssociationSet Name=\"FK_CraftFiller_Craft1\"" +
-                " Association=\"LightSwitchApplication.FK_CraftFiller_Craft1\"><End Role=\"CraftActi" +
-                "on\" EntitySet=\"CraftAction\" /><End Role=\"CraftFiller\" EntitySet=\"CraftFiller\" />" +
-                "</AssociationSet><AssociationSet Name=\"FK_MatsAndGoodsQuantities_MatsAndGoods\" A" +
-                "ssociation=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods\"><End " +
-                "Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"MatsAndGoodsQuantities" +
-                "\" EntitySet=\"MatsAndGoodsQuantities\" /></AssociationSet><AssociationSet Name=\"FK" +
-                "_Recipes_MatsAndGoods\" Association=\"LightSwitchApplication.FK_Recipes_MatsAndGoo" +
-                "ds\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"Recipes\" Enti" +
-                "tySet=\"Recipes\" /></AssociationSet><AssociationSet Name=\"FK_RecipesComponents_Ma" +
-                "tsAndGoods\" Association=\"LightSwitchApplication.FK_RecipesComponents_MatsAndGood" +
-                "s\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"RecipesCompone" +
-                "nts\" EntitySet=\"RecipesComponents\" /></AssociationSet><AssociationSet Name=\"FK_A" +
-                "ctionsFiller_MatsAndGoods\" Association=\"LightSwitchApplication.FK_ActionsFiller_" +
-                "MatsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"Act" +
-                "ionsFiller\" EntitySet=\"ActionsFiller\" /></AssociationSet><AssociationSet Name=\"F" +
-                "K_CraftFiller_MatsAndGoods\" Association=\"LightSwitchApplication.FK_CraftFiller_M" +
-                "atsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"Craf" +
-                "tFiller\" EntitySet=\"CraftFiller\" /></AssociationSet><Associ";
+                "ipal><Dependent Role=\"Responsible\"><PropertyRef Name=\"SkladID\" /></Dependent></R" +
+                "eferentialConstraint></Association><Association Name=\"FK_LogMatsAndGoodsQuantiti" +
+                "es_Skladi\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplic" +
+                "ity=\"0..1\" /><End Role=\"LogMatsAndGoodsQuantities\" Type=\"LightSwitchApplication." +
+                "LogMatsAndGoodsQuantitiesItem\" Multiplicity=\"*\" /><ReferentialConstraint><Princi" +
+                "pal Role=\"Skladi\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"LogMatsA" +
+                "ndGoodsQuantities\"><PropertyRef Name=\"SkladItemID\" /></Dependent></ReferentialCo" +
+                "nstraint></Association><Association Name=\"FK_LogActionsAndCraft_LogActionsAndCra" +
+                "ft1\"><End Role=\"Skladi\" Type=\"LightSwitchApplication.SkladiItem\" Multiplicity=\"0" +
+                "..1\" /><End Role=\"LogActionsAndCraft\" Type=\"LightSwitchApplication.LogActionsAnd" +
+                "CraftItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"Skladi\"><P" +
+                "ropertyRef Name=\"ID\" /></Principal><Dependent Role=\"LogActionsAndCraft\"><Propert" +
+                "yRef Name=\"Sklad\" /></Dependent></ReferentialConstraint></Association><Associati" +
+                "on Name=\"FK_Actions_Suppliers\"><End Role=\"Suppliers\" Type=\"LightSwitchApplicatio" +
+                "n.SuppliersItem\" Multiplicity=\"0..1\" /><End Role=\"Actions\" Type=\"LightSwitchAppl" +
+                "ication.ActionsItem\" Multiplicity=\"*\" /><ReferentialConstraint><Principal Role=\"" +
+                "Suppliers\"><PropertyRef Name=\"ID\" /></Principal><Dependent Role=\"Actions\"><Prope" +
+                "rtyRef Name=\"SupplierID\" /></Dependent></ReferentialConstraint></Association><As" +
+                "sociation Name=\"FK_MatsAndGoodsPrices_Suppliers\"><End Role=\"Suppliers\" Type=\"Lig" +
+                "htSwitchApplication.SuppliersItem\" Multiplicity=\"0..1\" /><End Role=\"MatsAndGoods" +
+                "Prices\" Type=\"LightSwitchApplication.MatsAndGoodsPricesItem\" Multiplicity=\"*\" />" +
+                "<ReferentialConstraint><Principal Role=\"Suppliers\"><PropertyRef Name=\"ID\" /></Pr" +
+                "incipal><Dependent Role=\"MatsAndGoodsPrices\"><PropertyRef Name=\"SupplierID\" /></" +
+                "Dependent></ReferentialConstraint></Association><EntityContainer Name=\"skladData" +
+                "\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"Actions\" EntityType=\"LightS" +
+                "witchApplication.ActionsItem\" /><EntitySet Name=\"ActionsFiller\" EntityType=\"Ligh" +
+                "tSwitchApplication.ActionsFillerItem\" /><EntitySet Name=\"Craft\" EntityType=\"Ligh" +
+                "tSwitchApplication.CraftItem\" /><EntitySet Name=\"CraftAction\" EntityType=\"LightS" +
+                "witchApplication.CraftActionItem\" /><EntitySet Name=\"CraftFiller\" EntityType=\"Li" +
+                "ghtSwitchApplication.CraftFillerItem\" /><EntitySet Name=\"LogActionsAndCraft\" Ent" +
+                "ityType=\"LightSwitchApplication.LogActionsAndCraftItem\" /><EntitySet Name=\"LogMa" +
+                "tsAndGoodsQuantities\" EntityType=\"LightSwitchApplication.LogMatsAndGoodsQuantiti" +
+                "esItem\" /><EntitySet Name=\"MatsAndGoods\" EntityType=\"LightSwitchApplication.Mats" +
+                "AndGoodsItem\" /><EntitySet Name=\"MatsAndGoodsPrices\" EntityType=\"LightSwitchAppl" +
+                "ication.MatsAndGoodsPricesItem\" /><EntitySet Name=\"MatsAndGoodsQuantities\" Entit" +
+                "yType=\"LightSwitchApplication.MatsAndGoodsQuantitiesItem\" /";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart4 = "ationSet Name=\"FK_LogActionsAndCraft_MatsAndGoods\" Association=\"LightSwitchApplic" +
-                "ation.FK_LogActionsAndCraft_MatsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"Ma" +
-                "tsAndGoods\" /><End Role=\"LogActionsAndCraft\" EntitySet=\"LogActionsAndCraft\" /></" +
-                "AssociationSet><AssociationSet Name=\"FK_LogMatsAndGoodsQuantities_MatsAndGoods\" " +
-                "Association=\"LightSwitchApplication.FK_LogMatsAndGoodsQuantities_MatsAndGoods\"><" +
-                "End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"LogMatsAndGoodsQua" +
-                "ntities\" EntitySet=\"LogMatsAndGoodsQuantities\" /></AssociationSet><AssociationSe" +
-                "t Name=\"FK_RecipesComponents_Recipes\" Association=\"LightSwitchApplication.FK_Rec" +
-                "ipesComponents_Recipes\"><End Role=\"Recipes\" EntitySet=\"Recipes\" /><End Role=\"Rec" +
-                "ipesComponents\" EntitySet=\"RecipesComponents\" /></AssociationSet><AssociationSet" +
-                " Name=\"FK_Craft_Recipes\" Association=\"LightSwitchApplication.FK_Craft_Recipes\"><" +
-                "End Role=\"Recipes\" EntitySet=\"Recipes\" /><End Role=\"Craft\" EntitySet=\"Craft\" /><" +
-                "/AssociationSet><AssociationSet Name=\"FK_CraftAction_Responsible\" Association=\"L" +
-                "ightSwitchApplication.FK_CraftAction_Responsible\"><End Role=\"Responsible\" Entity" +
-                "Set=\"Responsible\" /><End Role=\"CraftAction\" EntitySet=\"CraftAction\" /></Associat" +
-                "ionSet><AssociationSet Name=\"FK_Actions_Skladi\" Association=\"LightSwitchApplicat" +
-                "ion.FK_Actions_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"Action" +
-                "s\" EntitySet=\"Actions\" /></AssociationSet><AssociationSet Name=\"FK_Actions_Sklad" +
-                "i1\" Association=\"LightSwitchApplication.FK_Actions_Skladi1\"><End Role=\"Skladi\" E" +
-                "ntitySet=\"Skladi\" /><End Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><" +
-                "AssociationSet Name=\"FK_MatsAndGoodsQuantities_Skladi\" Association=\"LightSwitchA" +
-                "pplication.FK_MatsAndGoodsQuantities_Skladi\"><End Role=\"Skladi\" EntitySet=\"Sklad" +
-                "i\" /><End Role=\"MatsAndGoodsQuantities\" EntitySet=\"MatsAndGoodsQuantities\" /></A" +
-                "ssociationSet><AssociationSet Name=\"FK_CraftAction_Skladi\" Association=\"LightSwi" +
-                "tchApplication.FK_CraftAction_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><E" +
-                "nd Role=\"CraftAction\" EntitySet=\"CraftAction\" /></AssociationSet><AssociationSet" +
-                " Name=\"FK_Responsible_Skladi\" Association=\"LightSwitchApplication.FK_Responsible" +
-                "_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"Responsible\" EntityS" +
-                "et=\"Responsible\" /></AssociationSet><AssociationSet Name=\"FK_LogMatsAndGoodsQuan" +
-                "tities_Skladi\" Association=\"LightSwitchApplication.FK_LogMatsAndGoodsQuantities_" +
-                "Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"LogMatsAndGoodsQuanti" +
-                "ties\" EntitySet=\"LogMatsAndGoodsQuantities\" /></AssociationSet><AssociationSet N" +
-                "ame=\"FK_LogActionsAndCraft_LogActionsAndCraft1\" Association=\"LightSwitchApplicat" +
-                "ion.FK_LogActionsAndCraft_LogActionsAndCraft1\"><End Role=\"Skladi\" EntitySet=\"Skl" +
-                "adi\" /><End Role=\"LogActionsAndCraft\" EntitySet=\"LogActionsAndCraft\" /></Associa" +
-                "tionSet><AssociationSet Name=\"FK_Actions_Suppliers\" Association=\"LightSwitchAppl" +
-                "ication.FK_Actions_Suppliers\"><End Role=\"Suppliers\" EntitySet=\"Suppliers\" /><End" +
-                " Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><FunctionImport Name=\"Wor" +
-                "kingSkladi\" ReturnType=\"Collection(LightSwitchApplication.SkladiItem)\" EntitySet" +
-                "=\"Skladi\" m:HttpMethod=\"GET\" /><FunctionImport Name=\"Microsoft_LightSwitch_GetCa" +
-                "nInformation\" ReturnType=\"Edm.String\" m:HttpMethod=\"GET\"><Parameter Name=\"dataSe" +
-                "rviceMembers\" Type=\"Edm.String\" Mode=\"In\" /></FunctionImport></EntityContainer><" +
-                "/Schema></edmx:DataServices></edmx:Edmx>";
+            private const string ModelPart4 = "><EntitySet Name=\"Recipes\" EntityType=\"LightSwitchApplication.RecipesItem\" /><Ent" +
+                "itySet Name=\"RecipesComponents\" EntityType=\"LightSwitchApplication.RecipesCompon" +
+                "entsItem\" /><EntitySet Name=\"Responsible\" EntityType=\"LightSwitchApplication.Res" +
+                "ponsibleItem\" /><EntitySet Name=\"Skladi\" EntityType=\"LightSwitchApplication.Skla" +
+                "diItem\" /><EntitySet Name=\"Suppliers\" EntityType=\"LightSwitchApplication.Supplie" +
+                "rsItem\" /><AssociationSet Name=\"FK_ActionsFiller_Actions\" Association=\"LightSwit" +
+                "chApplication.FK_ActionsFiller_Actions\"><End Role=\"Actions\" EntitySet=\"Actions\" " +
+                "/><End Role=\"ActionsFiller\" EntitySet=\"ActionsFiller\" /></AssociationSet><Associ" +
+                "ationSet Name=\"FK_Craft_CraftAction\" Association=\"LightSwitchApplication.FK_Craf" +
+                "t_CraftAction\"><End Role=\"CraftAction\" EntitySet=\"CraftAction\" /><End Role=\"Craf" +
+                "t\" EntitySet=\"Craft\" /></AssociationSet><AssociationSet Name=\"FK_CraftFiller_Cra" +
+                "ft1\" Association=\"LightSwitchApplication.FK_CraftFiller_Craft1\"><End Role=\"Craft" +
+                "Action\" EntitySet=\"CraftAction\" /><End Role=\"CraftFiller\" EntitySet=\"CraftFiller" +
+                "\" /></AssociationSet><AssociationSet Name=\"FK_MatsAndGoodsQuantities_MatsAndGood" +
+                "s\" Association=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_MatsAndGoods\"><" +
+                "End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"MatsAndGoodsQuanti" +
+                "ties\" EntitySet=\"MatsAndGoodsQuantities\" /></AssociationSet><AssociationSet Name" +
+                "=\"FK_Recipes_MatsAndGoods\" Association=\"LightSwitchApplication.FK_Recipes_MatsAn" +
+                "dGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"Recipes\" " +
+                "EntitySet=\"Recipes\" /></AssociationSet><AssociationSet Name=\"FK_RecipesComponent" +
+                "s_MatsAndGoods\" Association=\"LightSwitchApplication.FK_RecipesComponents_MatsAnd" +
+                "Goods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"RecipesCom" +
+                "ponents\" EntitySet=\"RecipesComponents\" /></AssociationSet><AssociationSet Name=\"" +
+                "FK_ActionsFiller_MatsAndGoods\" Association=\"LightSwitchApplication.FK_ActionsFil" +
+                "ler_MatsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=" +
+                "\"ActionsFiller\" EntitySet=\"ActionsFiller\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"FK_CraftFiller_MatsAndGoods\" Association=\"LightSwitchApplication.FK_CraftFill" +
+                "er_MatsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"" +
+                "CraftFiller\" EntitySet=\"CraftFiller\" /></AssociationSet><AssociationSet Name=\"FK" +
+                "_LogActionsAndCraft_MatsAndGoods\" Association=\"LightSwitchApplication.FK_LogActi" +
+                "onsAndCraft_MatsAndGoods\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods\" /><E" +
+                "nd Role=\"LogActionsAndCraft\" EntitySet=\"LogActionsAndCraft\" /></AssociationSet><" +
+                "AssociationSet Name=\"FK_LogMatsAndGoodsQuantities_MatsAndGoods\" Association=\"Lig" +
+                "htSwitchApplication.FK_LogMatsAndGoodsQuantities_MatsAndGoods\"><End Role=\"MatsAn" +
+                "dGoods\" EntitySet=\"MatsAndGoods\" /><End Role=\"LogMatsAndGoodsQuantities\" EntityS" +
+                "et=\"LogMatsAndGoodsQuantities\" /></AssociationSet><AssociationSet Name=\"FK_MatsA" +
+                "ndGoodsPrices_MatsAndGoodsPrices\" Association=\"LightSwitchApplication.FK_MatsAnd" +
+                "GoodsPrices_MatsAndGoodsPrices\"><End Role=\"MatsAndGoods\" EntitySet=\"MatsAndGoods" +
+                "\" /><End Role=\"MatsAndGoodsPrices\" EntitySet=\"MatsAndGoodsPrices\" /></Associatio" +
+                "nSet><AssociationSet Name=\"FK_RecipesComponents_Recipes\" Association=\"LightSwitc" +
+                "hApplication.FK_RecipesComponents_Recipes\"><End Role=\"Recipes\" EntitySet=\"Recipe" +
+                "s\" /><End Role=\"RecipesComponents\" EntitySet=\"RecipesComponents\" /></Association" +
+                "Set><AssociationSet Name=\"FK_Craft_Recipes\" Association=\"LightSwitchApplication." +
+                "FK_Craft_Recipes\"><End Role=\"Recipes\" EntitySet=\"Recipes\" /><End Role=\"Craft\" En" +
+                "titySet=\"Craft\" /></AssociationSet><AssociationSet Name=\"FK_CraftAction_Responsi" +
+                "ble\" Association=\"LightSwitchApplication.FK_CraftAction_Responsible\"><End Role=\"" +
+                "Responsible\" EntitySet=\"Responsible\" /><End Role=\"CraftAction\" EntitySet=\"CraftA" +
+                "ction\" /></AssociationSet><AssociationSet Name=\"FK_Actions_Skladi\" Association=\"" +
+                "LightSwitchApplication.FK_Actions_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" " +
+                "/><End Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><AssociationSet Nam" +
+                "e=\"FK_Actions_Skladi1\" Association=\"LightSwitchApplication.FK_Actions_Skladi1\"><" +
+                "End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"Actions\" EntitySet=\"Actions\" /" +
+                "></AssociationSet><AssociationSet Name=\"FK_MatsAndGoodsQuantities_Skladi\" Associ" +
+                "ation=\"LightSwitchApplication.FK_MatsAndGoodsQuantities_Skladi\"><End Role=\"Sklad" +
+                "i\" EntitySet=\"Skladi\" /><End Role=\"MatsAndGoodsQuantities\" EntitySet=\"MatsAndGoo" +
+                "dsQuantities\" /></AssociationSet><AssociationSet Name=\"FK_CraftAction_Skladi\" As" +
+                "sociation=\"LightSwitchApplication.FK_CraftAction_Skladi\"><End Role=\"Skladi\" Enti" +
+                "tySet=\"Skladi\" /><End Role=\"CraftAction\" EntitySet=\"CraftAction\" /></Association" +
+                "Set><AssociationSet Name=\"FK_Responsible_Skladi\" Association=\"LightSwitchApplica" +
+                "tion.FK_Responsible_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"R" +
+                "esponsible\" EntitySet=\"Responsible\" /></AssociationSet><AssociationSet Name=\"FK_" +
+                "LogMatsAndGoodsQuantities_Skladi\" Association=\"LightSwitchApplication.FK_LogMats" +
+                "AndGoodsQuantities_Skladi\"><End Role=\"Skladi\" EntitySet=\"Skladi\" /><End Role=\"Lo" +
+                "gMatsAndGoodsQuantities\" EntitySet=\"LogMatsAndGoodsQuantities\" /></AssociationSe" +
+                "t><AssociationSet Name=\"FK_LogActionsAndCraft_LogActionsAndCraft1\" Association=\"" +
+                "LightSwitchApplication.FK_LogActionsAndCraft_LogActionsAndCraft1\"><End Role=\"Skl" +
+                "adi\" EntitySet=\"Skladi\" /><End Role=\"LogActionsAndCraft\" EntitySet=\"LogActionsAn" +
+                "dCraft\" /></AssociationSet><AssociationSet Name=\"FK_Actions_Suppliers\" Associati" +
+                "on=\"LightSwitchApplication.FK_Actions_Suppliers\"><End Role=\"Suppliers\" EntitySet" +
+                "=\"Suppliers\" /><End Role=\"Actions\" EntitySet=\"Actions\" /></AssociationSet><Assoc" +
+                "iationSet Name=\"FK_MatsAndGoodsPrices_Suppliers\" Association=\"LightSwitchApplica" +
+                "tion.FK_MatsAndGoodsPrices_Suppliers\"><End Role=\"Suppliers\" EntitySet=\"Suppliers" +
+                "\" /><End Role=\"MatsAndGoodsPrices\" EntitySet=\"MatsAndGoodsPrices\" /></Associatio" +
+                "nSet><FunctionImport Name=\"WorkingSkladi\" ReturnType=\"Collection(LightSwitchAppl" +
+                "ication.SkladiItem)\" EntitySet=\"Skladi\" m:HttpMethod=\"GET\" /><FunctionImport Nam" +
+                "e=\"Microsoft_LightSwitch_GetCanInformation\" ReturnType=\"Edm.String\" m:HttpMethod" +
+                "=\"GET\"><Parameter Name=\"dataServiceMembers\" Type=\"Edm.String\" Mode=\"In\" /></Func" +
+                "tionImport></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -3618,6 +3678,283 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<LogMatsAndGoodsQuantitiesItem> _LogMatsAndGoodsQuantities = new global::System.Data.Services.Client.DataServiceCollection<LogMatsAndGoodsQuantitiesItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// В схеме отсутствуют комментарии для MatsAndGoodsPrices.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                this.@__MatsAndGoodsPrices.EnsureValueInitialized();
+                return this._MatsAndGoodsPrices;
+            }
+            set
+            {
+                this._MatsAndGoodsPrices = value;
+                this.OnPropertyChanged("MatsAndGoodsPrices");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem> _MatsAndGoodsPrices = new global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// В схеме отсутствуют комментарии для LightSwitchApplication.MatsAndGoodsPricesItem.
+    /// </summary>
+    /// <KeyProperties>
+    /// ID
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("MatsAndGoodsPrices")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("ID")]
+    public partial class MatsAndGoodsPricesItem : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Создайте новый объект MatsAndGoodsPricesItem.
+        /// </summary>
+        /// <param name="ID">Начальное значение ID.</param>
+        /// <param name="mAGID">Начальное значение MAGID.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static MatsAndGoodsPricesItem CreateMatsAndGoodsPricesItem(decimal ID, decimal mAGID)
+        {
+            MatsAndGoodsPricesItem matsAndGoodsPricesItem = new MatsAndGoodsPricesItem();
+            matsAndGoodsPricesItem.ID = ID;
+            matsAndGoodsPricesItem.MAGID = mAGID;
+            return matsAndGoodsPricesItem;
+        }
+        /// <summary>
+        /// В схеме отсутствуют комментарии для свойства ID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public decimal ID
+        {
+            get
+            {
+                return this._ID;
+            }
+            set
+            {
+                this.OnIDChanging(value);
+                if (object.Equals(this.ID, value))
+                {
+                    return;
+                }
+                this._ID = value;
+                this.OnIDChanged();
+                this.OnPropertyChanged("ID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private decimal _ID;
+        partial void OnIDChanging(decimal value);
+        partial void OnIDChanged();
+        /// <summary>
+        /// В схеме отсутствуют комментарии для свойства LastPrice.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<decimal> LastPrice
+        {
+            get
+            {
+                return this._LastPrice;
+            }
+            set
+            {
+                this.OnLastPriceChanging(value);
+                if (object.Equals(this.LastPrice, value))
+                {
+                    return;
+                }
+                this._LastPrice = value;
+                this.OnLastPriceChanged();
+                this.OnPropertyChanged("LastPrice");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<decimal> _LastPrice;
+        partial void OnLastPriceChanging(global::System.Nullable<decimal> value);
+        partial void OnLastPriceChanged();
+        /// <summary>
+        /// В схеме отсутствуют комментарии для свойства LastDate.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<global::System.DateTime> LastDate
+        {
+            get
+            {
+                return this._LastDate;
+            }
+            set
+            {
+                this.OnLastDateChanging(value);
+                if (object.Equals(this.LastDate, value))
+                {
+                    return;
+                }
+                this._LastDate = value;
+                this.OnLastDateChanged();
+                this.OnPropertyChanged("LastDate");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<global::System.DateTime> _LastDate;
+        partial void OnLastDateChanging(global::System.Nullable<global::System.DateTime> value);
+        partial void OnLastDateChanged();
+        /// <summary>
+        /// В схеме отсутствуют комментарии для свойства MAGID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public decimal MAGID
+        {
+            get
+            {
+                return this._MAGID;
+            }
+            set
+            {
+                this.OnMAGIDChanging(value);
+                if (object.Equals(this.MAGID, value))
+                {
+                    return;
+                }
+                this._MAGID = value;
+                this.OnMAGIDChanged();
+                this.OnPropertyChanged("MAGID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private decimal _MAGID;
+        partial void OnMAGIDChanging(decimal value);
+        partial void OnMAGIDChanged();
+        /// <summary>
+        /// В схеме отсутствуют комментарии для свойства SupplierID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Nullable<decimal> SupplierID
+        {
+            get
+            {
+                return this._SupplierID;
+            }
+            set
+            {
+                this.OnSupplierIDChanging(value);
+                if (object.Equals(this.SupplierID, value))
+                {
+                    return;
+                }
+                this._SupplierID = value;
+                this.OnSupplierIDChanged();
+                this.OnPropertyChanged("SupplierID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Nullable<decimal> _SupplierID;
+        partial void OnSupplierIDChanging(global::System.Nullable<decimal> value);
+        partial void OnSupplierIDChanged();
+        /// <summary>
+        /// В схеме отсутствуют комментарии для MatsAndGoodsItem.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public MatsAndGoodsItem MatsAndGoodsItem
+        {
+            get
+            {
+                this.@__MatsAndGoodsItem.EnsureValueInitialized();
+                return this._MatsAndGoodsItem;
+            }
+            set
+            {
+                MatsAndGoodsItem previous = this.MatsAndGoodsItem;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._MatsAndGoodsItem = null;
+                    this.@__MatsAndGoodsItem.OnValueSet();
+                    previous.MatsAndGoodsPrices.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.MAGID = value.ID;
+                    }
+                    else
+                    {
+                        this.MAGID = default(decimal);
+                    }
+                }
+                this._MatsAndGoodsItem = value;
+                this.@__MatsAndGoodsItem.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__MatsAndGoodsPrices.Add(this);
+                }
+                this.___OnPropertyChanged("MatsAndGoodsItem");
+                this.OnPropertyChanged("MatsAndGoodsItem");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private MatsAndGoodsItem _MatsAndGoodsItem;
+        /// <summary>
+        /// В схеме отсутствуют комментарии для SuppliersItem.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public SuppliersItem SuppliersItem
+        {
+            get
+            {
+                this.@__SuppliersItem.EnsureValueInitialized();
+                return this._SuppliersItem;
+            }
+            set
+            {
+                SuppliersItem previous = this.SuppliersItem;
+                if ((previous == value))
+                {
+                    return;
+                }
+                if ((previous != null))
+                {
+                    this._SuppliersItem = null;
+                    this.@__SuppliersItem.OnValueSet();
+                    previous.MatsAndGoodsPrices.Remove(this);
+                }
+                if ((this.___Host != null))
+                {
+                    if ((value != null))
+                    {
+                        this.SupplierID = value.ID;
+                    }
+                    else
+                    {
+                        this.SupplierID = default(global::System.Nullable<decimal>);
+                    }
+                }
+                this._SuppliersItem = value;
+                this.@__SuppliersItem.OnValueSet();
+                if ((value != null))
+                {
+                    value.@__MatsAndGoodsPrices.Add(this);
+                }
+                this.___OnPropertyChanged("SuppliersItem");
+                this.OnPropertyChanged("SuppliersItem");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private SuppliersItem _SuppliersItem;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
@@ -5277,6 +5614,25 @@ namespace LightSwitchApplication.Implementation
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         private global::System.Data.Services.Client.DataServiceCollection<ActionsItem> _Actions = new global::System.Data.Services.Client.DataServiceCollection<ActionsItem>(null, global::System.Data.Services.Client.TrackingMode.None);
+        /// <summary>
+        /// В схеме отсутствуют комментарии для MatsAndGoodsPrices.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                this.@__MatsAndGoodsPrices.EnsureValueInitialized();
+                return this._MatsAndGoodsPrices;
+            }
+            set
+            {
+                this._MatsAndGoodsPrices = value;
+                this.OnPropertyChanged("MatsAndGoodsPrices");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem> _MatsAndGoodsPrices = new global::System.Data.Services.Client.DataServiceCollection<MatsAndGoodsPricesItem>(null, global::System.Data.Services.Client.TrackingMode.None);
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

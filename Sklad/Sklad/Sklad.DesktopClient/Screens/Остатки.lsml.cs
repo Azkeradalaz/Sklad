@@ -16,6 +16,13 @@ namespace LightSwitchApplication
         partial void Остатки_Created()
         {
             Quantity = 1;
+            QuantityMore = 1;
+        }
+
+        partial void MAGQWithoutPageSegregation_Execute()
+        {
+            this.OpenModalWindow("MAGQWithoutSegregation");
+
         }
     }
     

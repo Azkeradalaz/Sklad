@@ -204,6 +204,12 @@
     <Compile Include="DataSources\skladData\ActionsItem.lsml.cs">
       <DependentUpon>Actions.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\skladData\MatsAndGoodsPricesItem.lsml.cs">
+      <DependentUpon>MatsAndGoodsPrices.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSources\skladData\RecipesComponentsItem.lsml.cs">
+      <DependentUpon>RecipesComponents.lsml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -239,6 +245,9 @@
     <LightSwitchModel Include="DataSources\skladData\WorkingSkladi.lsml">
       <DependentUpon>Skladi.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\skladData\MatsAndGoodsPrices.lsml" />
+    <LightSwitchModel Include="Properties\DataSources\ApplicationData.lsml" />
+    <LightSwitchModel Include="DataSources\ApplicationData\Table1ItemSet.lsml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -475,6 +475,29 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// Отсутствует описание модели
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                return global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.GetValue(this, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPricesQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -693,6 +716,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties.MatsAndGoodsPrices) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -716,6 +747,7 @@ namespace LightSwitchApplication
                 new global::System.Collections.IEnumerable CraftFiller { get; }
                 new global::System.Collections.IEnumerable LogActionsAndCraft { get; }
                 new global::System.Collections.IEnumerable LogMatsAndGoodsQuantities { get; }
+                new global::System.Collections.IEnumerable MatsAndGoodsPrices { get; }
             }
             #pragma warning restore 109
     
@@ -1231,6 +1263,26 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.LogMatsAndGoodsQuantities;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry
+                    MatsAndGoodsPrices = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry(
+                        "MatsAndGoodsPrices",
+                        global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_Stub,
+                        global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_GetReferencedEntities,
+                        global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_GetEntityCollection);
+                private static void _MatsAndGoodsPrices_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data> c, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MatsAndGoodsPrices, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.MatsAndGoodsPricesItem> _MatsAndGoodsPrices_GetReferencedEntities(global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.MatsAndGoodsPricesItem, global::LightSwitchApplication.MatsAndGoodsPricesItem.DetailsClass>(global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass.PropertySetProperties.MatsAndGoodsPrices, ref d._MatsAndGoodsPrices);
+                }
+                private static global::System.Collections.IEnumerable _MatsAndGoodsPrices_GetEntityCollection(global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.MatsAndGoodsPrices;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1283,6 +1335,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data _LogMatsAndGoodsQuantities;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data _MatsAndGoodsPrices;
             
         }
     

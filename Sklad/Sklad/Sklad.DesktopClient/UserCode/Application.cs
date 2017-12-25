@@ -214,6 +214,32 @@ namespace LightSwitchApplication
             }
         }
 
+        partial void ОстаткиПоСпецификациям_CanRun(ref bool result)
+        {
+            if (Current.User.HasPermission(Permissions.ViewReports))
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+        }
+
+        partial void ОстаткиПокупныеКомплектующие_CanRun(ref bool result)
+        {
+            if (Current.User.HasPermission(Permissions.ViewReports))
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+        }
+
     }
    
 }

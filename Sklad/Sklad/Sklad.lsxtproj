@@ -20,9 +20,9 @@
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
     <ApplicationClientType>Desktop</ApplicationClientType>
     <ApplicationServerType>IIS</ApplicationServerType>
-    <AuthenticationType>None</AuthenticationType>
+    <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>Sklad</ApplicationName>
-    <AssemblyVersion>0.9.46.0</AssemblyVersion>
+    <AssemblyVersion>0.9.48.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -35,7 +35,7 @@
     <BootstrapperComponentsUrl />
     <DefaultInstallLocation>Sklad</DefaultInstallLocation>
     <DeploySchema>True</DeploySchema>
-    <PublishLocation>D:\VS_PRO\projects\publish\2017.10.17b\</PublishLocation>
+    <PublishLocation>D:\VS_PRO\projects\publish\2017.12.21b\</PublishLocation>
     <PublishNewDatabase>True</PublishNewDatabase>
     <PublishUrl />
     <PublishSite>Default Web Site/Sklad</PublishSite>

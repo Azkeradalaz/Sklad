@@ -7732,6 +7732,21 @@ namespace LightSwitchApplication
 
         partial void Quantity1_Changed();
 
+        partial void MatsAndGoodsQuantitiesFull_SelectionChanged();
+
+        partial void MatsAndGoodsQuantitiesFull_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsQuantitiesFull_Loaded(bool succeeded);
+
+        partial void NameMAG1_Changed();
+
+        partial void NameSklad1_Changed();
+
+        partial void QuantityMore_Changed();
+
+        partial void QuantityLess_Changed();
+
         /// <summary>
         /// Получает коллекцию визуальных элементов MatsAndGoodsQuantities. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
         /// </summary>
@@ -7827,6 +7842,97 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Quantity1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
+        /// <summary>
+        /// Получает коллекцию визуальных элементов MatsAndGoodsQuantitiesFull. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> MatsAndGoodsQuantitiesFull
+        {
+            get
+            {
+                return global::LightSwitchApplication.Остатки.DetailsClass.GetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.MatsAndGoodsQuantitiesFull);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsQuantitiesFull_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string NameMAG1
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Остатки.DetailsClass.GetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameMAG1);
+            }
+            set
+            {
+                global::LightSwitchApplication.Остатки.DetailsClass.SetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameMAG1, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NameMAG1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string NameSklad1
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Остатки.DetailsClass.GetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameSklad1);
+            }
+            set
+            {
+                global::LightSwitchApplication.Остатки.DetailsClass.SetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameSklad1, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NameSklad1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Nullable<decimal> QuantityMore
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Остатки.DetailsClass.GetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityMore);
+            }
+            set
+            {
+                global::LightSwitchApplication.Остатки.DetailsClass.SetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityMore, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void QuantityMore_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Nullable<decimal> QuantityLess
+        {
+            get 
+            {
+                return global::LightSwitchApplication.Остатки.DetailsClass.GetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityLess);
+            }
+            set
+            {
+                global::LightSwitchApplication.Остатки.DetailsClass.SetValue(this, global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityLess, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void QuantityLess_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Вызывает метод экрана MAGQWithoutPageSegregation.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void MAGQWithoutPageSegregation()
+        {
+            this.Details.Methods.MAGQWithoutPageSegregation.CreateInvocation().Execute();
+        }
+        partial void MAGQWithoutPageSegregation_CanExecute(ref bool result);
+        partial void MAGQWithoutPageSegregation_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7837,6 +7943,8 @@ namespace LightSwitchApplication
             static DetailsClass()
             {
                 var initializePropertyEntry = global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.MatsAndGoodsQuantities;
+                var initializeCommandEntry = global::LightSwitchApplication.Остатки.DetailsClass.CommandSetProperties.MAGQWithoutPageSegregation;
+                var initializeMethodEntry = global::LightSwitchApplication.Остатки.DetailsClass.MethodSetProperties.MAGQWithoutPageSegregation;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -7918,7 +8026,18 @@ namespace LightSwitchApplication
                     global::Microsoft.LightSwitch.DataServiceQueryable.Include(
                         global::Microsoft.LightSwitch.DataServiceQueryable.Where(
                             this.Screen.DataWorkspace.skladData.MatsAndGoodsQuantities,
-                            (m) => (((((m.SkladiItem.Status.CompareTo("Функционирует") == 0) && ((NameMAG == null) || (m.MatsAndGoodsItem.Name.CompareTo(NameMAG) == 0))) && ((NameSklad == null) || (m.SkladiItem.Name.CompareTo(NameSklad) == 0))) && ((Quantity.HasValue == false) || (m.Quantity.HasValue && (Quantity.HasValue && (m.Quantity > Quantity))))) && ((Quantity1.HasValue == false) || (m.Quantity.HasValue && (Quantity1.HasValue && (m.Quantity < Quantity1)))))),
+                            (m) => (((((m.SkladiItem.Status.CompareTo("Функционирует") == 0) && ((NameMAG == null) || m.MatsAndGoodsItem.Name.Contains(NameMAG))) && ((NameSklad == null) || m.SkladiItem.Name.Contains(NameSklad))) && ((Quantity.HasValue == false) || (m.Quantity.HasValue && (Quantity.HasValue && (m.Quantity >= Quantity))))) && ((Quantity1.HasValue == false) || (m.Quantity.HasValue && (Quantity1.HasValue && (m.Quantity <= Quantity1)))))),
+                        "SkladiItem"),
+                    "MatsAndGoodsItem");
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoodsQuantitiesFullQuery(string NameMAG, string NameSklad, global::System.Nullable<decimal> QuantityMore, global::System.Nullable<decimal> QuantityLess)
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                            this.Screen.DataWorkspace.skladData.MatsAndGoodsQuantities,
+                            (m) => (((((m.SkladiItem.Status.CompareTo("Функционирует") == 0) && ((NameMAG == null) || m.MatsAndGoodsItem.Name.Contains(NameMAG))) && ((NameSklad == null) || m.SkladiItem.Name.Contains(NameSklad))) && ((QuantityMore.HasValue == false) || (m.Quantity.HasValue && (QuantityMore.HasValue && (m.Quantity > QuantityMore))))) && ((QuantityLess.HasValue == false) || (m.Quantity.HasValue && (QuantityLess.HasValue && (m.Quantity < QuantityLess)))))),
                         "SkladiItem"),
                     "MatsAndGoodsItem");
             }
@@ -7940,6 +8059,27 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Data _MatsAndGoodsQuantitiesFull;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Data _NameMAG1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Data _NameSklad1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Data _QuantityMore;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Data _QuantityLess;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Data _MAGQWithoutPageSegregationCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Data _MAGQWithoutPageSegregationMethod;
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
@@ -7996,6 +8136,46 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> MatsAndGoodsQuantitiesFull
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.MatsAndGoodsQuantitiesFull);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string> NameMAG1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameMAG1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string> NameSklad1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.NameSklad1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>> QuantityMore
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityMore);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>> QuantityLess
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties.QuantityLess);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8004,6 +8184,15 @@ namespace LightSwitchApplication
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass> MAGQWithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.CommandSetProperties.MAGQWithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8012,6 +8201,15 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass> MAGQWithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>)base.GetItem(global::LightSwitchApplication.Остатки.DetailsClass.MethodSetProperties.MAGQWithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8152,6 +8350,1012 @@ namespace LightSwitchApplication
                 private static void _Quantity1_OnValueChanged(global::LightSwitchApplication.Остатки s)
                 {
                     s.Quantity1_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Entry
+                    MatsAndGoodsQuantitiesFull = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Entry(
+                        "MatsAndGoodsQuantitiesFull",
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_Validate,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_CreateQuery,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_SelectionChanged,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_OnCollectionChanged,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._MatsAndGoodsQuantitiesFull_OnLoaded);
+                private static void _MatsAndGoodsQuantitiesFull_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MatsAndGoodsQuantitiesFull, sf);
+                }
+                private static void _MatsAndGoodsQuantitiesFull_Validate(global::LightSwitchApplication.Остатки s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.MatsAndGoodsQuantitiesFull_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _MatsAndGoodsQuantitiesFull_CreateQuery(global::LightSwitchApplication.Остатки.DetailsClass d, object[] args)
+                {
+                    return d.MatsAndGoodsQuantitiesFullQuery((string)args[0], (string)args[1], (global::System.Nullable<decimal>)args[2], (global::System.Nullable<decimal>)args[3]);
+                }
+                private static void _MatsAndGoodsQuantitiesFull_SelectionChanged(global::LightSwitchApplication.Остатки s)
+                {
+                    s.MatsAndGoodsQuantitiesFull_SelectionChanged();
+                }
+                private static void _MatsAndGoodsQuantitiesFull_OnCollectionChanged(global::LightSwitchApplication.Остатки s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.MatsAndGoodsQuantitiesFull_Changed(e);
+                }
+                private static void _MatsAndGoodsQuantitiesFull_OnLoaded(global::LightSwitchApplication.Остатки s, bool succeeded)
+                {
+                    s.MatsAndGoodsQuantitiesFull_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Entry
+                    NameMAG1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Entry(
+                        "NameMAG1",
+                        false,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameMAG1_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameMAG1_Validate,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameMAG1_OnValueChanged);
+                private static void _NameMAG1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NameMAG1, sf);
+                }
+                private static void _NameMAG1_Validate(global::LightSwitchApplication.Остатки s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.NameMAG1_Validate(r);
+                }
+                private static void _NameMAG1_OnValueChanged(global::LightSwitchApplication.Остатки s)
+                {
+                    s.NameMAG1_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Entry
+                    NameSklad1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Entry(
+                        "NameSklad1",
+                        false,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameSklad1_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameSklad1_Validate,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._NameSklad1_OnValueChanged);
+                private static void _NameSklad1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, string>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NameSklad1, sf);
+                }
+                private static void _NameSklad1_Validate(global::LightSwitchApplication.Остатки s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.NameSklad1_Validate(r);
+                }
+                private static void _NameSklad1_OnValueChanged(global::LightSwitchApplication.Остатки s)
+                {
+                    s.NameSklad1_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    QuantityMore = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                        "QuantityMore",
+                        false,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityMore_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityMore_Validate,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityMore_OnValueChanged);
+                private static void _QuantityMore_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._QuantityMore, sf);
+                }
+                private static void _QuantityMore_Validate(global::LightSwitchApplication.Остатки s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.QuantityMore_Validate(r);
+                }
+                private static void _QuantityMore_OnValueChanged(global::LightSwitchApplication.Остатки s)
+                {
+                    s.QuantityMore_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    QuantityLess = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                        "QuantityLess",
+                        false,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityLess_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityLess_Validate,
+                        global::LightSwitchApplication.Остатки.DetailsClass.PropertySetProperties._QuantityLess_OnValueChanged);
+                private static void _QuantityLess_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._QuantityLess, sf);
+                }
+                private static void _QuantityLess_Validate(global::LightSwitchApplication.Остатки s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.QuantityLess_Validate(r);
+                }
+                private static void _QuantityLess_OnValueChanged(global::LightSwitchApplication.Остатки s)
+                {
+                    s.QuantityLess_Changed();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Entry
+                    MAGQWithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Entry(
+                        "MAGQWithoutPageSegregation",
+                        global::LightSwitchApplication.Остатки.DetailsClass.CommandSetProperties._MAGQWithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.CommandSetProperties._MAGQWithoutPageSegregation_CreateExecutableObject);
+                private static void _MAGQWithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MAGQWithoutPageSegregationCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _MAGQWithoutPageSegregation_CreateExecutableObject(global::LightSwitchApplication.Остатки.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.Остатки.DetailsClass)d).Methods.MAGQWithoutPageSegregation.CreateInvocation();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Entry
+                    MAGQWithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Entry(
+                        "MAGQWithoutPageSegregation",
+                        global::LightSwitchApplication.Остатки.DetailsClass.MethodSetProperties._MAGQWithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.Остатки.DetailsClass.MethodSetProperties._MAGQWithoutPageSegregation_CanInvoke,
+                        global::LightSwitchApplication.Остатки.DetailsClass.MethodSetProperties._MAGQWithoutPageSegregation_InvokeMethod);
+                private static void _MAGQWithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Остатки.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.Остатки, global::LightSwitchApplication.Остатки.DetailsClass>.Data> c, global::LightSwitchApplication.Остатки.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MAGQWithoutPageSegregationMethod, sf);
+                }
+                private static global::System.Exception _MAGQWithoutPageSegregation_CanInvoke(global::LightSwitchApplication.Остатки.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.MAGQWithoutPageSegregation_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _MAGQWithoutPageSegregation_InvokeMethod(global::LightSwitchApplication.Остатки.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.MAGQWithoutPageSegregation_Execute();
+                }
+
+            }
+        }
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    public sealed partial class ОстаткиПокупныеКомплектующие
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private ОстаткиПокупныеКомплектующие() : base("LightSwitchApplication.Sklad.DesktopClient:ОстаткиПокупныеКомплектующие")
+        {
+            global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static ОстаткиПокупныеКомплектующие CreateInstance()
+        {
+            return new global::LightSwitchApplication.ОстаткиПокупныеКомплектующие(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПокупныеКомплектующие_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Получает объект Application для данного приложения.  Объект Application предоставляет доступ к активным экранам, методы для открытых экранов и доступ к текущему пользователю.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Получает вмещающую рабочую область данных.  Рабочая область данных предоставляет доступ ко всем источникам данных в приложении.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void MatsAndGoodsPrices_SelectionChanged();
+
+        partial void MatsAndGoodsPrices_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsPrices_Loaded(bool succeeded);
+
+        partial void NameMAG_Changed();
+
+        partial void NameSupplier_Changed();
+
+        /// <summary>
+        /// Получает коллекцию визуальных элементов MatsAndGoodsPrices. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsPrices_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string NameMAG
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameMAG);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.SetValue(this, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameMAG, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NameMAG_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string NameSupplier
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameSupplier);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.SetValue(this, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameSupplier, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NameSupplier_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySet, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.CommandSet, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.MatsAndGoodsPrices;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>.Entry
+                __ОстаткиПокупныеКомплектующиеEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>.Entry(
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeSavingEvent,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeSavedEvent,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeClosingEvent,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeCreated,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeActivated,
+                    global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.__ОстаткиПокупныеКомплектующие_InvokeSaveErrorEvent);
+            private static void __ОстаткиПокупныеКомплектующие_InvokeInitializeDataWorkspace(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.ОстаткиПокупныеКомплектующие_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __ОстаткиПокупныеКомплектующие_InvokeSavingEvent(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+            {
+                bool handled = false;
+                s.ОстаткиПокупныеКомплектующие_Saving(ref handled);
+                return handled;
+            }
+            private static void __ОстаткиПокупныеКомплектующие_InvokeSavedEvent(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+            {
+                s.ОстаткиПокупныеКомплектующие_Saved();
+            }
+            private static bool __ОстаткиПокупныеКомплектующие_InvokeClosingEvent(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+            {
+                bool cancel = false;
+                s.ОстаткиПокупныеКомплектующие_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __ОстаткиПокупныеКомплектующие_InvokeCreated(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+            {
+                s.ОстаткиПокупныеКомплектующие_Created();
+            }
+            private static void __ОстаткиПокупныеКомплектующие_InvokeActivated(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+            {
+                s.ОстаткиПокупныеКомплектующие_Activated();
+            }
+            private static bool __ОстаткиПокупныеКомплектующие_InvokeSaveErrorEvent(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.ОстаткиПокупныеКомплектующие_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoodsPricesQuery(string NameMAG, string NameSupplier)
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                            this.Screen.DataWorkspace.skladData.MatsAndGoodsPrices,
+                            (m) => (((m.MatsAndGoodsItem.Category.CompareTo("Материал") == 0) && ((NameMAG == null) || m.MatsAndGoodsItem.Name.Contains(NameMAG))) && ((NameSupplier == null) || m.SuppliersItem.Name.Contains(NameSupplier)))),
+                        "MatsAndGoodsItem"),
+                    "SuppliersItem");
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data _MatsAndGoodsPrices;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Data _NameMAG;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Data _NameSupplier;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>)base.GetItem(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string> NameMAG
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameMAG);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string> NameSupplier
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties.NameSupplier);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry
+                    MatsAndGoodsPrices = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry(
+                        "MatsAndGoodsPrices",
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_Stub,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_Validate,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_CreateQuery,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_SelectionChanged,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_OnCollectionChanged,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_OnLoaded);
+                private static void _MatsAndGoodsPrices_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data> c, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MatsAndGoodsPrices, sf);
+                }
+                private static void _MatsAndGoodsPrices_Validate(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.MatsAndGoodsPrices_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _MatsAndGoodsPrices_CreateQuery(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass d, object[] args)
+                {
+                    return d.MatsAndGoodsPricesQuery((string)args[0], (string)args[1]);
+                }
+                private static void _MatsAndGoodsPrices_SelectionChanged(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+                {
+                    s.MatsAndGoodsPrices_SelectionChanged();
+                }
+                private static void _MatsAndGoodsPrices_OnCollectionChanged(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.MatsAndGoodsPrices_Changed(e);
+                }
+                private static void _MatsAndGoodsPrices_OnLoaded(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, bool succeeded)
+                {
+                    s.MatsAndGoodsPrices_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Entry
+                    NameMAG = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Entry(
+                        "NameMAG",
+                        false,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameMAG_Stub,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameMAG_Validate,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameMAG_OnValueChanged);
+                private static void _NameMAG_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Data> c, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NameMAG, sf);
+                }
+                private static void _NameMAG_Validate(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.NameMAG_Validate(r);
+                }
+                private static void _NameMAG_OnValueChanged(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+                {
+                    s.NameMAG_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Entry
+                    NameSupplier = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Entry(
+                        "NameSupplier",
+                        false,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameSupplier_Stub,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameSupplier_Validate,
+                        global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass.PropertySetProperties._NameSupplier_OnValueChanged);
+                private static void _NameSupplier_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПокупныеКомплектующие, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass, string>.Data> c, global::LightSwitchApplication.ОстаткиПокупныеКомплектующие.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NameSupplier, sf);
+                }
+                private static void _NameSupplier_Validate(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.NameSupplier_Validate(r);
+                }
+                private static void _NameSupplier_OnValueChanged(global::LightSwitchApplication.ОстаткиПокупныеКомплектующие s)
+                {
+                    s.NameSupplier_Changed();
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class CommandSetProperties
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class MethodSetProperties
+            {
+            }
+        }
+    }
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+    public sealed partial class ОстаткиПоСпецификациям
+        : global::Microsoft.LightSwitch.Framework.Client.ScreenObject<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>
+    {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private ОстаткиПоСпецификациям() : base("LightSwitchApplication.Sklad.DesktopClient:ОстаткиПоСпецификациям")
+        {
+            global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.Initialize(this);
+        }
+
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static ОстаткиПоСпецификациям CreateInstance()
+        {
+            return new global::LightSwitchApplication.ОстаткиПоСпецификациям(
+            );
+        }
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_Created();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_Activated();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_Saving(ref bool handled);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_Saved();
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_Closing(ref bool cancel);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ОстаткиПоСпецификациям_SaveError(global::System.Exception exception, ref bool handled);
+     
+        #region Private Properties
+        
+        /// <summary>
+        /// Получает объект Application для данного приложения.  Объект Application предоставляет доступ к активным экранам, методы для открытых экранов и доступ к текущему пользователю.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.Application Application
+        {
+            get
+            {
+                return global::LightSwitchApplication.Application.Current;
+            }
+        }
+        
+        /// <summary>
+        /// Получает вмещающую рабочую область данных.  Рабочая область данных предоставляет доступ ко всем источникам данных в приложении.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private global::LightSwitchApplication.DataWorkspace DataWorkspace
+        {
+            get
+            {
+                return (global::LightSwitchApplication.DataWorkspace)((global::Microsoft.LightSwitch.Details.Client.IScreenDetails)this.Details).DataWorkspace;
+            }
+        }
+        
+        #endregion
+ 
+        partial void Recipes_SelectionChanged();
+
+        partial void Recipes_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Recipes_Loaded(bool succeeded);
+
+        partial void RecipesComponents_SelectionChanged();
+
+        partial void RecipesComponents_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecipesComponents_Loaded(bool succeeded);
+
+        partial void MatsAndGoodsQuantities_SelectionChanged();
+
+        partial void MatsAndGoodsQuantities_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsQuantities_Loaded(bool succeeded);
+
+        partial void NameMAG_Changed();
+
+        /// <summary>
+        /// Получает коллекцию визуальных элементов Recipes. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.RecipesItem> Recipes
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.Recipes);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void Recipes_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Получает коллекцию визуальных элементов RecipesComponents. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.RecipesComponentsItem> RecipesComponents
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.RecipesComponents);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RecipesComponents_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Получает коллекцию визуальных элементов MatsAndGoodsQuantities. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> MatsAndGoodsQuantities
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.MatsAndGoodsQuantities);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsQuantities_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public string NameMAG
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.GetValue(this, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.NameMAG);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.SetValue(this, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.NameMAG, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void NameMAG_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public sealed class DetailsClass
+            : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySet, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.CommandSet, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.MethodSet>
+        {
+
+            static DetailsClass()
+            {
+                var initializePropertyEntry = global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.Recipes;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>.Entry
+                __ОстаткиПоСпецификациямEntry = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenDetails<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>.Entry(
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeInitializeDataWorkspace,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeSavingEvent,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeSavedEvent,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeClosingEvent,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeCreated,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeActivated,
+                    global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.__ОстаткиПоСпецификациям_InvokeSaveErrorEvent);
+            private static void __ОстаткиПоСпецификациям_InvokeInitializeDataWorkspace(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
+            {
+                s.ОстаткиПоСпецификациям_InitializeDataWorkspace(saveChangesTo);
+            }
+            private static bool __ОстаткиПоСпецификациям_InvokeSavingEvent(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+            {
+                bool handled = false;
+                s.ОстаткиПоСпецификациям_Saving(ref handled);
+                return handled;
+            }
+            private static void __ОстаткиПоСпецификациям_InvokeSavedEvent(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+            {
+                s.ОстаткиПоСпецификациям_Saved();
+            }
+            private static bool __ОстаткиПоСпецификациям_InvokeClosingEvent(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+            {
+                bool cancel = false;
+                s.ОстаткиПоСпецификациям_Closing(ref cancel);
+                return cancel;
+            }
+            private static void __ОстаткиПоСпецификациям_InvokeCreated(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+            {
+                s.ОстаткиПоСпецификациям_Created();
+            }
+            private static void __ОстаткиПоСпецификациям_InvokeActivated(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+            {
+                s.ОстаткиПоСпецификациям_Activated();
+            }
+            private static bool __ОстаткиПоСпецификациям_InvokeSaveErrorEvent(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::System.Exception ex)
+            {
+                bool handled = false;
+                s.ОстаткиПоСпецификациям_SaveError(ex, ref handled);
+                return handled;
+            }
+
+            public DetailsClass() : base()
+            {
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySet Properties
+            {
+                get
+                {
+                    return base.Properties;
+                }
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.CommandSet Commands
+            {
+                get
+                {
+                    return base.Commands;
+                }
+            }
+
+            public new global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.MethodSet Methods
+            {
+                get
+                {
+                    return base.Methods;
+                }
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable RecipesQuery(string NameMAG)
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                        this.Screen.DataWorkspace.skladData.Recipes,
+                        (r) => ((NameMAG == null) || r.MatsAndGoodsItem.Name.Contains(NameMAG))),
+                    "MatsAndGoodsItem");
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable RecipesComponentsQuery()
+            {
+                if (this.Screen.Recipes.SelectedItem == null)
+                {
+                    return null;
+                }
+
+                global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.RecipesComponentsItem> loader =
+                    (global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.RecipesComponentsItem>)((global::Microsoft.LightSwitch.Details.ILoadableProperty)this.Screen.Recipes.SelectedItem.Details.Properties.RecipesComponents).Loader;
+                if (loader == null)
+                {
+                    return null;
+                }
+
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    loader,
+                    "MatsAndGoodsItem");
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoodsQuantitiesQuery()
+            {
+                return this.Screen.DataWorkspace.skladData.MatsAndGoodsQuantities;
+            }
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem>.Data _Recipes;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Data _RecipesComponents;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Data _MatsAndGoodsQuantities;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string>.Data _NameMAG;
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class PropertySet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenPropertySet<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>
+            {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem> Recipes
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem>)base.GetItem(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.Recipes);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem> RecipesComponents
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>)base.GetItem(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.RecipesComponents);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> MatsAndGoodsQuantities
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>)base.GetItem(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.MatsAndGoodsQuantities);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string> NameMAG
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string>)base.GetItem(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties.NameMAG);
+                    }
+                }
+
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class CommandSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public sealed class MethodSet
+                : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass>
+            {
+            }
+
+            [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            internal sealed class PropertySetProperties
+            {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem>.Entry
+                    Recipes = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem>.Entry(
+                        "Recipes",
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_Stub,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_Validate,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_CreateQuery,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_SelectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_OnCollectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._Recipes_OnLoaded);
+                private static void _Recipes_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesItem>.Data> c, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object sf)
+                {
+                    c(d, ref d._Recipes, sf);
+                }
+                private static void _Recipes_Validate(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.Recipes_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _Recipes_CreateQuery(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object[] args)
+                {
+                    return d.RecipesQuery((string)args[0]);
+                }
+                private static void _Recipes_SelectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+                {
+                    s.Recipes_SelectionChanged();
+                }
+                private static void _Recipes_OnCollectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.Recipes_Changed(e);
+                }
+                private static void _Recipes_OnLoaded(global::LightSwitchApplication.ОстаткиПоСпецификациям s, bool succeeded)
+                {
+                    s.Recipes_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Entry
+                    RecipesComponents = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Entry(
+                        "RecipesComponents",
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_Stub,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_Validate,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_CreateQuery,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_SelectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_OnCollectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._RecipesComponents_OnLoaded);
+                private static void _RecipesComponents_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Data> c, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object sf)
+                {
+                    c(d, ref d._RecipesComponents, sf);
+                }
+                private static void _RecipesComponents_Validate(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.RecipesComponents_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _RecipesComponents_CreateQuery(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object[] args)
+                {
+                    return d.RecipesComponentsQuery();
+                }
+                private static void _RecipesComponents_SelectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+                {
+                    s.RecipesComponents_SelectionChanged();
+                }
+                private static void _RecipesComponents_OnCollectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.RecipesComponents_Changed(e);
+                }
+                private static void _RecipesComponents_OnLoaded(global::LightSwitchApplication.ОстаткиПоСпецификациям s, bool succeeded)
+                {
+                    s.RecipesComponents_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Entry
+                    MatsAndGoodsQuantities = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Entry(
+                        "MatsAndGoodsQuantities",
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_Stub,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_Validate,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_CreateQuery,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_SelectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_OnCollectionChanged,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._MatsAndGoodsQuantities_OnLoaded);
+                private static void _MatsAndGoodsQuantities_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem>.Data> c, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MatsAndGoodsQuantities, sf);
+                }
+                private static void _MatsAndGoodsQuantities_Validate(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.MatsAndGoodsQuantities_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _MatsAndGoodsQuantities_CreateQuery(global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object[] args)
+                {
+                    return d.MatsAndGoodsQuantitiesQuery();
+                }
+                private static void _MatsAndGoodsQuantities_SelectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+                {
+                    s.MatsAndGoodsQuantities_SelectionChanged();
+                }
+                private static void _MatsAndGoodsQuantities_OnCollectionChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.MatsAndGoodsQuantities_Changed(e);
+                }
+                private static void _MatsAndGoodsQuantities_OnLoaded(global::LightSwitchApplication.ОстаткиПоСпецификациям s, bool succeeded)
+                {
+                    s.MatsAndGoodsQuantities_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string>.Entry
+                    NameMAG = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string>.Entry(
+                        "NameMAG",
+                        false,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._NameMAG_Stub,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._NameMAG_Validate,
+                        global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass.PropertySetProperties._NameMAG_OnValueChanged);
+                private static void _NameMAG_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОстаткиПоСпецификациям, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass, string>.Data> c, global::LightSwitchApplication.ОстаткиПоСпецификациям.DetailsClass d, object sf)
+                {
+                    c(d, ref d._NameMAG, sf);
+                }
+                private static void _NameMAG_Validate(global::LightSwitchApplication.ОстаткиПоСпецификациям s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.NameMAG_Validate(r);
+                }
+                private static void _NameMAG_OnValueChanged(global::LightSwitchApplication.ОстаткиПоСпецификациям s)
+                {
+                    s.NameMAG_Changed();
                 }
 
             }
@@ -8526,6 +9730,17 @@ namespace LightSwitchApplication
 
         partial void ID_Changed();
 
+        partial void LogActionsAndCraftFull_SelectionChanged();
+
+        partial void LogActionsAndCraftFull_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogActionsAndCraftFull_Loaded(bool succeeded);
+
+        partial void c_Date1More_Changed();
+
+        partial void c_Date1Less_Changed();
+
         /// <summary>
         /// Получает коллекцию визуальных элементов LogActionsAndCraft. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
         /// </summary>
@@ -8601,6 +9816,65 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void ID_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
+        /// <summary>
+        /// Получает коллекцию визуальных элементов LogActionsAndCraftFull. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.LogActionsAndCraftItem> LogActionsAndCraftFull
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.LogActionsAndCraftFull);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogActionsAndCraftFull_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime c_Date1More
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1More);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.SetValue(this, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1More, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void c_Date1More_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime c_Date1Less
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1Less);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.SetValue(this, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1Less, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void c_Date1Less_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Вызывает метод экрана WithoutPageSegregation.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void WithoutPageSegregation()
+        {
+            this.Details.Methods.WithoutPageSegregation.CreateInvocation().Execute();
+        }
+        partial void WithoutPageSegregation_CanExecute(ref bool result);
+        partial void WithoutPageSegregation_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8611,6 +9885,8 @@ namespace LightSwitchApplication
             static DetailsClass()
             {
                 var initializePropertyEntry = global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.LogActionsAndCraft;
+                var initializeCommandEntry = global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.CommandSetProperties.WithoutPageSegregation;
+                var initializeMethodEntry = global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.MethodSetProperties.WithoutPageSegregation;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -8697,6 +9973,17 @@ namespace LightSwitchApplication
                     "SkladiItem");
             }
 
+            private global::Microsoft.LightSwitch.IDataServiceQueryable LogActionsAndCraftFullQuery(global::System.Nullable<global::System.DateTime> c_Date1More, global::System.Nullable<global::System.DateTime> c_Date1Less, global::System.Nullable<decimal> ID)
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                            this.Screen.DataWorkspace.skladData.LogActionsAndCraft,
+                            (l) => (((l.c_Date.HasValue && (c_Date1More.HasValue && (l.c_Date >= c_Date1More))) && (l.c_Date.HasValue && (c_Date1Less.HasValue && (l.c_Date <= c_Date1Less)))) && (ID.HasValue && (l.MatsAndGoodsItem1.ID == ID)))),
+                        "MatsAndGoodsItem1"),
+                    "SkladiItem");
+            }
+
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>.Data _LogActionsAndCraft;
 
@@ -8711,6 +9998,21 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _ID;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>.Data _LogActionsAndCraftFull;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Data _c_Date1More;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Data _c_Date1Less;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Data _WithoutPageSegregationCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Data _WithoutPageSegregationMethod;
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
@@ -8759,6 +10061,30 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem> LogActionsAndCraftFull
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>)base.GetItem(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.LogActionsAndCraftFull);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime> c_Date1More
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1More);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime> c_Date1Less
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties.c_Date1Less);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8767,6 +10093,15 @@ namespace LightSwitchApplication
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass> WithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>)base.GetItem(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.CommandSetProperties.WithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8775,6 +10110,15 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass> WithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>)base.GetItem(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.MethodSetProperties.WithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8907,6 +10251,80 @@ namespace LightSwitchApplication
                     s.ID_Changed();
                 }
 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>.Entry
+                    LogActionsAndCraftFull = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>.Entry(
+                        "LogActionsAndCraftFull",
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_Stub,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_Validate,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_CreateQuery,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_SelectionChanged,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_OnCollectionChanged,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._LogActionsAndCraftFull_OnLoaded);
+                private static void _LogActionsAndCraftFull_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::LightSwitchApplication.LogActionsAndCraftItem>.Data> c, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object sf)
+                {
+                    c(d, ref d._LogActionsAndCraftFull, sf);
+                }
+                private static void _LogActionsAndCraftFull_Validate(global::LightSwitchApplication.ОтчетЛогДвижение s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.LogActionsAndCraftFull_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _LogActionsAndCraftFull_CreateQuery(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object[] args)
+                {
+                    return d.LogActionsAndCraftFullQuery((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1], (global::System.Nullable<decimal>)args[2]);
+                }
+                private static void _LogActionsAndCraftFull_SelectionChanged(global::LightSwitchApplication.ОтчетЛогДвижение s)
+                {
+                    s.LogActionsAndCraftFull_SelectionChanged();
+                }
+                private static void _LogActionsAndCraftFull_OnCollectionChanged(global::LightSwitchApplication.ОтчетЛогДвижение s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.LogActionsAndCraftFull_Changed(e);
+                }
+                private static void _LogActionsAndCraftFull_OnLoaded(global::LightSwitchApplication.ОтчетЛогДвижение s, bool succeeded)
+                {
+                    s.LogActionsAndCraftFull_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Entry
+                    c_Date1More = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Entry(
+                        "c_Date1More",
+                        false,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1More_Stub,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1More_Validate,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1More_OnValueChanged);
+                private static void _c_Date1More_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object sf)
+                {
+                    c(d, ref d._c_Date1More, sf);
+                }
+                private static void _c_Date1More_Validate(global::LightSwitchApplication.ОтчетЛогДвижение s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.c_Date1More_Validate(r);
+                }
+                private static void _c_Date1More_OnValueChanged(global::LightSwitchApplication.ОтчетЛогДвижение s)
+                {
+                    s.c_Date1More_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Entry
+                    c_Date1Less = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Entry(
+                        "c_Date1Less",
+                        false,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1Less_Stub,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1Less_Validate,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.PropertySetProperties._c_Date1Less_OnValueChanged);
+                private static void _c_Date1Less_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object sf)
+                {
+                    c(d, ref d._c_Date1Less, sf);
+                }
+                private static void _c_Date1Less_Validate(global::LightSwitchApplication.ОтчетЛогДвижение s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.c_Date1Less_Validate(r);
+                }
+                private static void _c_Date1Less_OnValueChanged(global::LightSwitchApplication.ОтчетЛогДвижение s)
+                {
+                    s.c_Date1Less_Changed();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8914,6 +10332,21 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Entry
+                    WithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Entry(
+                        "WithoutPageSegregation",
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.CommandSetProperties._WithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.CommandSetProperties._WithoutPageSegregation_CreateExecutableObject);
+                private static void _WithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Data> c, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object sf)
+                {
+                    c(d, ref d._WithoutPageSegregationCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _WithoutPageSegregation_CreateExecutableObject(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass)d).Methods.WithoutPageSegregation.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -8921,6 +10354,28 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class MethodSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Entry
+                    WithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Entry(
+                        "WithoutPageSegregation",
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.MethodSetProperties._WithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.MethodSetProperties._WithoutPageSegregation_CanInvoke,
+                        global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass.MethodSetProperties._WithoutPageSegregation_InvokeMethod);
+                private static void _WithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогДвижение, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass>.Data> c, global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, object sf)
+                {
+                    c(d, ref d._WithoutPageSegregationMethod, sf);
+                }
+                private static global::System.Exception _WithoutPageSegregation_CanInvoke(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.WithoutPageSegregation_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _WithoutPageSegregation_InvokeMethod(global::LightSwitchApplication.ОтчетЛогДвижение.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.WithoutPageSegregation_Execute();
+                }
+
             }
         }
     }
@@ -9000,6 +10455,17 @@ namespace LightSwitchApplication
 
         partial void c_DateLess_Changed();
 
+        partial void LogMatsAndGoodsQuantitiesFull_SelectionChanged();
+
+        partial void LogMatsAndGoodsQuantitiesFull_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogMatsAndGoodsQuantitiesFull_Loaded(bool succeeded);
+
+        partial void c_DateMore1_Changed();
+
+        partial void c_DateLess1_Changed();
+
         /// <summary>
         /// Получает коллекцию визуальных элементов LogMatsAndGoodsQuantities. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
         /// </summary>
@@ -9047,6 +10513,65 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void c_DateLess_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
+        /// <summary>
+        /// Получает коллекцию визуальных элементов LogMatsAndGoodsQuantitiesFull. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem> LogMatsAndGoodsQuantitiesFull
+        {
+            get
+            {
+                return global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.LogMatsAndGoodsQuantitiesFull);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogMatsAndGoodsQuantitiesFull_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime c_DateMore1
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateMore1);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.SetValue(this, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateMore1, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void c_DateMore1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime c_DateLess1
+        {
+            get 
+            {
+                return global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.GetValue(this, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateLess1);
+            }
+            set
+            {
+                global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.SetValue(this, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateLess1, value);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void c_DateLess1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Вызывает метод экрана OpenWithoutPageSegregation.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public void OpenWithoutPageSegregation()
+        {
+            this.Details.Methods.OpenWithoutPageSegregation.CreateInvocation().Execute();
+        }
+        partial void OpenWithoutPageSegregation_CanExecute(ref bool result);
+        partial void OpenWithoutPageSegregation_Execute();
+
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9057,6 +10582,8 @@ namespace LightSwitchApplication
             static DetailsClass()
             {
                 var initializePropertyEntry = global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.LogMatsAndGoodsQuantities;
+                var initializeCommandEntry = global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.CommandSetProperties.OpenWithoutPageSegregation;
+                var initializeMethodEntry = global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.MethodSetProperties.OpenWithoutPageSegregation;
             }
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -9143,6 +10670,17 @@ namespace LightSwitchApplication
                     "SkladiItem");
             }
 
+            private global::Microsoft.LightSwitch.IDataServiceQueryable LogMatsAndGoodsQuantitiesFullQuery(global::System.Nullable<global::System.DateTime> c_DateMore, global::System.Nullable<global::System.DateTime> c_DateLess)
+            {
+                return global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                    global::Microsoft.LightSwitch.DataServiceQueryable.Include(
+                        global::Microsoft.LightSwitch.DataServiceQueryable.Where(
+                            this.Screen.DataWorkspace.skladData.LogMatsAndGoodsQuantities,
+                            (l) => (((l.c_Date.HasValue && (c_DateMore.HasValue && (l.c_Date >= c_DateMore))) && (l.c_Date.HasValue && (c_DateLess.HasValue && (l.c_Date <= c_DateLess)))) && (l.SkladiItem.Status.CompareTo("Функционирует") == 0))),
+                        "MatsAndGoodsItem"),
+                    "SkladiItem");
+            }
+
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data _LogMatsAndGoodsQuantities;
 
@@ -9151,6 +10689,21 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Data _c_DateLess;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data _LogMatsAndGoodsQuantitiesFull;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Data _c_DateMore1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Data _c_DateLess1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Data _OpenWithoutPageSegregationCommand;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Data _OpenWithoutPageSegregationMethod;
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
@@ -9183,6 +10736,30 @@ namespace LightSwitchApplication
                     }
                 }
 
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem> LogMatsAndGoodsQuantitiesFull
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>)base.GetItem(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.LogMatsAndGoodsQuantitiesFull);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime> c_DateMore1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateMore1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime> c_DateLess1
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>)base.GetItem(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties.c_DateLess1);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -9191,6 +10768,15 @@ namespace LightSwitchApplication
             public sealed class CommandSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommandSet<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass> OpenWithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>)base.GetItem(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.CommandSetProperties.OpenWithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -9199,6 +10785,15 @@ namespace LightSwitchApplication
             public sealed class MethodSet
                 : global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethodSet<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>
             {
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass> OpenWithoutPageSegregation
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>)base.GetItem(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.MethodSetProperties.OpenWithoutPageSegregation);
+                    }
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -9281,6 +10876,80 @@ namespace LightSwitchApplication
                     s.c_DateLess_Changed();
                 }
 
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Entry
+                    LogMatsAndGoodsQuantitiesFull = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Entry(
+                        "LogMatsAndGoodsQuantitiesFull",
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_Stub,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_Validate,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_CreateQuery,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_SelectionChanged,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_OnCollectionChanged,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantitiesFull_OnLoaded);
+                private static void _LogMatsAndGoodsQuantitiesFull_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data> c, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object sf)
+                {
+                    c(d, ref d._LogMatsAndGoodsQuantitiesFull, sf);
+                }
+                private static void _LogMatsAndGoodsQuantitiesFull_Validate(global::LightSwitchApplication.ОтчетЛогКоличества s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.LogMatsAndGoodsQuantitiesFull_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _LogMatsAndGoodsQuantitiesFull_CreateQuery(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object[] args)
+                {
+                    return d.LogMatsAndGoodsQuantitiesFullQuery((global::System.Nullable<global::System.DateTime>)args[0], (global::System.Nullable<global::System.DateTime>)args[1]);
+                }
+                private static void _LogMatsAndGoodsQuantitiesFull_SelectionChanged(global::LightSwitchApplication.ОтчетЛогКоличества s)
+                {
+                    s.LogMatsAndGoodsQuantitiesFull_SelectionChanged();
+                }
+                private static void _LogMatsAndGoodsQuantitiesFull_OnCollectionChanged(global::LightSwitchApplication.ОтчетЛогКоличества s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.LogMatsAndGoodsQuantitiesFull_Changed(e);
+                }
+                private static void _LogMatsAndGoodsQuantitiesFull_OnLoaded(global::LightSwitchApplication.ОтчетЛогКоличества s, bool succeeded)
+                {
+                    s.LogMatsAndGoodsQuantitiesFull_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Entry
+                    c_DateMore1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Entry(
+                        "c_DateMore1",
+                        false,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateMore1_Stub,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateMore1_Validate,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateMore1_OnValueChanged);
+                private static void _c_DateMore1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object sf)
+                {
+                    c(d, ref d._c_DateMore1, sf);
+                }
+                private static void _c_DateMore1_Validate(global::LightSwitchApplication.ОтчетЛогКоличества s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.c_DateMore1_Validate(r);
+                }
+                private static void _c_DateMore1_OnValueChanged(global::LightSwitchApplication.ОтчетЛогКоличества s)
+                {
+                    s.c_DateMore1_Changed();
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Entry
+                    c_DateLess1 = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Entry(
+                        "c_DateLess1",
+                        false,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateLess1_Stub,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateLess1_Validate,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.PropertySetProperties._c_DateLess1_OnValueChanged);
+                private static void _c_DateLess1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenLocalProperty<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::System.DateTime>.Data> c, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object sf)
+                {
+                    c(d, ref d._c_DateLess1, sf);
+                }
+                private static void _c_DateLess1_Validate(global::LightSwitchApplication.ОтчетЛогКоличества s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.c_DateLess1_Validate(r);
+                }
+                private static void _c_DateLess1_OnValueChanged(global::LightSwitchApplication.ОтчетЛогКоличества s)
+                {
+                    s.c_DateLess1_Changed();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -9288,6 +10957,21 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class CommandSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Entry
+                    OpenWithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Entry(
+                        "OpenWithoutPageSegregation",
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.CommandSetProperties._OpenWithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.CommandSetProperties._OpenWithoutPageSegregation_CreateExecutableObject);
+                private static void _OpenWithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Data> c, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OpenWithoutPageSegregationCommand, sf);
+                }
+                private static global::Microsoft.LightSwitch.IExecutable _OpenWithoutPageSegregation_CreateExecutableObject(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d)
+                {
+                    return ((global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass)d).Methods.OpenWithoutPageSegregation.CreateInvocation();
+                }
+
             }
 
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -9295,6 +10979,28 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal sealed class MethodSetProperties
             {
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Entry
+                    OpenWithoutPageSegregation = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Entry(
+                        "OpenWithoutPageSegregation",
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.MethodSetProperties._OpenWithoutPageSegregation_Stub,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.MethodSetProperties._OpenWithoutPageSegregation_CanInvoke,
+                        global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass.MethodSetProperties._OpenWithoutPageSegregation_InvokeMethod);
+                private static void _OpenWithoutPageSegregation_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenMethod<global::LightSwitchApplication.ОтчетЛогКоличества, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass>.Data> c, global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OpenWithoutPageSegregationMethod, sf);
+                }
+                private static global::System.Exception _OpenWithoutPageSegregation_CanInvoke(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args, global::System.Exception ex)
+                {
+                    bool result = true;
+                    d.Screen.OpenWithoutPageSegregation_CanExecute(ref result);
+                    return result ? null : ex;
+                }
+                private static void _OpenWithoutPageSegregation_InvokeMethod(global::LightSwitchApplication.ОтчетЛогКоличества.DetailsClass d, global::System.Collections.ObjectModel.ReadOnlyCollection<object> args)
+                {
+                    d.Screen.OpenWithoutPageSegregation_Execute();
+                }
+
             }
         }
     }
@@ -12203,6 +13909,20 @@ namespace LightSwitchApplication
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void ActionsFiller1_Loaded(bool succeeded);
 
+        partial void LogMatsAndGoodsQuantities_SelectionChanged();
+
+        partial void LogMatsAndGoodsQuantities_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogMatsAndGoodsQuantities_Loaded(bool succeeded);
+
+        partial void MatsAndGoodsPrices_SelectionChanged();
+
+        partial void MatsAndGoodsPrices_Changed(global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsPrices_Loaded(bool succeeded);
+
         /// <summary>
         /// Получает коллекцию визуальных элементов MatsAndGoods. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
         /// </summary>
@@ -12384,6 +14104,36 @@ namespace LightSwitchApplication
         }
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void ActionsFiller1_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Получает коллекцию визуальных элементов LogMatsAndGoodsQuantities. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem> LogMatsAndGoodsQuantities
+        {
+            get
+            {
+                return global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.GetValue(this, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties.LogMatsAndGoodsQuantities);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void LogMatsAndGoodsQuantities_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
+ 
+        /// <summary>
+        /// Получает коллекцию визуальных элементов MatsAndGoodsPrices. Коллекция содержит все записи, отображаемые в данный момент в соответствующем списке или сетке.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.Client.VisualCollection<global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+        {
+            get
+            {
+                return global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.GetValue(this, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
+            }
+        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void MatsAndGoodsPrices_Validate(global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder results);
  
         /// <summary>
         /// Вызывает метод экрана Calculate.
@@ -12642,6 +14392,40 @@ namespace LightSwitchApplication
                     "MatsAndGoodsItem");
             }
 
+            private global::Microsoft.LightSwitch.IDataServiceQueryable LogMatsAndGoodsQuantitiesQuery()
+            {
+                if (this.Screen.MatsAndGoods.SelectedItem == null)
+                {
+                    return null;
+                }
+
+                global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem> loader =
+                    (global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>)((global::Microsoft.LightSwitch.Details.ILoadableProperty)this.Screen.MatsAndGoods.SelectedItem.Details.Properties.LogMatsAndGoodsQuantities).Loader;
+                if (loader == null)
+                {
+                    return null;
+                }
+
+                return loader;
+            }
+
+            private global::Microsoft.LightSwitch.IDataServiceQueryable MatsAndGoodsPricesQuery()
+            {
+                if (this.Screen.MatsAndGoods.SelectedItem == null)
+                {
+                    return null;
+                }
+
+                global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.MatsAndGoodsPricesItem> loader =
+                    (global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.MatsAndGoodsPricesItem>)((global::Microsoft.LightSwitch.Details.ILoadableProperty)this.Screen.MatsAndGoods.SelectedItem.Details.Properties.MatsAndGoodsPrices).Loader;
+                if (loader == null)
+                {
+                    return null;
+                }
+
+                return loader;
+            }
+
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _MatsAndGoods;
 
@@ -12677,6 +14461,12 @@ namespace LightSwitchApplication
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.ActionsFillerItem>.Data _ActionsFiller1;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data _LogMatsAndGoodsQuantities;
+
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data _MatsAndGoodsPrices;
 
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCommand<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass>.Data _CalculateCommand;
@@ -12820,6 +14610,22 @@ namespace LightSwitchApplication
                     get
                     {
                         return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.ActionsFillerItem>)base.GetItem(global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties.ActionsFiller1);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem> LogMatsAndGoodsQuantities
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>)base.GetItem(global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties.LogMatsAndGoodsQuantities);
+                    }
+                }
+
+                public global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem> MatsAndGoodsPrices
+                {
+                    get
+                    {
+                        return (global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>)base.GetItem(global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties.MatsAndGoodsPrices);
                     }
                 }
 
@@ -13339,6 +15145,74 @@ namespace LightSwitchApplication
                 private static void _ActionsFiller1_OnLoaded(global::LightSwitchApplication.ПланированиеЗакупок s, bool succeeded)
                 {
                     s.ActionsFiller1_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Entry
+                    LogMatsAndGoodsQuantities = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Entry(
+                        "LogMatsAndGoodsQuantities",
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_Stub,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_Validate,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_CreateQuery,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_SelectionChanged,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_OnCollectionChanged,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._LogMatsAndGoodsQuantities_OnLoaded);
+                private static void _LogMatsAndGoodsQuantities_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.LogMatsAndGoodsQuantitiesItem>.Data> c, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass d, object sf)
+                {
+                    c(d, ref d._LogMatsAndGoodsQuantities, sf);
+                }
+                private static void _LogMatsAndGoodsQuantities_Validate(global::LightSwitchApplication.ПланированиеЗакупок s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.LogMatsAndGoodsQuantities_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _LogMatsAndGoodsQuantities_CreateQuery(global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass d, object[] args)
+                {
+                    return d.LogMatsAndGoodsQuantitiesQuery();
+                }
+                private static void _LogMatsAndGoodsQuantities_SelectionChanged(global::LightSwitchApplication.ПланированиеЗакупок s)
+                {
+                    s.LogMatsAndGoodsQuantities_SelectionChanged();
+                }
+                private static void _LogMatsAndGoodsQuantities_OnCollectionChanged(global::LightSwitchApplication.ПланированиеЗакупок s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.LogMatsAndGoodsQuantities_Changed(e);
+                }
+                private static void _LogMatsAndGoodsQuantities_OnLoaded(global::LightSwitchApplication.ПланированиеЗакупок s, bool succeeded)
+                {
+                    s.LogMatsAndGoodsQuantities_Loaded(succeeded);
+                }
+
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry
+                    MatsAndGoodsPrices = new global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Entry(
+                        "MatsAndGoodsPrices",
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_Stub,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_Validate,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_CreateQuery,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_SelectionChanged,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_OnCollectionChanged,
+                        global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass.PropertySetProperties._MatsAndGoodsPrices_OnLoaded);
+                private static void _MatsAndGoodsPrices_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.Client.ScreenCollectionProperty<global::LightSwitchApplication.ПланированиеЗакупок, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass, global::LightSwitchApplication.MatsAndGoodsPricesItem>.Data> c, global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass d, object sf)
+                {
+                    c(d, ref d._MatsAndGoodsPrices, sf);
+                }
+                private static void _MatsAndGoodsPrices_Validate(global::LightSwitchApplication.ПланированиеЗакупок s, global::Microsoft.LightSwitch.Framework.Client.ScreenValidationResultsBuilder r)
+                {
+                    s.MatsAndGoodsPrices_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.IDataServiceQueryable _MatsAndGoodsPrices_CreateQuery(global::LightSwitchApplication.ПланированиеЗакупок.DetailsClass d, object[] args)
+                {
+                    return d.MatsAndGoodsPricesQuery();
+                }
+                private static void _MatsAndGoodsPrices_SelectionChanged(global::LightSwitchApplication.ПланированиеЗакупок s)
+                {
+                    s.MatsAndGoodsPrices_SelectionChanged();
+                }
+                private static void _MatsAndGoodsPrices_OnCollectionChanged(global::LightSwitchApplication.ПланированиеЗакупок s, global::System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+                {
+                    s.MatsAndGoodsPrices_Changed(e);
+                }
+                private static void _MatsAndGoodsPrices_OnLoaded(global::LightSwitchApplication.ПланированиеЗакупок s, bool succeeded)
+                {
+                    s.MatsAndGoodsPrices_Loaded(succeeded);
                 }
 
             }

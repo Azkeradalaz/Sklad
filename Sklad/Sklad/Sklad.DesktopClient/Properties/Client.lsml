@@ -28,6 +28,9 @@
     <EntityContainerGroupProperty
       Name="skladData"
       EntityContainer="skladData" />
+    <EntityContainerGroupProperty
+      Name="ApplicationData"
+      EntityContainer="ApplicationData" />
   </EntityContainerGroup>
   <GlobalAttributeGroup>
     <GlobalAttributeGroup.Attributes>
@@ -169,9 +172,6 @@
       Name="ScreenCommandShowПеремещениеПриход2"
       Target="!module/Methods[ShowПеремещениеПриход2]" />
     <ApplicationCommand
-      Name="ScreenCommandShowОстатки"
-      Target="!module/Methods[ShowОстатки]" />
-    <ApplicationCommand
       Name="ScreenCommandShowОтветственные"
       Target="!module/Methods[ShowОтветственные]" />
     <ApplicationCommand
@@ -186,6 +186,15 @@
     <ApplicationCommand
       Name="ScreenCommandShowОтчетЛогКоличества"
       Target="!module/Methods[ShowОтчетЛогКоличества]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОстатки"
+      Target="!module/Methods[ShowОстатки]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОстаткиПоСпецификациям"
+      Target="!module/Methods[ShowОстаткиПоСпецификациям]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowОстаткиПокупныеКомплектующие"
+      Target="!module/Methods[ShowОстаткиПокупныеКомплектующие]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -276,6 +285,12 @@
       <ApplicationNavigationLink
         Name="link4"
         Command="!module/Commands[ScreenCommandShowОтчетЛогКоличества]" />
+      <ApplicationNavigationLink
+        Name="link5"
+        Command="!module/Commands[ScreenCommandShowОстаткиПоСпецификациям]" />
+      <ApplicationNavigationLink
+        Name="link6"
+        Command="!module/Commands[ScreenCommandShowОстаткиПокупныеКомплектующие]" />
     </ApplicationNavigationGroup>
   </Application.NavigationItems>
 </Application>

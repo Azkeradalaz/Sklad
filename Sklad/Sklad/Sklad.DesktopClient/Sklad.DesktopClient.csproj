@@ -246,10 +246,22 @@
     <Compile Include="..\Sklad.Server\DataSources\skladData\ActionsItem.lsml.cs">
       <Link>UserCode\Shared\ActionsItem.lsml.cs</Link>
     </Compile>
+    <Compile Include="..\Sklad.Server\DataSources\skladData\MatsAndGoodsPricesItem.lsml.cs">
+      <Link>UserCode\Shared\MatsAndGoodsPricesItem.lsml.cs</Link>
+    </Compile>
+    <Compile Include="..\Sklad.Server\DataSources\skladData\RecipesComponentsItem.lsml.cs">
+      <Link>UserCode\Shared\RecipesComponentsItem.lsml.cs</Link>
+    </Compile>
     <Compile Include="HelperClasses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\Остатки.lsml.cs">
       <DependentUpon>Остатки.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ОстаткиПоСпецификациям.lsml.cs">
+      <DependentUpon>ОстаткиПоСпецификациям.lsml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ОтчетЛогКоличества.lsml.cs">
+      <DependentUpon>ОтчетЛогКоличества.lsml</DependentUpon>
     </Compile>
     <Compile Include="Screens\ПланированиеЗакупок.lsml.cs">
       <DependentUpon>ПланированиеЗакупок.lsml</DependentUpon>
@@ -324,6 +336,10 @@
     <LightSwitchModel Include="Screens\MatsAndGoodsListDetail.lsml" />
     <LightSwitchModel Include="Screens\ОтчетЛогКоличества.lsml" />
     <LightSwitchModel Include="Screens\ОтчетЛогДвижение.lsml" />
+    <LightSwitchModel Include="Screens\ОстаткиПоСпецификациям.lsml" />
+    <LightSwitchModel Include="Properties\skladData\RecipesComponents.lsml" />
+    <LightSwitchModel Include="Properties\skladData\MatsAndGoodsPrices.lsml" />
+    <LightSwitchModel Include="Screens\ОстаткиПокупныеКомплектующие.lsml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1450,6 +1450,70 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="LogMatsAndGoodsQuantities"
+        PageSize="45"
+        PropertyType="CollectionView$LogMatsAndGoodsQuantitiesItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="LogMatsAndGoodsQuantitiesQuery"
+            ReturnType="LogMatsAndGoodsQuantitiesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="LogMatsAndGoodsQuantities" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[LogMatsAndGoodsQuantities]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="MatsAndGoodsPrices"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsPricesItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoodsPricesQuery"
+            ReturnType="MatsAndGoodsPricesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="ПланированиеЗакупок/Properties[MatsAndGoods]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="MatsAndGoodsPrices" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="ПланированиеЗакупок/Properties[MatsAndGoodsPrices]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

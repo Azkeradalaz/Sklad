@@ -11,5 +11,10 @@ namespace LightSwitchApplication
 {
     public partial class ОтчетЛогДвижение
     {
+        partial void WithoutPageSegregation_Execute()
+        {
+            this.OpenModalWindow("Group1");
+
+        }
     }
 }

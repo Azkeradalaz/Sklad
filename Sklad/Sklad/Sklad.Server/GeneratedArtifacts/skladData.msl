@@ -110,6 +110,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MatsAndGoodsPrices">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.MatsAndGoodsPricesItem)">
+        <MappingFragment StoreEntitySet="MatsAndGoodsPrices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LastPrice" ColumnName="LastPrice" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+          <ScalarProperty Name="MAGID" ColumnName="MAGID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MatsAndGoodsQuantities">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.MatsAndGoodsQuantitiesItem)">
         <MappingFragment StoreEntitySet="MatsAndGoodsQuantities">

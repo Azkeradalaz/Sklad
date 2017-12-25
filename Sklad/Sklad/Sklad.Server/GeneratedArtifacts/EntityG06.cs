@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Отсутствует описание модели
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-    public sealed partial class LogActionsAndCraftItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>
+    public sealed partial class CraftFillerItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Инициализирует новый экземпляр сущности LogActionsAndCraftItem.
+        /// Инициализирует новый экземпляр сущности CraftFillerItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public LogActionsAndCraftItem()
+        public CraftFillerItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public LogActionsAndCraftItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.LogActionsAndCraftItem> entitySet)
+        public CraftFillerItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.CraftFillerItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.CraftFillerItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void LogActionsAndCraftItem_Created();
+        partial void CraftFillerItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void LogActionsAndCraftItem_AllowSaveWithErrors(ref bool result);
+        partial void CraftFillerItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -87,7 +87,7 @@ namespace LightSwitchApplication
         {
             get
             {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.ID);
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.ID);
             }
         }
         
@@ -103,87 +103,15 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Nullable<global::System.DateTime> c_Date
-        {
-            get
-            {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.c_Date);
-            }
-            set
-            {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.c_Date, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void c_Date_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void c_Date_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void c_Date_Changed();
-
-        /// <summary>
-        /// Отсутствует описание модели
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string Action
-        {
-            get
-            {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Action);
-            }
-            set
-            {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Action, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Action_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Action_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Action_Changed();
-
-        /// <summary>
-        /// Отсутствует описание модели
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string WayBillNumber
-        {
-            get
-            {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.WayBillNumber);
-            }
-            set
-            {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.WayBillNumber, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void WayBillNumber_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void WayBillNumber_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void WayBillNumber_Changed();
-
-        /// <summary>
-        /// Отсутствует описание модели
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Nullable<decimal> Quantity
         {
             get
             {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Quantity);
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity);
             }
             set
             {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Quantity, value);
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.SetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity, value);
             }
         }
         
@@ -199,72 +127,96 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Nullable<decimal> QuantityOnSklad
+        public global::System.Nullable<decimal> Quantity1
         {
             get
             {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.QuantityOnSklad);
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity1);
             }
             set
             {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.QuantityOnSklad, value);
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.SetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity1, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityOnSklad_IsReadOnly(ref bool result);
+        partial void Quantity1_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityOnSklad_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Quantity1_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityOnSklad_Changed();
+        partial void Quantity1_Changed();
 
         /// <summary>
         /// Отсутствует описание модели
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.MatsAndGoodsItem MatsAndGoodsItem1
+        public global::System.Nullable<decimal> Quantity2
         {
             get
             {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1);
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity2);
             }
             set
             {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1, value);
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.SetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity2, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void MatsAndGoodsItem1_IsReadOnly(ref bool result);
+        partial void Quantity2_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void MatsAndGoodsItem1_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Quantity2_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void MatsAndGoodsItem1_Changed();
+        partial void Quantity2_Changed();
 
         /// <summary>
         /// Отсутствует описание модели
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.SkladiItem SkladiItem
+        public global::LightSwitchApplication.MatsAndGoodsItem MatsAndGoodsItem
         {
             get
             {
-                return global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.GetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem);
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem);
             }
             set
             {
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.SetValue(this, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem, value);
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.SetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void SkladiItem_IsReadOnly(ref bool result);
+        partial void MatsAndGoodsItem_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void SkladiItem_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void MatsAndGoodsItem_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void SkladiItem_Changed();
+        partial void MatsAndGoodsItem_Changed();
+
+        /// <summary>
+        /// Отсутствует описание модели
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::LightSwitchApplication.CraftActionItem CraftActionItem
+        {
+            get
+            {
+                return global::LightSwitchApplication.CraftFillerItem.DetailsClass.GetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem);
+            }
+            set
+            {
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.SetValue(this, global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CraftActionItem_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CraftActionItem_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void CraftActionItem_Changed();
 
         #endregion
     
@@ -275,37 +227,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.LogActionsAndCraftItem,
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass,
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>>
+                global::LightSwitchApplication.CraftFillerItem,
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass,
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.ID;
+                var initializeEntry = global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.ID;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>.Entry
-                __LogActionsAndCraftItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.__LogActionsAndCraftItem_CreateNew,
-                    global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.__LogActionsAndCraftItem_Created,
-                    global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.__LogActionsAndCraftItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.LogActionsAndCraftItem __LogActionsAndCraftItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.LogActionsAndCraftItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>.Entry
+                __CraftFillerItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.CraftFillerItem.DetailsClass.__CraftFillerItem_CreateNew,
+                    global::LightSwitchApplication.CraftFillerItem.DetailsClass.__CraftFillerItem_Created,
+                    global::LightSwitchApplication.CraftFillerItem.DetailsClass.__CraftFillerItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.CraftFillerItem __CraftFillerItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.CraftFillerItem> es)
             {
-                return new global::LightSwitchApplication.LogActionsAndCraftItem(es);
+                return new global::LightSwitchApplication.CraftFillerItem(es);
             }
-            private static void __LogActionsAndCraftItem_Created(global::LightSwitchApplication.LogActionsAndCraftItem e)
+            private static void __CraftFillerItem_Created(global::LightSwitchApplication.CraftFillerItem e)
             {
-                e.LogActionsAndCraftItem_Created();
+                e.CraftFillerItem_Created();
             }
-            private static bool __LogActionsAndCraftItem_AllowSaveWithErrors(global::LightSwitchApplication.LogActionsAndCraftItem e)
+            private static bool __CraftFillerItem_AllowSaveWithErrors(global::LightSwitchApplication.CraftFillerItem e)
             {
                 bool result = false;
-                e.LogActionsAndCraftItem_AllowSaveWithErrors(ref result);
+                e.CraftFillerItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -313,7 +265,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass> Commands
             {
                 get
                 {
@@ -321,7 +273,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass> Methods
             {
                 get
                 {
@@ -329,7 +281,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -341,74 +293,58 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal> ID
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal> ID
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.ID) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.ID) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>> c_Date
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>> Quantity
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.c_Date) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string> Action
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>> Quantity1
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Action) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity1) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string> WayBillNumber
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>> Quantity2
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.WayBillNumber) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.Quantity2) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>> Quantity
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem> MatsAndGoodsItem
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.Quantity) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>> QuantityOnSklad
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem> CraftActionItem
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.QuantityOnSklad) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem> MatsAndGoodsItem1
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem> SkladiItem
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem>;
+                        return base.GetItem(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem>;
                     }
                 }
                 
@@ -419,13 +355,11 @@ namespace LightSwitchApplication
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
                 new decimal ID { get; }
-                new global::System.Nullable<global::System.DateTime> c_Date { get; set; }
-                new string Action { get; set; }
-                new string WayBillNumber { get; set; }
                 new global::System.Nullable<decimal> Quantity { get; set; }
-                new global::System.Nullable<decimal> QuantityOnSklad { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation MatsAndGoodsItem1 { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation SkladiItem { get; set; }
+                new global::System.Nullable<decimal> Quantity1 { get; set; }
+                new global::System.Nullable<decimal> Quantity2 { get; set; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation MatsAndGoodsItem { get; set; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation CraftActionItem { get; set; }
             }
             #pragma warning restore 109
     
@@ -436,342 +370,262 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal>.Entry
-                    ID = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal>.Entry
+                    ID = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal>.Entry(
                         "ID",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._ID_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._ID_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._ID_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._ID_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._ID_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._ID_GetImplementationValue,
                         null,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._ID_OnValueChanged);
-                private static void _ID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._ID_OnValueChanged);
+                private static void _ID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._ID, sf);
                 }
-                private static bool _ID_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static bool _ID_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     bool result = false;
                     e.ID_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _ID_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _ID_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.ID_Validate(r);
                 }
-                private static decimal _ID_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static decimal _ID_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.ID;
                 }
-                private static void _ID_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static void _ID_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     e.ID_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>>.Entry
-                    c_Date = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>>.Entry(
-                        "c_Date",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._c_Date_OnValueChanged);
-                private static void _c_Date_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._c_Date, sf);
-                }
-                private static bool _c_Date_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    bool result = false;
-                    e.c_Date_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _c_Date_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.c_Date_Validate(r);
-                }
-                private static global::System.Nullable<global::System.DateTime> _c_Date_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.c_Date;
-                }
-                private static void _c_Date_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, global::System.Nullable<global::System.DateTime> v)
-                {
-                    d.ImplementationEntity.c_Date = global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.ClearDateTimeKind(v);
-                }
-                private static void _c_Date_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    e.c_Date_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Entry
-                    Action = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Entry(
-                        "Action",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Action_OnValueChanged);
-                private static void _Action_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._Action, sf);
-                }
-                private static bool _Action_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    bool result = false;
-                    e.Action_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _Action_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.Action_Validate(r);
-                }
-                private static string _Action_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.Action;
-                }
-                private static void _Action_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.Action = v;
-                }
-                private static void _Action_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    e.Action_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Entry
-                    WayBillNumber = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Entry(
-                        "WayBillNumber",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._WayBillNumber_OnValueChanged);
-                private static void _WayBillNumber_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._WayBillNumber, sf);
-                }
-                private static bool _WayBillNumber_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    bool result = false;
-                    e.WayBillNumber_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _WayBillNumber_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.WayBillNumber_Validate(r);
-                }
-                private static string _WayBillNumber_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.WayBillNumber;
-                }
-                private static void _WayBillNumber_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, string v)
-                {
-                    d.ImplementationEntity.WayBillNumber = v;
-                }
-                private static void _WayBillNumber_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    e.WayBillNumber_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Entry
-                    Quantity = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    Quantity = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
                         "Quantity",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._Quantity_OnValueChanged);
-                private static void _Quantity_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_SetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity_OnValueChanged);
+                private static void _Quantity_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._Quantity, sf);
                 }
-                private static bool _Quantity_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static bool _Quantity_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     bool result = false;
                     e.Quantity_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _Quantity_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Quantity_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.Quantity_Validate(r);
                 }
-                private static global::System.Nullable<decimal> _Quantity_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static global::System.Nullable<decimal> _Quantity_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.Quantity;
                 }
-                private static void _Quantity_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, global::System.Nullable<decimal> v)
+                private static void _Quantity_SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d, global::System.Nullable<decimal> v)
                 {
                     d.ImplementationEntity.Quantity = v;
                 }
-                private static void _Quantity_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static void _Quantity_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     e.Quantity_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Entry
-                    QuantityOnSklad = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
-                        "QuantityOnSklad",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._QuantityOnSklad_OnValueChanged);
-                private static void _QuantityOnSklad_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    Quantity1 = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                        "Quantity1",
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_SetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity1_OnValueChanged);
+                private static void _Quantity1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._QuantityOnSklad, sf);
+                    c(d, ref d._Quantity1, sf);
                 }
-                private static bool _QuantityOnSklad_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static bool _Quantity1_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     bool result = false;
-                    e.QuantityOnSklad_IsReadOnly(ref result);
+                    e.Quantity1_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _QuantityOnSklad_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Quantity1_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.QuantityOnSklad_Validate(r);
+                    e.Quantity1_Validate(r);
                 }
-                private static global::System.Nullable<decimal> _QuantityOnSklad_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static global::System.Nullable<decimal> _Quantity1_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.QuantityOnSklad;
+                    return d.ImplementationEntity.Quantity1;
                 }
-                private static void _QuantityOnSklad_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, global::System.Nullable<decimal> v)
+                private static void _Quantity1_SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d, global::System.Nullable<decimal> v)
                 {
-                    d.ImplementationEntity.QuantityOnSklad = v;
+                    d.ImplementationEntity.Quantity1 = v;
                 }
-                private static void _QuantityOnSklad_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static void _Quantity1_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
                 {
-                    e.QuantityOnSklad_Changed();
+                    e.Quantity1_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry
-                    MatsAndGoodsItem1 = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry(
-                        "MatsAndGoodsItem1",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_GetCoreImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_Refresh,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem1_OnValueChanged);
-                private static void _MatsAndGoodsItem1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    Quantity2 = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                        "Quantity2",
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_SetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._Quantity2_OnValueChanged);
+                private static void _Quantity2_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._MatsAndGoodsItem1, sf);
+                    c(d, ref d._Quantity2, sf);
                 }
-                private static bool _MatsAndGoodsItem1_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static bool _Quantity2_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     bool result = false;
-                    e.MatsAndGoodsItem1_IsReadOnly(ref result);
+                    e.Quantity2_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _MatsAndGoodsItem1_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Quantity2_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.MatsAndGoodsItem1_Validate(r);
+                    e.Quantity2_Validate(r);
                 }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _MatsAndGoodsItem1_GetCoreImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static global::System.Nullable<decimal> _Quantity2_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.MatsAndGoodsItem1;
+                    return d.ImplementationEntity.Quantity2;
                 }
-                private static global::LightSwitchApplication.MatsAndGoodsItem _MatsAndGoodsItem1_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static void _Quantity2_SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d, global::System.Nullable<decimal> v)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass>(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1, ref d._MatsAndGoodsItem1);
+                    d.ImplementationEntity.Quantity2 = v;
                 }
-                private static void _MatsAndGoodsItem1_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, global::LightSwitchApplication.MatsAndGoodsItem v)
+                private static void _Quantity2_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
                 {
-                    d.SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1, ref d._MatsAndGoodsItem1, (i, ev) => i.MatsAndGoodsItem1 = ev, v);
-                }
-                private static void _MatsAndGoodsItem1_Refresh(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem1, ref d._MatsAndGoodsItem1);
-                }
-                private static void _MatsAndGoodsItem1_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
-                {
-                    e.MatsAndGoodsItem1_Changed();
+                    e.Quantity2_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry
-                    SkladiItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry(
-                        "SkladiItem",
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_Stub,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_ComputeIsReadOnly,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_Validate,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_GetCoreImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_GetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_SetImplementationValue,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_Refresh,
-                        global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties._SkladiItem_OnValueChanged);
-                private static void _SkladiItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data> c, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry
+                    MatsAndGoodsItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry(
+                        "MatsAndGoodsItem",
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetCoreImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_SetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Refresh,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_OnValueChanged);
+                private static void _MatsAndGoodsItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._SkladiItem, sf);
+                    c(d, ref d._MatsAndGoodsItem, sf);
                 }
-                private static bool _SkladiItem_ComputeIsReadOnly(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static bool _MatsAndGoodsItem_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
                 {
                     bool result = false;
-                    e.SkladiItem_IsReadOnly(ref result);
+                    e.MatsAndGoodsItem_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _SkladiItem_Validate(global::LightSwitchApplication.LogActionsAndCraftItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _MatsAndGoodsItem_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.SkladiItem_Validate(r);
+                    e.MatsAndGoodsItem_Validate(r);
                 }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _SkladiItem_GetCoreImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _MatsAndGoodsItem_GetCoreImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.SkladiItem;
+                    return d.ImplementationEntity.MatsAndGoodsItem;
                 }
-                private static global::LightSwitchApplication.SkladiItem _SkladiItem_GetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static global::LightSwitchApplication.MatsAndGoodsItem _MatsAndGoodsItem_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.SkladiItem, global::LightSwitchApplication.SkladiItem.DetailsClass>(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem);
+                    return d.GetImplementationValue<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass>(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
                 }
-                private static void _SkladiItem_SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d, global::LightSwitchApplication.SkladiItem v)
+                private static void _MatsAndGoodsItem_SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d, global::LightSwitchApplication.MatsAndGoodsItem v)
                 {
-                    d.SetImplementationValue(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem, (i, ev) => i.SkladiItem = ev, v);
+                    d.SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem, (i, ev) => i.MatsAndGoodsItem = ev, v);
                 }
-                private static void _SkladiItem_Refresh(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass d)
+                private static void _MatsAndGoodsItem_Refresh(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
                 {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem);
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
                 }
-                private static void _SkladiItem_OnValueChanged(global::LightSwitchApplication.LogActionsAndCraftItem e)
+                private static void _MatsAndGoodsItem_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
                 {
-                    e.SkladiItem_Changed();
+                    e.MatsAndGoodsItem_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem>.Entry
+                    CraftActionItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem>.Entry(
+                        "CraftActionItem",
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_Stub,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_ComputeIsReadOnly,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_Validate,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_GetCoreImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_GetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_SetImplementationValue,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_Refresh,
+                        global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties._CraftActionItem_OnValueChanged);
+                private static void _CraftActionItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem>.Data> c, global::LightSwitchApplication.CraftFillerItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._CraftActionItem, sf);
+                }
+                private static bool _CraftActionItem_ComputeIsReadOnly(global::LightSwitchApplication.CraftFillerItem e)
+                {
+                    bool result = false;
+                    e.CraftActionItem_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _CraftActionItem_Validate(global::LightSwitchApplication.CraftFillerItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.CraftActionItem_Validate(r);
+                }
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _CraftActionItem_GetCoreImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.CraftActionItem;
+                }
+                private static global::LightSwitchApplication.CraftActionItem _CraftActionItem_GetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
+                {
+                    return d.GetImplementationValue<global::LightSwitchApplication.CraftActionItem, global::LightSwitchApplication.CraftActionItem.DetailsClass>(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem, ref d._CraftActionItem);
+                }
+                private static void _CraftActionItem_SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass d, global::LightSwitchApplication.CraftActionItem v)
+                {
+                    d.SetImplementationValue(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem, ref d._CraftActionItem, (i, ev) => i.CraftActionItem = ev, v);
+                }
+                private static void _CraftActionItem_Refresh(global::LightSwitchApplication.CraftFillerItem.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.CraftFillerItem.DetailsClass.PropertySetProperties.CraftActionItem, ref d._CraftActionItem);
+                }
+                private static void _CraftActionItem_OnValueChanged(global::LightSwitchApplication.CraftFillerItem e)
+                {
+                    e.CraftActionItem_Changed();
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, decimal>.Data _ID;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, decimal>.Data _ID;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<global::System.DateTime>>.Data _c_Date;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Data _Action;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity1;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, string>.Data _WayBillNumber;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity2;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _MatsAndGoodsItem;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::System.Nullable<decimal>>.Data _QuantityOnSklad;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _MatsAndGoodsItem1;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.LogActionsAndCraftItem, global::LightSwitchApplication.LogActionsAndCraftItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data _SkladiItem;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.CraftFillerItem, global::LightSwitchApplication.CraftFillerItem.DetailsClass, global::LightSwitchApplication.CraftActionItem>.Data _CraftActionItem;
             
         }
     

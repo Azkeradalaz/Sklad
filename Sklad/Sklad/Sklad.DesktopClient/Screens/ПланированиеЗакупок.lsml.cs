@@ -31,6 +31,7 @@ namespace LightSwitchApplication
 
         partial void ПланированиеЗакупок_Created()
         {
+
             WaybillHC.Initialise();
             QuantsHC.Initialise();
         }

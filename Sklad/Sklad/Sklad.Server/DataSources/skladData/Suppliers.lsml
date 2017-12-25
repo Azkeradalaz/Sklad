@@ -202,6 +202,11 @@
             Value="Без НДС" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="MatsAndGoodsPrices"
+        Association="FK_MatsAndGoodsPrices_Suppliers"
+        FromEnd="Suppliers"
+        ToEnd="MatsAndGoodsPrices" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -305,6 +310,16 @@
         Name="Actions"
         EntitySet="Actions" />
     </AssociationSet>
+    <AssociationSet
+      Name="FK_MatsAndGoodsPrices_Suppliers"
+      Association="FK_MatsAndGoodsPrices_Suppliers">
+      <AssociationSetEnd
+        Name="Suppliers"
+        EntitySet="Suppliers" />
+      <AssociationSetEnd
+        Name="MatsAndGoodsPrices"
+        EntitySet="MatsAndGoodsPrices" />
+    </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_Actions_Suppliers">
@@ -319,6 +334,20 @@
       Name="Actions"
       Multiplicity="Many"
       EntityType="ActionsItem" />
+  </Association>
+  <Association
+    Name="FK_MatsAndGoodsPrices_Suppliers">
+    <AssociationEnd
+      Name="Suppliers"
+      EntityType="SuppliersItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="MatsAndGoodsPrices"
+      Multiplicity="Many"
+      EntityType="MatsAndGoodsPricesItem" />
   </Association>
   <DataService
     Name="skladDataDataService">
@@ -447,6 +476,27 @@
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
           End="skladData/Members[FK_Actions_Suppliers]/Members[Actions]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="SupplierID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_MatsAndGoodsPrices_Suppliers">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_MatsAndGoodsPrices_Suppliers" />
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsPrices_Suppliers]/Members[Suppliers]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ID" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="skladData/Members[FK_MatsAndGoodsPrices_Suppliers]/Members[MatsAndGoodsPrices]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="SupplierID" />

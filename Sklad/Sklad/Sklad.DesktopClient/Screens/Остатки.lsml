@@ -293,6 +293,24 @@
                 </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="MAGQWithoutPageSegregation"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Без разбивки на страницы" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="Остатки/Methods[MAGQWithoutPageSegregation]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
             <ContentItem.PropertySources>
               <ControlPropertySource
                 Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
@@ -321,6 +339,225 @@
                     <ConstantExpression
                       Value="False"
                       ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="MAGQWithoutSegregation"
+            IsHidden="True"
+            Kind="Group"
+            View="Microsoft.LightSwitch.RichClient:ModalWindow">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value=" " />
+            </ContentItem.Attributes>
+            <ContentItem
+              Name="Group1"
+              Kind="Group">
+              <ContentItem
+                Name="Group2"
+                Kind="Group">
+                <ContentItem
+                  Name="NameSklad1"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Склад" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Остатки/Properties[NameSklad1]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="NameMAG1"
+                  Kind="Value"
+                  DataType=":String?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Товар" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Остатки/Properties[NameMAG1]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="QuantityMore"
+                  Kind="Value"
+                  DataType=":Decimal?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Количество от:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Остатки/Properties[QuantityMore]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="QuantityLess"
+                  Kind="Value"
+                  DataType=":Decimal?"
+                  View="Microsoft.LightSwitch.RichClient:TextBox">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="До:" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="Остатки/Properties[QuantityLess]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                Name="MatsAndGoodsQuantitiesFull"
+                Kind="Collection"
+                DataType="CollectionView$MatsAndGoodsQuantitiesItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="Остатки/Properties[MatsAndGoodsQuantitiesFull]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="MatsAndGoodsQuantitiesFullTemplate"
+                  Kind="Details"
+                  DataType="MatsAndGoodsQuantitiesItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="Name2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Склад" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
+                          <MemberExpression
+                            Member="Name" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Name3"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsQuantitiesItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Name" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Unit1"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsQuantitiesItem/Properties[MatsAndGoodsItem]" />
+                          <MemberExpression
+                            Member="Unit" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Quantity2"
+                    Kind="Value"
+                    DataType=":Decimal?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsQuantitiesItem/Properties[Quantity]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="False"
+                      ResultType=":Boolean" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Center"
+                      ResultType=":String" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Center"
+                      ResultType=":String" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
@@ -416,6 +653,8 @@
           <Generated />
         </ScreenMethod.Attributes>
       </ScreenMethod>
+      <ScreenMethod
+        Name="MAGQWithoutPageSegregation" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -460,7 +699,7 @@
                               </BinaryExpression.Left>
                               <BinaryExpression.Right>
                                 <BinaryExpression
-                                  NodeType="Equal">
+                                  NodeType="Contains">
                                   <BinaryExpression.Left>
                                     <ChainExpression>
                                       <MemberExpression
@@ -479,7 +718,7 @@
                           </BinaryExpression.Left>
                           <BinaryExpression.Right>
                             <BinaryExpression
-                              NodeType="Equal">
+                              NodeType="Contains">
                               <BinaryExpression.Left>
                                 <ChainExpression>
                                   <MemberExpression
@@ -498,7 +737,7 @@
                       </BinaryExpression.Left>
                       <BinaryExpression.Right>
                         <BinaryExpression
-                          NodeType="GreaterThan">
+                          NodeType="GreaterThanOrEqual">
                           <BinaryExpression.Left>
                             <ChainExpression>
                               <MemberExpression
@@ -515,7 +754,7 @@
                   </BinaryExpression.Left>
                   <BinaryExpression.Right>
                     <BinaryExpression
-                      NodeType="LessThan">
+                      NodeType="LessThanOrEqual">
                       <BinaryExpression.Left>
                         <ChainExpression>
                           <MemberExpression
@@ -611,6 +850,194 @@
         PropertyType=":Decimal?" />
       <ScreenProperty
         Name="Quantity1"
+        PropertyType=":Decimal?" />
+      <ScreenCollectionProperty
+        Name="MatsAndGoodsQuantitiesFull"
+        DisablePaging="True"
+        DisableSearch="True"
+        PageSize="45"
+        PropertyType="CollectionView$MatsAndGoodsQuantitiesItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="MatsAndGoodsQuantitiesFullQuery"
+            ReturnType="MatsAndGoodsQuantitiesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="And">
+                  <BinaryExpression.Left>
+                    <BinaryExpression
+                      NodeType="And">
+                      <BinaryExpression.Left>
+                        <BinaryExpression
+                          NodeType="And">
+                          <BinaryExpression.Left>
+                            <BinaryExpression
+                              NodeType="And">
+                              <BinaryExpression.Left>
+                                <BinaryExpression
+                                  NodeType="Equal">
+                                  <BinaryExpression.Left>
+                                    <ChainExpression>
+                                      <MemberExpression
+                                        Member="MatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
+                                      <MemberExpression
+                                        Member="Status" />
+                                    </ChainExpression>
+                                  </BinaryExpression.Left>
+                                  <BinaryExpression.Right>
+                                    <ConstantExpression
+                                      Value="Функционирует"
+                                      ResultType=":String?" />
+                                  </BinaryExpression.Right>
+                                </BinaryExpression>
+                              </BinaryExpression.Left>
+                              <BinaryExpression.Right>
+                                <BinaryExpression
+                                  NodeType="Contains">
+                                  <BinaryExpression.Left>
+                                    <ChainExpression>
+                                      <MemberExpression
+                                        Member="MatsAndGoodsQuantitiesItem/Properties[MatsAndGoodsItem]" />
+                                      <MemberExpression
+                                        Member="Name" />
+                                    </ChainExpression>
+                                  </BinaryExpression.Left>
+                                  <BinaryExpression.Right>
+                                    <ParameterExpression
+                                      Parameter="NameMAG" />
+                                  </BinaryExpression.Right>
+                                </BinaryExpression>
+                              </BinaryExpression.Right>
+                            </BinaryExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <BinaryExpression
+                              NodeType="Contains">
+                              <BinaryExpression.Left>
+                                <ChainExpression>
+                                  <MemberExpression
+                                    Member="MatsAndGoodsQuantitiesItem/Properties[SkladiItem]" />
+                                  <MemberExpression
+                                    Member="Name" />
+                                </ChainExpression>
+                              </BinaryExpression.Left>
+                              <BinaryExpression.Right>
+                                <ParameterExpression
+                                  Parameter="NameSklad" />
+                              </BinaryExpression.Right>
+                            </BinaryExpression>
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <BinaryExpression
+                          NodeType="GreaterThan">
+                          <BinaryExpression.Left>
+                            <ChainExpression>
+                              <MemberExpression
+                                Member="MatsAndGoodsQuantitiesItem/Properties[Quantity]" />
+                            </ChainExpression>
+                          </BinaryExpression.Left>
+                          <BinaryExpression.Right>
+                            <ParameterExpression
+                              Parameter="QuantityMore" />
+                          </BinaryExpression.Right>
+                        </BinaryExpression>
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <BinaryExpression
+                      NodeType="LessThan">
+                      <BinaryExpression.Left>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="MatsAndGoodsQuantitiesItem/Properties[Quantity]" />
+                        </ChainExpression>
+                      </BinaryExpression.Left>
+                      <BinaryExpression.Right>
+                        <ParameterExpression
+                          Parameter="QuantityLess" />
+                      </BinaryExpression.Right>
+                    </BinaryExpression>
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="skladData/Members[MatsAndGoodsQuantities]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="NameMAG"
+                IsOptional="True"
+                ParameterType=":String?" />
+              <QueryParameter
+                Name="NameSklad"
+                IsOptional="True"
+                ParameterType=":String?" />
+              <QueryParameter
+                Name="QuantityMore"
+                IsOptional="True"
+                ParameterType=":Decimal?" />
+              <QueryParameter
+                Name="QuantityLess"
+                IsOptional="True"
+                ParameterType=":Decimal?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="Остатки/Properties[MatsAndGoodsQuantitiesFull]/Query">
+              <ArgumentExpression
+                Parameter="NameMAG">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Остатки/Properties[NameMAG1]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="NameSklad">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Остатки/Properties[NameSklad1]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="QuantityMore">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Остатки/Properties[QuantityMore]" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="QuantityLess">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="Остатки/Properties[QuantityLess]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="NameMAG1"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="NameSklad1"
+        PropertyType=":String?" />
+      <ScreenProperty
+        Name="QuantityMore"
+        PropertyType=":Decimal?" />
+      <ScreenProperty
+        Name="QuantityLess"
         PropertyType=":Decimal?" />
     </Screen.Properties>
   </Screen>

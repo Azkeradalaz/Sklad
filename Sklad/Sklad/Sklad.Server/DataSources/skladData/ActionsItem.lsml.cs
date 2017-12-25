@@ -17,14 +17,11 @@ namespace LightSwitchApplication
             {
                 result = "0" + CreationDate.Day.ToString();
             }
-           
-
         }
 
         partial void month_Compute(ref string result)
         {
             int i = CreationDate.Month;
-
             switch (i)
             {
                 case 1: result = "января";
@@ -52,8 +49,6 @@ namespace LightSwitchApplication
                 case 12: result = "декабря";
                     break;
             }
-           
-
         }
 
         partial void year_Compute(ref string result)

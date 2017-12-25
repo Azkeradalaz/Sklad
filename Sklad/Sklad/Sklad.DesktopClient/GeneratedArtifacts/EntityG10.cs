@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Отсутствует описание модели
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-    public sealed partial class RecipesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>
+    public sealed partial class MatsAndGoodsQuantitiesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Инициализирует новый экземпляр сущности RecipesItem.
+        /// Инициализирует новый экземпляр сущности MatsAndGoodsQuantitiesItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public RecipesItem()
+        public MatsAndGoodsQuantitiesItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public RecipesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.RecipesItem> entitySet)
+        public MatsAndGoodsQuantitiesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.RecipesItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RecipesItem_Created();
+        partial void MatsAndGoodsQuantitiesItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void RecipesItem_AllowSaveWithErrors(ref bool result);
+        partial void MatsAndGoodsQuantitiesItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -87,7 +87,7 @@ namespace LightSwitchApplication
         {
             get
             {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.ID);
+                return global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.ID);
             }
         }
         
@@ -103,24 +103,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Nullable<decimal> QuantityDone
+        public global::System.Nullable<decimal> Quantity
         {
             get
             {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.QuantityDone);
+                return global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.Quantity);
             }
             set
             {
-                global::LightSwitchApplication.RecipesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.QuantityDone, value);
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.Quantity, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityDone_IsReadOnly(ref bool result);
+        partial void Quantity_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityDone_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Quantity_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void QuantityDone_Changed();
+        partial void Quantity_Changed();
 
         /// <summary>
         /// Отсутствует описание модели
@@ -131,11 +131,11 @@ namespace LightSwitchApplication
         {
             get
             {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem);
+                return global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem);
             }
             set
             {
-                global::LightSwitchApplication.RecipesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, value);
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, value);
             }
         }
         
@@ -151,46 +151,24 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.RecipesComponentsItem> RecipesComponents
+        public global::LightSwitchApplication.SkladiItem SkladiItem
         {
             get
             {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.RecipesComponents);
+                return global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem);
+            }
+            set
+            {
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem, value);
             }
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.RecipesComponentsItem> RecipesComponentsQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.RecipesComponents);
-            }
-        }
-
-        /// <summary>
-        /// Отсутствует описание модели
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.CraftItem> Craft
-        {
-            get
-            {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.Craft);
-            }
-        }
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.CraftItem> CraftQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.RecipesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.Craft);
-            }
-        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SkladiItem_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SkladiItem_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void SkladiItem_Changed();
 
         #endregion
     
@@ -201,37 +179,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.RecipesItem,
-                global::LightSwitchApplication.RecipesItem.DetailsClass,
-                global::LightSwitchApplication.RecipesItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>>
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem,
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass,
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.ID;
+                var initializeEntry = global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.ID;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>.Entry
-                __RecipesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.RecipesItem.DetailsClass.__RecipesItem_CreateNew,
-                    global::LightSwitchApplication.RecipesItem.DetailsClass.__RecipesItem_Created,
-                    global::LightSwitchApplication.RecipesItem.DetailsClass.__RecipesItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.RecipesItem __RecipesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.RecipesItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>.Entry
+                __MatsAndGoodsQuantitiesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.__MatsAndGoodsQuantitiesItem_CreateNew,
+                    global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.__MatsAndGoodsQuantitiesItem_Created,
+                    global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.__MatsAndGoodsQuantitiesItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.MatsAndGoodsQuantitiesItem __MatsAndGoodsQuantitiesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem> es)
             {
-                return new global::LightSwitchApplication.RecipesItem(es);
+                return new global::LightSwitchApplication.MatsAndGoodsQuantitiesItem(es);
             }
-            private static void __RecipesItem_Created(global::LightSwitchApplication.RecipesItem e)
+            private static void __MatsAndGoodsQuantitiesItem_Created(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
             {
-                e.RecipesItem_Created();
+                e.MatsAndGoodsQuantitiesItem_Created();
             }
-            private static bool __RecipesItem_AllowSaveWithErrors(global::LightSwitchApplication.RecipesItem e)
+            private static bool __MatsAndGoodsQuantitiesItem_AllowSaveWithErrors(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
             {
                 bool result = false;
-                e.RecipesItem_AllowSaveWithErrors(ref result);
+                e.MatsAndGoodsQuantitiesItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -239,7 +217,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass> Commands
             {
                 get
                 {
@@ -247,7 +225,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass> Methods
             {
                 get
                 {
@@ -255,7 +233,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -267,50 +245,42 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "12.1.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal> ID
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal> ID
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.ID) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.ID) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>> QuantityDone
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>> Quantity
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.QuantityDone) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>>;
+                        return base.GetItem(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.Quantity) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem> MatsAndGoodsItem
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem> MatsAndGoodsItem
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>;
+                        return base.GetItem(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem> RecipesComponents
+                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem> SkladiItem
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.RecipesComponents) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem> Craft
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.Craft) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem>;
+                        return base.GetItem(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem>;
                     }
                 }
                 
@@ -321,10 +291,9 @@ namespace LightSwitchApplication
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
                 new decimal ID { get; }
-                new global::System.Nullable<decimal> QuantityDone { get; set; }
+                new global::System.Nullable<decimal> Quantity { get; set; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation MatsAndGoodsItem { get; set; }
-                new global::System.Collections.IEnumerable RecipesComponents { get; }
-                new global::System.Collections.IEnumerable Craft { get; }
+                new global::Microsoft.LightSwitch.Internal.IEntityImplementation SkladiItem { get; set; }
             }
             #pragma warning restore 109
     
@@ -335,178 +304,182 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal>.Entry
-                    ID = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal>.Entry
+                    ID = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal>.Entry(
                         "ID",
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._ID_Stub,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._ID_Validate,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._ID_GetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._ID_Stub,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._ID_ComputeIsReadOnly,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._ID_Validate,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._ID_GetImplementationValue,
                         null,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._ID_OnValueChanged);
-                private static void _ID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecipesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.RecipesItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._ID_OnValueChanged);
+                private static void _ID_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._ID, sf);
                 }
-                private static bool _ID_ComputeIsReadOnly(global::LightSwitchApplication.RecipesItem e)
+                private static bool _ID_ComputeIsReadOnly(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
                     bool result = false;
                     e.ID_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _ID_Validate(global::LightSwitchApplication.RecipesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _ID_Validate(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.ID_Validate(r);
                 }
-                private static decimal _ID_GetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static decimal _ID_GetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.ID;
                 }
-                private static void _ID_OnValueChanged(global::LightSwitchApplication.RecipesItem e)
+                private static void _ID_OnValueChanged(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
                     e.ID_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>>.Entry
-                    QuantityDone = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
-                        "QuantityDone",
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_Stub,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_ComputeIsReadOnly,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_Validate,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_GetImplementationValue,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_SetImplementationValue,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._QuantityDone_OnValueChanged);
-                private static void _QuantityDone_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecipesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.RecipesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>>.Entry
+                    Quantity = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>>.Entry(
+                        "Quantity",
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_Stub,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_ComputeIsReadOnly,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_Validate,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_GetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_SetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._Quantity_OnValueChanged);
+                private static void _Quantity_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>>.Data> c, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._QuantityDone, sf);
+                    c(d, ref d._Quantity, sf);
                 }
-                private static bool _QuantityDone_ComputeIsReadOnly(global::LightSwitchApplication.RecipesItem e)
+                private static bool _Quantity_ComputeIsReadOnly(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
                     bool result = false;
-                    e.QuantityDone_IsReadOnly(ref result);
+                    e.Quantity_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _QuantityDone_Validate(global::LightSwitchApplication.RecipesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Quantity_Validate(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.QuantityDone_Validate(r);
+                    e.Quantity_Validate(r);
                 }
-                private static global::System.Nullable<decimal> _QuantityDone_GetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static global::System.Nullable<decimal> _Quantity_GetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.QuantityDone;
+                    return d.ImplementationEntity.Quantity;
                 }
-                private static void _QuantityDone_SetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d, global::System.Nullable<decimal> v)
+                private static void _Quantity_SetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, global::System.Nullable<decimal> v)
                 {
-                    d.ImplementationEntity.QuantityDone = v;
+                    d.ImplementationEntity.Quantity = v;
                 }
-                private static void _QuantityDone_OnValueChanged(global::LightSwitchApplication.RecipesItem e)
+                private static void _Quantity_OnValueChanged(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
-                    e.QuantityDone_Changed();
+                    e.Quantity_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry
-                    MatsAndGoodsItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry
+                    MatsAndGoodsItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Entry(
                         "MatsAndGoodsItem",
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Stub,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_ComputeIsReadOnly,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Validate,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetCoreImplementationValue,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetImplementationValue,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_SetImplementationValue,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Refresh,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_OnValueChanged);
-                private static void _MatsAndGoodsItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecipesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data> c, global::LightSwitchApplication.RecipesItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Stub,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_ComputeIsReadOnly,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Validate,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetCoreImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_GetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_SetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_Refresh,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._MatsAndGoodsItem_OnValueChanged);
+                private static void _MatsAndGoodsItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data> c, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._MatsAndGoodsItem, sf);
                 }
-                private static bool _MatsAndGoodsItem_ComputeIsReadOnly(global::LightSwitchApplication.RecipesItem e)
+                private static bool _MatsAndGoodsItem_ComputeIsReadOnly(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
                     bool result = false;
                     e.MatsAndGoodsItem_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _MatsAndGoodsItem_Validate(global::LightSwitchApplication.RecipesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _MatsAndGoodsItem_Validate(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
                     e.MatsAndGoodsItem_Validate(r);
                 }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _MatsAndGoodsItem_GetCoreImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _MatsAndGoodsItem_GetCoreImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.MatsAndGoodsItem;
                 }
-                private static global::LightSwitchApplication.MatsAndGoodsItem _MatsAndGoodsItem_GetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static global::LightSwitchApplication.MatsAndGoodsItem _MatsAndGoodsItem_GetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass>(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
+                    return d.GetImplementationValue<global::LightSwitchApplication.MatsAndGoodsItem, global::LightSwitchApplication.MatsAndGoodsItem.DetailsClass>(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
                 }
-                private static void _MatsAndGoodsItem_SetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass d, global::LightSwitchApplication.MatsAndGoodsItem v)
+                private static void _MatsAndGoodsItem_SetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, global::LightSwitchApplication.MatsAndGoodsItem v)
                 {
-                    d.SetImplementationValue(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem, (i, ev) => i.MatsAndGoodsItem = ev, v);
+                    d.SetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem, (i, ev) => i.MatsAndGoodsItem = ev, v);
                 }
-                private static void _MatsAndGoodsItem_Refresh(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static void _MatsAndGoodsItem_Refresh(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.MatsAndGoodsItem, ref d._MatsAndGoodsItem);
                 }
-                private static void _MatsAndGoodsItem_OnValueChanged(global::LightSwitchApplication.RecipesItem e)
+                private static void _MatsAndGoodsItem_OnValueChanged(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
                     e.MatsAndGoodsItem_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Entry
-                    RecipesComponents = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Entry(
-                        "RecipesComponents",
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._RecipesComponents_Stub,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._RecipesComponents_GetReferencedEntities,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._RecipesComponents_GetEntityCollection);
-                private static void _RecipesComponents_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecipesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Data> c, global::LightSwitchApplication.RecipesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry
+                    SkladiItem = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Entry(
+                        "SkladiItem",
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_Stub,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_ComputeIsReadOnly,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_Validate,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_GetCoreImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_GetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_SetImplementationValue,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_Refresh,
+                        global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties._SkladiItem_OnValueChanged);
+                private static void _SkladiItem_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data> c, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._RecipesComponents, sf);
+                    c(d, ref d._SkladiItem, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.RecipesComponentsItem> _RecipesComponents_GetReferencedEntities(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static bool _SkladiItem_ComputeIsReadOnly(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.RecipesComponentsItem, global::LightSwitchApplication.RecipesComponentsItem.DetailsClass>(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.RecipesComponents, ref d._RecipesComponents);
+                    bool result = false;
+                    e.SkladiItem_IsReadOnly(ref result);
+                    return result;
                 }
-                private static global::System.Collections.IEnumerable _RecipesComponents_GetEntityCollection(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static void _SkladiItem_Validate(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    return d.ImplementationEntity.RecipesComponents;
+                    e.SkladiItem_Validate(r);
                 }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem>.Entry
-                    Craft = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem>.Entry(
-                        "Craft",
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._Craft_Stub,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._Craft_GetReferencedEntities,
-                        global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties._Craft_GetEntityCollection);
-                private static void _Craft_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.RecipesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem>.Data> c, global::LightSwitchApplication.RecipesItem.DetailsClass d, object sf)
+                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _SkladiItem_GetCoreImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
-                    c(d, ref d._Craft, sf);
+                    return d.ImplementationEntity.SkladiItem;
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.CraftItem> _Craft_GetReferencedEntities(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static global::LightSwitchApplication.SkladiItem _SkladiItem_GetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.CraftItem, global::LightSwitchApplication.CraftItem.DetailsClass>(global::LightSwitchApplication.RecipesItem.DetailsClass.PropertySetProperties.Craft, ref d._Craft);
+                    return d.GetImplementationValue<global::LightSwitchApplication.SkladiItem, global::LightSwitchApplication.SkladiItem.DetailsClass>(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem);
                 }
-                private static global::System.Collections.IEnumerable _Craft_GetEntityCollection(global::LightSwitchApplication.RecipesItem.DetailsClass d)
+                private static void _SkladiItem_SetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d, global::LightSwitchApplication.SkladiItem v)
                 {
-                    return d.ImplementationEntity.Craft;
+                    d.SetImplementationValue(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem, (i, ev) => i.SkladiItem = ev, v);
+                }
+                private static void _SkladiItem_Refresh(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass d)
+                {
+                    d.RefreshNavigationProperty(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass.PropertySetProperties.SkladiItem, ref d._SkladiItem);
+                }
+                private static void _SkladiItem_OnValueChanged(global::LightSwitchApplication.MatsAndGoodsQuantitiesItem e)
+                {
+                    e.SkladiItem_Changed();
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, decimal>.Data _ID;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, decimal>.Data _ID;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::System.Nullable<decimal>>.Data _QuantityDone;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::System.Nullable<decimal>>.Data _Quantity;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _MatsAndGoodsItem;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.MatsAndGoodsItem>.Data _MatsAndGoodsItem;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.RecipesComponentsItem>.Data _RecipesComponents;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.RecipesItem, global::LightSwitchApplication.RecipesItem.DetailsClass, global::LightSwitchApplication.CraftItem>.Data _Craft;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.MatsAndGoodsQuantitiesItem, global::LightSwitchApplication.MatsAndGoodsQuantitiesItem.DetailsClass, global::LightSwitchApplication.SkladiItem>.Data _SkladiItem;
             
         }
     
